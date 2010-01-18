@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NUIF : CSS Selector Rules</title>
+<link rel="stylesheet" type="text/css" href="../common/css/framework.css"/>
+<link rel="stylesheet" type="text/css" href="../common/css/default.css"/>
+</head>
+<body>
+<div id="root">
+	<div id="wrap">
+		<div id="header">
+			<h1>CSS Selector Rules &gt; Naming Guide</h1>
+		</div>
+		<hr />
+		<div id="container">
+			<div id="content">
+				<h2>Naming Rule</h2>
+				<ol>
+					<li>Use reserved CSS selectors</li>
+					<li>Use only lowercase letters and numbers and underscore</li>
+					<li>Don't use numbers or underscore at the first letter</li>
+				</ol>
+				<h2>Naming Rule Exception</h2>
+				<ol>
+					<li>Must use underscore at the first letter if you are javascript/AJAX developer or server-side developer</li>
+				</ol>
+<h2>Reserved Selector</h2>
+				<table cellspacing="0" border="1">
+					<tbody>
+						<tr>
+							<th scope="col">Selector</th>
+							<th scope="col">Description</th>
+						</tr>
+						<tr>
+							<th scope="row">#root</th>
+							<td>root container if is required</td>
+						</tr>
+						<tr>
+							<th scope="row">#wrap</th>
+							<td>wrap container for whole content block</td>
+						</tr>
+						<tr>
+							<th scope="row">#header</th>
+							<td>header</td>
+						</tr>
+						<tr>
+							<th scope="row">#footer</th>
+							<td>footer</td>
+						</tr>
+						<tr>
+							<th scope="row">#container</th>
+							<td>container block  isn't  #header or #footer</td>
+						</tr>
+						<tr>
+							<th scope="row">#content</th>
+							<td>main content</td>
+						</tr>
+						<tr>
+							<th scope="row">.gnb</th>
+							<td>global navigation bar</td>
+						</tr>
+						<tr>
+							<th scope="row">.lnb</th>
+							<td>local navigation bar</td>
+						</tr>
+						<tr>
+							<th scope="row">.snb</th>
+							<td>side navigation bar</td>
+						</tr>
+						<tr>
+							<th scope="row">.aside</th>
+							<td>aside </td>
+						</tr>
+						<tr>
+							<th scope="row">.section</th>
+							<td>section  containing heading element</td>
+						</tr>
+						<tr>
+							<th scope="row">.spot</th>
+							<td>spotlighted </td>
+						</tr>
+						<tr>
+							<th scope="row">.path</th>
+							<td>path </td>
+						</tr>
+						<tr>
+							<th scope="row">.nav</th>
+							<td>navigation</td>
+						</tr>
+						<tr>
+							<th scope="row">.pagination</th>
+							<td>page navigation</td>
+						</tr>
+						<tr>
+							<th scope="row">.btn</th>
+							<td>button</td>
+						</tr>
+						<tr>
+							<th scope="row">.ico</th>
+							<td>icon</td>
+						</tr>
+						<tr>
+							<th scope="row">.blind</th>
+							<td>blind</td>
+						</tr>
+						<tr>
+							<th scope="row">.input_txt</th>
+							<td>text input control</td>
+						</tr>
+						<tr>
+							<th scope="row">.input_chk</th>
+							<td>checkbox input control</td>
+						</tr>
+						<tr>
+							<th scope="row">.input_rdo</th>
+							<td>radio input control</td>
+						</tr>
+						<tr>
+							<th scope="row">.h</th>
+							<td>heading</td>
+						</tr>
+						<tr>
+							<th scope="row">.tab</th>
+							<td>tab</td>
+						</tr>
+						<tr>
+							<th scope="row">.lst</th>
+							<td>list</td>
+						</tr>
+						<tr>
+							<th scope="row">.read</th>
+							<td>read</td>
+						</tr>
+						<tr>
+							<th scope="row">.wrt</th>
+							<td>write</td>
+						</tr>
+						<tr>
+							<th scope="row">.edt</th>
+							<td>edit</td>
+						</tr>
+						<tr>
+							<th scope="row">.del</th>
+							<td>delete</td>
+						</tr>
+						<tr>
+							<th scope="row">.repl</th>
+							<td>reply</td>
+						</tr>
+						<tr>
+							<th scope="row">.cncl</th>
+							<td>cancel</td>
+						</tr>
+						<tr>
+							<th scope="row">.srch</th>
+							<td>search</td>
+						</tr>
+						<tr>
+							<th scope="row">.fnd</th>
+							<td>find</td>
+						</tr>
+						<tr>
+							<th scope="row">.reg</th>
+							<td>registration</td>
+						</tr>
+						<tr>
+							<th scope="row">.ok</th>
+							<td>ok</td>
+						</tr>
+						<tr>
+							<th scope="row">.smit</th>
+							<td>submit</td>
+						</tr>
+						<tr>
+							<th scope="row">.cfm</th>
+							<td>confirm</td>
+						</tr>
+						<tr>
+							<th scope="row">.pmit</th>
+							<td>permit</td>
+						</tr>
+						<tr>
+							<th scope="row">.upld</th>
+							<td>upload</td>
+						</tr>
+						<tr>
+							<th scope="row">.dnld</th>
+							<td>download</td>
+						</tr>
+						<tr>
+							<th scope="row">.inst</th>
+							<td>install</td>
+						</tr>
+						<tr>
+							<th scope="row">.file</th>
+							<td>file</td>
+						</tr>
+						<tr>
+							<th scope="row">.stp</th>
+							<td>stop</td>
+						</tr>
+						<tr>
+							<th scope="row">.play</th>
+							<td>play</td>
+						</tr>
+						<tr>
+							<th scope="row">.prev</th>
+							<td>previous</td>
+						</tr>
+						<tr>
+							<th scope="row">.next</th>
+							<td>next</td>
+						</tr>
+						<tr>
+							<th scope="row">.frst</th>
+							<td>first</td>
+						</tr>
+						<tr>
+							<th scope="row">.last</th>
+							<td>last</td>
+						</tr>
+						<tr>
+							<th scope="row">.up</th>
+							<td>up</td>
+						</tr>
+						<tr>
+							<th scope="row">.dn</th>
+							<td>down</td>
+						</tr>
+						<tr>
+							<th scope="row">.zip</th>
+							<td>zip</td>
+						</tr>
+						<tr>
+							<th scope="row">.go</th>
+							<td>go</td>
+						</tr>
+						<tr>
+							<th scope="row">.thmb</th>
+							<td>thumb</td>
+						</tr>
+						<tr>
+							<th scope="row">.img</th>
+							<td>image</td>
+						</tr>
+						<tr>
+							<th scope="row">.rfsh</th>
+							<td>refresh</td>
+						</tr>
+						<tr>
+							<th scope="row">.opn</th>
+							<td>open</td>
+						</tr>
+						<tr>
+							<th scope="row">.clse</th>
+							<td>close</td>
+						</tr>
+						<tr>
+							<th scope="row">.zin</th>
+							<td>zoom in</td>
+						</tr>
+						<tr>
+							<th scope="row">.zout</th>
+							<td>zoom out</td>
+						</tr>
+						<tr>
+							<th scope="row">.unfd</th>
+							<td>un fold</td>
+						</tr>
+						<tr>
+							<th scope="row">.fd</th>
+							<td>fold</td>
+						</tr>
+						<tr>
+							<th scope="row">.lc</th>
+							<td>lock</td>
+						</tr>
+						<tr>
+							<th scope="row">.unlc</th>
+							<td>un lock</td>
+						</tr>
+						<tr>
+							<th scope="row">.more</th>
+							<td>more</td>
+						</tr>
+						<tr>
+							<th scope="row">.dot</th>
+							<td>dot</td>
+						</tr>
+						<tr>
+							<th scope="row">.circ</th>
+							<td>circle</td>
+						</tr>
+						<tr>
+							<th scope="row">.arr</th>
+							<td>arrow</td>
+						</tr>
+						<tr>
+							<th scope="row">.star</th>
+							<td>star</td>
+						</tr>
+						<tr>
+							<th scope="row">.num</th>
+							<td>num</td>
+						</tr>
+						<tr>
+							<th scope="row">.new</th>
+							<td>new</td>
+						</tr>
+						<tr>
+							<th scope="row">.updt</th>
+							<td>update</td>
+						</tr>
+						<tr>
+							<th scope="row">.rovr</th>
+							<td>roll over</td>
+						</tr>
+						<tr>
+							<th scope="row">.mov</th>
+							<td>movie</td>
+						</tr>
+						<tr>
+							<th scope="row">.pht</th>
+							<td>photo</td>
+						</tr>
+						<tr>
+							<th scope="row">.en</th>
+							<td>english</td>
+						</tr>
+						<tr>
+							<th scope="row">.kr</th>
+							<td>korean</td>
+						</tr>
+						<tr>
+							<th scope="row">.jp</th>
+							<td>japanese</td>
+						</tr>
+						<tr>
+							<th scope="row">.cn</th>
+							<td>chinese</td>
+						</tr>
+						<tr>
+							<th scope="row">.noti</th>
+							<td>notification</td>
+						</tr>
+						<tr>
+							<th scope="row">.rels</th>
+							<td>release</td>
+						</tr>
+						<tr>
+							<th scope="row">.hr</th>
+							<td>horizontal rule</td>
+						</tr>
+						<tr>
+							<th scope="row">.vr</th>
+							<td>vertical rule</td>
+						</tr>
+						<tr>
+							<th scope="row">.sl</th>
+							<td>slash</td>
+						</tr>
+						<tr>
+							<th scope="row">.bsl</th>
+							<td>back slash</td>
+						</tr>
+						<tr>
+							<th scope="row">.top</th>
+							<td>top</td>
+						</tr>
+						<tr>
+							<th scope="row">.mid</th>
+							<td>middle</td>
+						</tr>
+						<tr>
+							<th scope="row">.cen</th>
+							<td>center</td>
+						</tr>
+						<tr>
+							<th scope="row">.btm</th>
+							<td>bottom</td>
+						</tr>
+						<tr>
+							<th scope="row">.lt</th>
+							<td>left top</td>
+						</tr>
+						<tr>
+							<th scope="row">.rt</th>
+							<td>right top</td>
+						</tr>
+						<tr>
+							<th scope="row">.lb</th>
+							<td>left bottom</td>
+						</tr>
+						<tr>
+							<th scope="row">.rb</th>
+							<td>right bottom</td>
+						</tr>
+						<tr>
+							<th scope="row">.tmp</th>
+							<td>temporary</td>
+						</tr>
+						<tr>
+							<th scope="row">.ad</th>
+							<td>advertisement</td>
+						</tr>
+						<tr>
+							<th scope="row">.on</th>
+							<td>on</td>
+						</tr>
+						<tr>
+							<th scope="row">.off</th>
+							<td>off</td>
+						</tr>
+						<tr>
+							<th scope="row">.ovr</th>
+							<td>over</td>
+						</tr>
+						<tr>
+							<th scope="row">.ly</th>
+							<td>layer</td>
+						</tr>
+						<tr>
+							<th scope="row">.dsc</th>
+							<td>description</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<hr />
+		<div id="footer">
+			<address>
+			NHN UIT Lab.
+			</address>
+		</div>
+	</div>
+</div>
+</body>
+</html>
