@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* OUIF | JCM */
+/* List Section */
+.listSection{ position:relative; border:1px solid #ddd; font-size:12px; line-height:normal; *zoom:1; background:#fff;}
+.listSection a{ text-decoration:none; color:#666;}
+.listSection a:hover,
+.listSection a:active,
+.listSection a:focus{ text-decoration:underline;}
+.listSection em{ font-style:normal;}
+.listSection h2{ font-size:12px; margin:0; padding:10px 0 8px 13px; color:#333; border-bottom:1px solid #ddd;}
+.listSection h2 em{ color:#cf3292;}
+.listSection ol{ margin:13px; padding:0; list-style:none;}
+.listSection li{ position:relative; margin:0 0 10px 0; *zoom:1;}
+.listSection li:after{ content:""; display:block; clear:both;}
+.listSection li .ranking{ display:inline-block; width:14px; height:11px; margin:0 5px 0 0; background:#d1d1d1; text-align:center; vertical-align:top; font:bold 10px Tahoma; color:#fff; border-top:1px solid #fff; border-bottom:1px solid #d1d1d1;}
+.listSection li.best .ranking{ background:#6e87a5; border-bottom:1px solid #6e87a5;}
+.listSection li.best a{ color:#7189a7;}
+.listSection li .num{ position:absolute; top:0; right:0; color:#a8a8a8; font:11px Tahoma; white-space:nowrap;}
+.listSection li.best .num{ font-weight:bold; color:#7189a7;}
+.listSection .more{ position:absolute; top:10px; right:13px; font:11px Dotum, 돋움; text-decoration:none !important;}
+.listSection .more span{ font-weight:bold; color:#d76ea9; font-size:16px; vertical-align:middle; margin:0 2px 0 0;}
