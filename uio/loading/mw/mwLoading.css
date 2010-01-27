@@ -1,0 +1,8 @@
+@charset "utf-8"; 
+/* OUIF : JCM */
+/* Modal Windowed Loading */
+html, body{ height:100%; margin:0;}
+.mwLoading{ position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:10000;}
+.mwLoading .bg{ position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
+.mwLoading .fg{ position:absolute; top:30%; width:100%; padding:25px 0 0 0; text-align:center; font:bold 12px Tahoma; color:#fff; background:url(loadingBar.gif) no-repeat center top;}
+.mwLoading .fg p{ margin:0; padding:0; line-height:1;}
