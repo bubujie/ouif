@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* OUIF | JCM */
+/* Lined Tab */
+.tab{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #ccc; font-family:Tahoma, Sans-serif; font-size:12px; background:#fff; *zoom:1;}
+.tab:after{ content:""; display:block; clear:both;}
+.tab li{ float:left; margin-right:-1px; margin-bottom:-1px; }
+.tab li a{ position:relative; float:left; text-decoration:none; border:1px solid #ccc; background:#f8f8f8; color:#333; -moz-border-radius-topleft:3px; -moz-border-radius-topright:3px; -webkit-border-top-left-radius:3px; -webkit-border-top-right-radius:3px; }
+.tab li a span{ display:inline-block; padding:6px 20px 4px 20px; letter-spacing:-1px; cursor:pointer;}
+.tab li ul{ display:none; width:100%; position:absolute; top:40px; left:0; list-style:none; margin:0; padding:0; white-space:nowrap; overflow:hidden; *zoom:1;}
+.tab li ul:after{ content:""; display:block; clear:both;}
+.tab li li{ position:relative; left:-1px; padding:0 10px; border-left:1px solid #ddd; overflow:visible;}
+.tab li li a{ padding:0; margin:0; border:0; font-weight:normal; background:transparent; letter-spacing:normal;}
+.tab.m1 .m1 a,
+.tab.m2 .m2 a,
+.tab.m3 .m3 a{ border-bottom:1px solid #fff; margin-top:-2px; background:#fff; }
+.tab.m1 .m1 a span,
+.tab.m2 .m2 a span,
+.tab.m3 .m3 a span{ padding:8px 20px 4px 20px; font-weight:bold;}
+.tab.m1 .m1 ul,
+.tab.m2 .m2 ul,
+.tab.m3 .m3 ul{ display:block;}
+.tab li li a:hover,
+.tab li li a:active,
+.tab li li a:focus,
+.tab.s1 .s1 a,
+.tab.s2 .s2 a,
+.tab.s3 .s3 a{ font-weight:bold; letter-spacing:-1px;}
