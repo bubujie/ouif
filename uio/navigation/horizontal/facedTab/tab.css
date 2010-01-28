@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* OUIF | JCM */
+/* Faced Tab */
+.tab{ position:relative; margin:0; padding:0; _padding:2px 0 0 0; list-style:none; border-bottom:2px solid #315593; font-family:Tahoma, Sans-serif; font-size:12px; background:#fff; *zoom:1;}
+.tab:after{ content:""; display:block; clear:both;}
+.tab li{ float:left; margin-right:2px; background:#4CB1E5;}
+.tab li a,
+.tab li a span{ position:relative; background:url(bgTab.gif) no-repeat; cursor:pointer;}
+.tab li a{ float:left; text-decoration:none; background-position:left top;}
+.tab li a span{ display:inline-block; background-position:right top; padding:6px 20px 4px 20px; color:#fff;}
+.tab li ul{ display:none; width:100%; position:absolute; top:40px; left:0; list-style:none; margin:0; padding:0; white-space:nowrap; overflow:hidden; *zoom:1;}
+.tab li ul:after{ content:""; display:block; clear:both;}
+.tab li li{ position:relative; left:-1px; padding:0 10px; border-left:1px solid #ddd; overflow:visible; background:#fff;}
+.tab li li a{ padding:0; margin:0; font-weight:normal; color:#333;}
+.tab.m1 .m1,
+.tab.m2 .m2,
+.tab.m3 .m3{ background-color:#315593; margin-top:-2px;}
+.tab.m1 .m1 a span,
+.tab.m2 .m2 a span,
+.tab.m3 .m3 a span{ padding:8px 20px 6px 20px; font-weight:bold; letter-spacing:-1px;}
+.tab.m1 .m1 ul,
+.tab.m2 .m2 ul,
+.tab.m3 .m3 ul{ display:block;}
+.tab li li a:hover,
+.tab li li a:active,
+.tab li li a:focus,
+.tab.s1 .s1 a,
+.tab.s2 .s2 a,
+.tab.s3 .s3 a{ font-weight:bold; letter-spacing:-1px;}
