@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* OUIF : JCM */
+/* Select */
+.select{ position:relative; line-height:normal; display:inline-block; *display:inline; vertical-align:middle; background:#fff; *zoom:1;}
+.select *{ margin:0; padding:0; cursor:pointer; font-size:12px; font-family:Tahoma, Sans-serif;}
+.select .arrow{ position:absolute; width:0; height:0; top:10px; right:10px; line-height:0; font-size:0; border-top:3px solid #999; border-left:3px solid #fff; border-right:3px solid #fff;}
+.select .selected{ position:relative; left:0; top:0; width:100%; height:23px; border:1px solid #d6d6d6; line-height:21px; *line-height:normal; text-align:left; text-indent:8px; *text-indent:0; *padding-left:5px; overflow:visible; background:transparent;}
+.select ul{ display:none; position:absolute; top:22px; left:0; width:100%; border-top:1px solid #a5a5a5; border-bottom:1px solid #a5a5a5; background:#fff; list-style:none;}
+.select.open ul{ display:block;}
+.select li{ position:relative; height:17px; border-left:1px solid #a5a5a5; border-right:1px solid #a5a5a5;}
+.select li .option{ width:100%; height:17px; line-height:17px;}
+.select li label{ position:absolute; left:0; top:0; width:100%; text-indent:8px; *text-indent:6px; height:17px; line-height:17px; color:#606060; background:#fff;}
+.select li a{ display:block; text-indent:8px; *text-indent:6px; height:17px; line-height:17px; color:#606060; background:#fff; text-decoration:none;}
+.select li input:focus+label,
+.select li label:hover,
+.select li a:hover,
+.select li a:active,
+.select li a:focus{ background:#606060; color:#fff;}
