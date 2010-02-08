@@ -18,15 +18,19 @@ jQuery(function($){
 	
 	li_list.find('>a').click(onselectmenu);
 	
-	if ($.browser.msie && $.browser.version < 7) {
-		li_list
-			.hover(
-				function(){ li_list.removeClass('hover'); $(this).addClass('hover') }
-			)
-			.mouseleave(
-				function(){ $(this).removeClass('hover'); }
-			);
-	}
+	li_list
+		.find('>a').mouseover(
+			function(){ li_list.removeClass('hover'); $(this).parentsUntil('div.major').filter('li:last').addClass('hover'); }
+		)
+		.focus(
+			function(){ li_list.removeClass('hover'); $(this).parentsUntil('div.major').filter('li:last').addClass('hover'); }
+		);
+
+	li_list
+		//.find('>div.sub')
+		.mouseleave(
+			function(){ li_list.removeClass('hover'); }
+		);
 });
 
 
