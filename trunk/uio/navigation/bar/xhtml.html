@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>OUIF : Bar Navigation</title>
 <link rel="stylesheet" type="text/css" href="bar.css"/>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="menu.js"></script>
 </head>
 <body>
 <div class="menu mcPurple">
@@ -15,16 +17,32 @@
 				<li class="m2"><a href="#"><span>백두산이</span></a>
 					<div class="sub">
 						<ul>
-							<li><a href="#">백두산 하나</a></li>
-							<li><a href="#">백두산 둘</a></li>
-							<li><a href="#">백두산 둘</a></li>
+							<li><a href="#"><span>백두산 하나</span></a></li>
+							<li><a href="#"><span>백두산 둘</span></a></li>
+							<li><a href="#"><span>백두산 셋</span></a></li>
 						</ul>
 					</div>
 				</li>
 				<li class="m3"><a href="#"><span>마르고</span></a></li>
-				<li class="m4"><a href="#"><span>닳도록</span></a></li>
+				<li class="m4"><a href="#"><span>닳도록</span></a>
+					<div class="sub">
+						<ul>
+							<li><a href="#"><span>백두산 하나</span></a></li>
+							<li><a href="#"><span>백두산 둘</span></a></li>
+							<li><a href="#"><span>백두산 셋</span></a></li>
+						</ul>
+					</div>
+				</li>
 				<li class="m5"><a href="#"><span>하느님이</span></a></li>
-				<li class="m6"><a href="#"><span>보우하사</span></a></li>
+				<li class="m6"><a href="#"><span>보우하사</span></a>
+					<div class="sub">
+						<ul>
+							<li><a href="#"><span>백두산 하나</span></a></li>
+							<li><a href="#"><span>백두산 둘</span></a></li>
+							<li><a href="#"><span>백두산 셋</span></a></li>
+						</ul>
+					</div>
+				</li>
 			</ul>
 		</div>
 		<div class="aside">
@@ -33,6 +51,7 @@
 				<li class="m2"><a href="#"><span>만세</span></a></li>
 			</ul>
 		</div>
+		<span class="gradient"></span>
 	</div>
 	<span class="shadow"></span>
 </div>
@@ -46,7 +65,5 @@
 <button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcOrange');">mcOrange</button>
 <button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcGreen');">mcGreen</button>
 <button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcGray');">mcGray</button>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="menu.js"></script>
 </body>
 </html>

@@ -11,26 +11,18 @@ jQuery(function($){
 		
 		myclass = myclass.join(' ');
 		if (!major.hasClass(myclass)) major.attr('class','major').addClass(myclass);
-		return false;
+	}
+	
+	function show_this(){
+		li_list.removeClass('active');
+		$(this).parentsUntil('div.major').filter('li').addClass('active');
 	}
 	
 	var li_list = major.find('li');
+	li_list.find('>a').click(onselectmenu).mouseover(show_this).focus(show_this);
 	
-	li_list.find('>a').click(onselectmenu);
-	
-	li_list
-		.find('>a').mouseover(
-			function(){ li_list.removeClass('hover'); $(this).parentsUntil('div.major').filter('li:last').addClass('hover'); }
-		)
-		.focus(
-			function(){ li_list.removeClass('hover'); $(this).parentsUntil('div.major').filter('li:last').addClass('hover'); }
-		);
-
-	li_list
-		//.find('>div.sub')
-		.mouseleave(
-			function(){ li_list.removeClass('hover'); }
-		);
+	//icon add
+	major.find('div.sub').prev('a').find('>span').append('<span class="i"></span>');
 });
 
 
