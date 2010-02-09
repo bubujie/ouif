@@ -26,9 +26,7 @@
 .menu .major li a:active,
 .menu .major li a:focus{ padding-left:1px; padding-right:1px; background:url(bgBarHover.png); _background:none;}
 .menu .major li.active a{ padding-left:1px; padding-right:1px; background:url(bgBarActiveHover.png); _background:none;}
-.menu .major li a:hover .i,
-.menu .major li a:active .i,
-.menu .major li a:focus .i{ background-position:center -50px; opacity:1; filter:none;}
+.menu .major li.active .i{ background-position:center -50px; opacity:1; filter:none;}
 
 /* Menu Active */
 .menu .major.m1 .m1,
@@ -55,7 +53,7 @@
 .menu .major.m9 .m9 a,
 .menu .major.m10 .m10 a,
 .menu .major.m11 .m11 a,
-.menu .major.m12 .m12 a{ padding-left:1px; padding-right:1px; background:url(bgBarActive.png) repeat-x; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgBarActive.png', sizingMethod='scale');/**/}
+.menu .major.m12 .m12 a{ padding-left:1px; padding-right:1px; background:url(bgBarActive.png) repeat-x; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgBarActive.png', sizingMethod='scale');}
 
 .menu .major.m1 .m1 span,
 .menu .major.m2 .m2 span,
@@ -135,6 +133,9 @@
 .mcViolet .major.m11 .m11,
 .mcViolet .major.m12 .m12,
 .mcViolet .major li.active{ border-color:#6755bf;}
+.mcViolet .major .sub a:hover,
+.mcViolet .major .sub a:active,
+.mcViolet .major .sub a:focus{ background:#f0eef8 !important;}
 
 /* Orange */
 .mcOrange{ border-color:#d0690f; border-bottom-color:#a84f00;}
@@ -155,6 +156,9 @@
 .mcOrange .major.m11 .m11,
 .mcOrange .major.m12 .m12,
 .mcOrange .major li.active{ border-color:#d0690f;}
+.mcOrange .major .sub a:hover,
+.mcOrange .major .sub a:active,
+.mcOrange .major .sub a:focus{ background:#faf0e7 !important;}
 
 /* Green */
 .mcGreen{ border-color:#2d8685; border-bottom-color:#237473;}
@@ -175,6 +179,9 @@
 .mcGreen .major.m11 .m11,
 .mcGreen .major.m12 .m12,
 .mcGreen .major li.active{ border-color:#2d8685;}
+.mcGreen .major .sub a:hover,
+.mcGreen .major .sub a:active,
+.mcGreen .major .sub a:focus{ background:#eaf3f3 !important;}
 
 /* Gray */
 .mcGray{ border-color:#707070; border-bottom-color:#474747;}
@@ -195,5 +202,8 @@
 .mcGray .major.m11 .m11,
 .mcGray .major.m12 .m12,
 .mcGray .major li.active{ border-color:#555;}
+.mcGray .major .sub a:hover,
+.mcGray .major .sub a:active,
+.mcGray .major .sub a:focus{ background:#f0f0f0 !important;}
 
 
