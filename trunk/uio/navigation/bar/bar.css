@@ -76,8 +76,8 @@
 .menu .major li a:focus span{ border:0;}
 
 /* Menu Sub */
-.menu .major .sub{ position:absolute; top:37px; _top:38px; left:-1px;}
-.menu .major .sub ul{ display:none; margin:0; border:1px solid #878787; border-top:0; background:#fff; overflow:hidden;}
+.menu .major .sub{ position:absolute; top:37px; _top:38px; left:-1px; width:auto;}
+.menu .major .sub ul{ display:none; margin:0; border:1px solid #878787; border-top:0; background:#fff;}
 .menu .major li.active .sub ul{ display:block; _display:inline;}
 .menu .major .sub li{ clear:both; width:100%; _width:auto; display:block; _display:inline; border:0; margin:0;}
 .menu .major .sub a{ clear:both; width:100%; _width:auto; display:block; _display:inline; padding:0 !important; margin:0; background:none !important; filter:none;}
