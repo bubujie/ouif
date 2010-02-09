@@ -13,16 +13,18 @@ jQuery(function($){
 		if (!major.hasClass(myclass)) major.attr('class','major').addClass(myclass);
 	}
 	
+	var li_list = major.find('li');
+
 	function show_this(){
 		li_list.removeClass('active');
 		$(this).parentsUntil('div.major').filter('li').addClass('active');
 	}
 	
-	var li_list = major.find('li');
 	li_list.find('>a').click(onselectmenu).mouseover(show_this).focus(show_this);
 	
-	//icon add
+	//icon
 	major.find('div.sub').prev('a').find('>span').append('<span class="i"></span>');
+	
 });
 
 
