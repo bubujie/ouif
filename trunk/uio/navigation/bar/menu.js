@@ -22,7 +22,7 @@ jQuery(function($){
 	li_list.find('>a').click(onselectmenu).mouseover(show_this).focus(show_this);
 	
 	//icon add
-	major.find('ul.sub').prev('a').find('>span').append('<span class="i"></span>');
+	major.find('div.sub').prev('a').find('>span').append('<span class="i"></span>');
 });
 
 
