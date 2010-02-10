@@ -3,12 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>OUIF : Bar Navigation</title>
-<link rel="stylesheet" type="text/css" href="bar.css"/>
+<link rel="stylesheet" type="text/css" href="bar.css" id="stylesheet" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 </head>
 <body>
-<div class="menu mcPurple">
+<h1 style="font:bold 24px Tahoma">CSS Naviagation Bar.</h1>
+<button type="button" onclick="jQuery('div#menu').removeClass().addClass('menu'+' '+'mcPurple');">mcPurple</button>
+<button type="button" onclick="jQuery('div#menu').removeClass().addClass('menu'+' '+'mcViolet');">mcViolet</button>
+<button type="button" onclick="jQuery('div#menu').removeClass().addClass('menu'+' '+'mcOrange');">mcOrange</button>
+<button type="button" onclick="jQuery('div#menu').removeClass().addClass('menu'+' '+'mcGreen');">mcGreen</button>
+<button type="button" onclick="jQuery('div#menu').removeClass().addClass('menu'+' '+'mcGray');">mcGray</button>
+|
+<button type="button" onclick="jQuery('div#menu').removeClass();">CSS X</button>
+<button type="button" onclick="jQuery('div#menu').addClass('menu'+' '+'mcPurple');">CSS O</button>
+<br />
+<br />
+<div id="menu" class="menu mcPurple">
 <!-- class="mcPurple | mcViolet | mcOrange | mcGreen | mcGray"-->
 	<div class="inset">
 		<div class="major">
@@ -46,15 +57,5 @@
 	</div>
 	<span class="shadow"></span>
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcPurple');">mcPurple</button>
-<button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcViolet');">mcViolet</button>
-<button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcOrange');">mcOrange</button>
-<button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcGreen');">mcGreen</button>
-<button type="button" onclick="jQuery('div.menu').removeClass().addClass('menu'+' '+'mcGray');">mcGray</button>
 </body>
 </html>
