@@ -3,6 +3,7 @@ jQuery(function($){
 	var major = $('div.major');
 	var li_list = major.find('li');
 	
+	// Selected
 	function onselectmenu(){
 		var t = $(this);
 		var myclass = [];
@@ -15,6 +16,7 @@ jQuery(function($){
 		if (!major.hasClass(myclass)) major.attr('class','major').addClass(myclass);
 	}
 	
+	// Show
 	function show_this(){
 		var t = $(this);
 		
@@ -31,9 +33,14 @@ jQuery(function($){
 			}
 		}
 	}
-	
 	li_list.find('>a').click(onselectmenu).mouseover(show_this).focus(show_this);
 	
+	// Hide
+	function hide_this(){
+		li_list.removeClass('active');
+	}
+	li_list.find('div.sub').mouseleave(hide_this);
+
 	//icon
 	major.find('div.sub').prev('a').find('>span').append('<span class="i"></span>');
 	
