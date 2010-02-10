@@ -1,5 +1,7 @@
 jQuery(function($){
+
 	var major = $('div.major');
+	var li_list = major.find('li');
 	
 	function onselectmenu(){
 		var t = $(this);
@@ -13,8 +15,6 @@ jQuery(function($){
 		if (!major.hasClass(myclass)) major.attr('class','major').addClass(myclass);
 	}
 	
-	var li_list = major.find('li');
-
 	function show_this(){
 		var t = $(this);
 		
