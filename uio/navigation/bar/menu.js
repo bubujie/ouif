@@ -40,6 +40,7 @@ jQuery(function($){
 		li_list.removeClass('active');
 	}
 	li_list.find('div.sub').mouseleave(hide_this);
+	li_list.find('div.sub li:last-child>a').focusout(hide_this);
 
 	//icon
 	major.find('div.sub').prev('a').find('>span').append('<span class="i"></span>');
