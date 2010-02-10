@@ -16,8 +16,20 @@ jQuery(function($){
 	var li_list = major.find('li');
 
 	function show_this(){
+		var t = $(this);
+		
 		li_list.removeClass('active');
-		$(this).parentsUntil('div.major').filter('li').addClass('active');
+		t.parentsUntil('div.major').filter('li').addClass('active');
+		
+		// IE7 or IE7 documentMode bug fix
+		if($.browser.msie) {
+			var v = document.documentMode || parseInt($.browser.version);
+
+			if (v == 7) {
+				var div = t.parentsUntil('div.sub').eq(-1);
+				div.css('width', '').css('width', div.width()+'px');
+			}
+		}
 	}
 	
 	li_list.find('>a').click(onselectmenu).mouseover(show_this).focus(show_this);
