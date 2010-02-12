@@ -70,7 +70,7 @@
 .menu .major li.active span{ border:0;}
 
 /* Menu Sub */
-.menu .major .sub{ position:absolute; top:100%; left:-1px; margin:2px 0 0 0; display:none; width:200%; *width:auto;}
+.menu .major .sub{ position:absolute; top:100%; left:-1px; margin:2px 0 0 0; display:none; width:300px; *width:auto;}
 .menu .major li.active .sub{ display:block;}
 .menu .major .sub ul{ margin:0; padding:0 1px 1px; border:1px solid #878787; border-top:0; background:#fff;}
 .menu .major .sub li{ width:100%; float:none; clear:both; *width:auto; display:block; _display:inline; border:0; margin:0;}
