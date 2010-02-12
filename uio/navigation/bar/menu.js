@@ -39,7 +39,7 @@ jQuery(function($){
 	function hide_this(){
 		li_list.removeClass('active');
 	}
-	li_list.find('div.sub').mouseleave(hide_this);
+	li_list.find('div.sub>ul').mouseleave(hide_this);
 	li_list.find('div.sub li:last-child>a').focusout(hide_this);
 
 	//icon
