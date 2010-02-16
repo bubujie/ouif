@@ -1,5 +1,6 @@
 jQuery(function($){
 
+	var menu = $('div.menu');
 	var major = $('div.major');
 	var li_list = major.find('li');
 	
@@ -39,6 +40,7 @@ jQuery(function($){
 	function hide_this(){
 		li_list.removeClass('active');
 	}
+	menu.mouseleave(hide_this);
 	li_list.find('div.sub>ul').mouseleave(hide_this);
 	li_list.find('div.sub li:last-child>a').focusout(hide_this);
 
