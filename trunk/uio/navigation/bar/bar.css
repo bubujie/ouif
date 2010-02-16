@@ -72,7 +72,7 @@
 /* Menu Sub */
 .menu .major .sub{ position:absolute; top:100%; left:-1px; margin:2px 0 0 0; display:none; width:300px; *width:auto;}
 .menu .major li.active .sub{ display:block;}
-.menu .major .sub ul{ margin:0; padding:0 1px 1px; border:1px solid #878787; border-top:0; background:#fff;}
+.menu .major .sub ul{ margin:0; padding:1px; border:1px solid #878787; border-top:0; background:#fff;}
 .menu .major .sub li{ width:100%; float:none; clear:both; *width:auto; display:block; _display:inline; border:0; margin:0;}
 .menu .major .sub a{ width:100%; float:none; clear:both; _width:auto; display:block; padding:0 !important; margin:0; background-image:none !important; filter:none;}
 .menu .major .sub a span{ display:block; height:auto; padding:5px 20px; font-weight:normal; color:#767676; border:0; _zoom:0;}
