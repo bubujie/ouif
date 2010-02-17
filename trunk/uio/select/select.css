@@ -17,3 +17,5 @@
 .select li a:hover,
 .select li a:active,
 .select li a:focus{ background:#999; color:#fff;}
+.select li.hover *{ _background:#999;}
+.select li.hover *{ _color:#fff;}
