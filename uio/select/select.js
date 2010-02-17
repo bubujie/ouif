@@ -16,24 +16,25 @@ jQuery(function($){
 	function set_label(){
 		var t = $(this);
 		var v = t.next('label').text();
-		t.parent().parent().prev(button_ui).text('');
-		t.parent().parent().prev(button_ui).append(v);
+		t.parents('ul').prev(button_ui).text('');
+		t.parents('ul').prev(button_ui).append(v);
 	}
 	select_ui.find('>ul>li>input').change(set_label).focus(set_label);
 		
 	function set_anchor(){
 		var t = $(this);
 		var v = t.text();
-		t.parent().parent().prev(button_ui).text('');
-		t.parent().parent().prev(button_ui).append(v);
+		t.parents('ul').prev(button_ui).text('');
+		t.parents('ul').prev(button_ui).append(v);
 	}
-	select_ui.find('>ul>li>a').click(set_anchor);
+	select_ui.find('>ul>li>a').click(set_anchor).click(hide_option);
 			
 	function hide_option(){
-		var selectObj = this.parentNode;
-		selectObj.className = 'select';
+		var t = $(this);
+		setTimeout(function(){
+			t.parents('div.select:first').removeClass('open');
+		}, 1);
 	}
 	
 	select_ui.find('>ul').mouseup(hide_option);
-	
 });
