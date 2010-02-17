@@ -4,26 +4,27 @@ jQuery(function($){
 	var button_ui = $('button.selected');
 	
 	function show_option(){
-		var t = $(this);
-		t.parents('div.select:first').addClass('open');
+		$(this).parents('div.select:first').addClass('open');
 	}
 	button_ui.mouseover(show_option).click(show_option);
 	
+	function list_hover(){
+		$(this).parents('li').toggleClass('hover');
+	}
+
 	function set_label(){
-		var t = $(this);
-		var v = t.next('label').text();
-		t.parents('ul').prev(button_ui).text('');
-		t.parents('ul').prev(button_ui).append(v);
+		var v = $(this).next('label').text();
+		$(this).parents('ul').prev(button_ui).text('').append(v);
 	}
 	select_ui.find('>ul>li>input').change(set_label).focus(set_label);
+	select_ui.find('>ul>li>label').hover(list_hover);
 		
 	function set_anchor(){
-		var t = $(this);
-		var v = t.text();
-		t.parents('ul').prev(button_ui).text('');
-		t.parents('ul').prev(button_ui).append(v);
+		var v = $(this).text();
+		$(this).parents('ul').prev(button_ui).text('').append(v);
 	}
-	select_ui.find('>ul>li>a').click(set_anchor).click(hide_option);
+	select_ui.find('>ul>li>a').click(set_anchor).click(hide_option).hover(list_hover);
+	select_ui.find('>ul>li>a').focus(list_hover);
 			
 	function hide_option(){
 		var t = $(this);
@@ -34,8 +35,7 @@ jQuery(function($){
 	select_ui.find('>ul').mouseup(hide_option);
 
 	select_ui.mouseleave(function(){
-		var t = $(this);
-		t.removeClass('open');
+		$(this).removeClass('open');
 	});
 
 });
