@@ -19,3 +19,4 @@
 .select li a:focus{ background:#999; color:#fff;}
 .select li.hover *{ _background:#999;}
 .select li.hover *{ _color:#fff;}
+.selectGo{ border:1px solid #bababa; height:21px; width:28px; padding:0; *margin:-2px 0 -1px 4px; overflow:visible; background:#eee; vertical-align:middle; cursor:pointer; font:bold 11px Tahoma; color:#767676;}
