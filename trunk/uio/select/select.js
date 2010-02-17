@@ -4,14 +4,10 @@ jQuery(function($){
 	var button_ui = $('button.selected');
 	
 	function show_option(){
-		var selectObj = this.parentNode;
-		if (selectObj.className == 'select') {
-			selectObj.className = 'select open';
-		} else {
-			selectObj.className = 'select';
-		}
+		var t = $(this);
+		t.parents('div.select:first').addClass('open');
 	}
-	button_ui.click(show_option);
+	button_ui.mouseover(show_option).click(show_option);
 	
 	function set_label(){
 		var t = $(this);
@@ -35,6 +31,11 @@ jQuery(function($){
 			t.parents('div.select:first').removeClass('open');
 		}, 1);
 	}
-	
 	select_ui.find('>ul').mouseup(hide_option);
+
+	select_ui.mouseleave(function(){
+		var t = $(this);
+		t.removeClass('open');
+	});
+
 });
