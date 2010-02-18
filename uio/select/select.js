@@ -50,7 +50,7 @@ jQuery(function($){
 		$(this).parents('ul:first').prev(select_value).addClass('selected');
 	}
 
-	select_value.mouseover(show_option).click(show_option);
+	select_value.click(show_option);
 	select_root.removeClass('open');
 	select_root.mouseleave(function(){$(this).removeClass('open');});
 	select_a.click(set_anchor).click(hide_option).focus(i_hover).hover(i_hover);
