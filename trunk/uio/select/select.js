@@ -56,6 +56,5 @@ jQuery(function($){
 	select_a.click(set_anchor).click(hide_option).focus(i_hover).hover(i_hover);
 	select_input.change(set_label).focus(set_label);
 	select_label.hover(i_hover).click(hide_option);
-	
 			
 });
