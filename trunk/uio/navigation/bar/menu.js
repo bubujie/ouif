@@ -37,15 +37,18 @@ jQuery(function($){
 	li_list.find('>a').click(onselectmenu).mouseover(show_this).focus(show_this);
 	
 	// Hide
-	function hide_this(){
+	function hide_menu(){
 		li_list.removeClass('active');
 	}
-	menu.mouseleave(hide_this);
-	li_list.find('div.sub>ul').mouseleave(hide_this);
-	li_list.find('div.sub li:last-child>a').focusout(hide_this);
+	menu.mouseleave(hide_menu);
+	li_list.find('div.sub>ul').mouseleave(hide_menu);
+	li_list.find('div.sub li:last-child>a').focusout(hide_menu);
 
-	//icon
+	// icon
 	major.find('div.sub').prev('a').find('>span').append('<span class="i"></span>');
+	
+	// Focus Out
+	$('*:not(".menu a")').focus(hide_menu);
 	
 });
 
