@@ -7,9 +7,11 @@ jQuery(function($){
 	var select_input = $('div.select>ul>li>input[type=radio]');
 	var select_label = $('div.select>ul>li>label');
 	
-	// Default Value
-	var default_value = $('div.select>ul>li:first-child>label').text();
-	$('div.myValue').append(default_value);
+	// Radio Default Value
+	$('div.myValue').each(function(){
+		var default_value = $(this).next('ul').find('label:first').text();
+		$(this).append(default_value);
+	});
 	
 	// Line
 	select_value.focusin(function(){$(this).addClass('outLine');});
@@ -50,11 +52,16 @@ jQuery(function($){
 		$(this).parents('ul:first').prev(select_value).addClass('selected');
 	}
 
+	// Anchor Focus Out
+	$('*:not("div.select a")').focus(function(){
+		select_root.removeClass('open');
+	});
+			
 	select_value.click(show_option);
 	select_root.removeClass('open');
 	select_root.mouseleave(function(){$(this).removeClass('open');});
 	select_a.click(set_anchor).click(hide_option).focus(i_hover).hover(i_hover);
 	select_input.change(set_label).focus(set_label);
 	select_label.hover(i_hover).click(hide_option);
-			
+	
 });
