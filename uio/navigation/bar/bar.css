@@ -92,6 +92,17 @@
 .menu .aside .m1 span{ background:url(iconHistory.png) no-repeat 0 center; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='iconHistory.png', sizingMethod='crop');}
 .menu .aside .m2 span{ background:url(iconSetup.png) no-repeat 0 center; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='iconSetup.png', sizingMethod='crop');}
 
+/* Menu Aside Sub */
+.menu .aside .sub{ position:absolute; top:100%; right:-2px; margin:2px 0 0; _margin:4px 0 0; display:none; width:300px; *width:auto;}
+.menu .aside li.active .sub{ display:block;}
+.menu .aside .sub ul{ float:right; margin:0; padding:1px; border:1px solid #878787; border-top:0; background:#fff;}
+.menu .aside .sub li{ width:100%; float:none; clear:both; *width:auto; display:block; _display:inline; border:0; margin:0;}
+.menu .aside .sub a{ width:100%; float:none; clear:both; _width:auto; display:block; padding:0 !important; margin:0; background-image:none !important; filter:none;}
+.menu .aside .sub a span{ display:block; padding:5px 20px; font-weight:normal; color:#767676; border:0; _zoom:0; background-image:none !important; filter:none;}
+.menu .aside .sub a:hover,
+.menu .aside .sub a:active,
+.menu .aside .sub a:focus{ background:#eee;}
+
 /* Menu Color Variation */
 
 /* Menu Purple */
