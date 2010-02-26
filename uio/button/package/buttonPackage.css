@@ -53,4 +53,8 @@
 .button.large .refresh{ background-position:-76px -146px;}
 .button.xLarge .refresh{ background-position:-76px -144px;}
 .button.small .refresh{ background-position:-79px -153px;}
+.button.medium .download{ background-position:-96px -151px;}
+.button.large .download{ background-position:-96px -147px;}
+.button.xLarge .download{ background-position:-96px -145px;}
+.button.small .download{ background-position:-99px -154px;}
 
