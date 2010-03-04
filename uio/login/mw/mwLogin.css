@@ -33,4 +33,4 @@ html, body{ height:100%; margin:0;}
 #login .oLogin .btnLogin{ margin-top:10px; margin-bottom:10px;}
 #login.gLogin .gLogin,
 #login.oLogin .oLogin{ display:block;}
-#login .close{ position:absolute; top:0; right:0; width:25px; height:25px; border:0; padding:0; background:transparent; overflow:visible; cursor:pointer; font:11px/25px Verdana, Geneva, sans-serif; color:#ccc;}
+#login .close{ position:absolute; top:0; right:0; width:25px; height:25px; border:0; padding:0; background:transparent; overflow:visible; cursor:pointer; text-align:center; font:11px/25px Verdana, Geneva, sans-serif; color:#ccc; text-decoration:none !important;}
