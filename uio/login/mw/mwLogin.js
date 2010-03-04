@@ -1,4 +1,11 @@
 jQuery(function($){
+	// Show Hide
+	$('.loginTrigger').click(function(){
+		$('.mwLogin').addClass('open');
+	});
+	$('#login .close').click(function(){
+		$('.mwLogin').removeClass('open');
+	});
 	// oLogin
 	$('.oAnchor').click(function(){
 		$('#login').removeClass('gLogin');
