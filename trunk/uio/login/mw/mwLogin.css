@@ -1,11 +1,12 @@
 @charset "utf-8"; 
 /* OUIF : JCM */
 /* Modal Windowed Login */
-html, body{ height:100%; margin:0;}
-.mwLogin{ position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:10000;}
+html, body{ height:100%;}
+.mwLogin{ display:none; position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:10000;}
+.mwLogin.open{ display:block;}
 .mwLogin .bg{ position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
-#login{ position:absolute; width:328px; top:30%; left:50%; padding:28px 28px 0 28px; margin:0 0 0 -194px; border:2px solid #555; font-size:12px; line-height:normal; background:#fff; white-space:normal; color:#767676;}
-#login form{ margin:0; padding:0;}
+#login{ position:absolute; width:328px; top:50%; left:50%; padding:28px 28px 0 28px; margin:-150px 0 0 -194px; border:2px solid #555; font-size:12px; line-height:normal; background:#fff; white-space:normal; color:#767676;}
+#login form{ display:none; margin:0; padding:0;}
 #login fieldset{ border:0; margin:0; padding:0;}
 #login legend{ position:absolute; left:0; top:0; width:1px; height:1px; font-size:0; line-height:0; visibility:hidden;}
 #login label{ cursor:pointer;}
@@ -30,6 +31,6 @@ html, body{ height:100%; margin:0;}
 #login .oLogin{ text-align:center;}
 #login .oLogin .iText{ width:291px; padding:8px 0 0 35px; margin:0; background:url(iconOpenId.gif) no-repeat 10px center;}
 #login .oLogin .btnLogin{ margin-top:10px; margin-bottom:10px;}
-#login form{ display:none;}
 #login.gLogin .gLogin,
 #login.oLogin .oLogin{ display:block;}
+#login .close{ position:absolute; top:0; right:0; width:25px; height:25px; border:0; padding:0; background:transparent; overflow:visible; cursor:pointer; font:11px/25px Verdana, Geneva, sans-serif; color:#ccc;}
