@@ -1,20 +1,26 @@
 jQuery(function($){
+	var loginWindow = $('.mwLogin');
+	var login = $('#login');
+	var uid = $('.iText.uid');
+	var upw = $('.iText.upw');
+	var oid = $('.iText.oid');
+	
 	// Show Hide
 	$('.loginTrigger').click(function(){
-		$('.mwLogin').addClass('open');
+		loginWindow.addClass('open');
 	});
 	$('#login .close').click(function(){
-		$('.mwLogin').removeClass('open');
+		loginWindow.removeClass('open');
 	});
 	// oLogin
 	$('.oAnchor').click(function(){
-		$('#login').removeClass('gLogin');
-		$('#login').addClass('oLogin');
+		login.removeClass('gLogin');
+		login.addClass('oLogin');
 	});
 	// gLogin
 	$('.gAnchor').click(function(){
-		$('#login').removeClass('oLogin');
-		$('#login').addClass('gLogin');
+		login.removeClass('oLogin');
+		login.addClass('gLogin');
 	});
 	// Warning
 	$('#keepid').change(function(){
@@ -23,57 +29,73 @@ jQuery(function($){
 		};
 	});
 	// ID Clear
-	$('.iText.uid').focus(function(){
-		if($(this).val() == 'ID'){
-			$(this).attr('value','');
-		}
-	});
-	$('.iText.uid').blur(function(){
-		if($(this).val() == ''){
-			$(this).attr('value','ID');
-		}
-	});
+	uid
+		.focus(function(){
+			if($(this).val() == ''){
+				uid.prev('label').attr('style','visibility:hidden');
+			}
+		})
+		.blur(function(){
+			if($(this).val() == ''){
+				uid.prev('label').attr('style','visibility:visible');
+			}
+		});
 	// PW Clear
-	$('.iText.upw').focus(function(){
-		if($(this).val() == 'PASSWORD'){
-			$(this).attr('value','');
-		}
-	});
-	$('.iText.upw').blur(function(){
-		if($(this).val() == ''){
-			$(this).attr('value','PASSWORD');
-		}
-	});
+	upw
+		.focus(function(){
+			if($(this).val() == ''){
+				upw.prev('label').attr('style','visibility:hidden');
+			}
+		})
+		.blur(function(){
+			if($(this).val() == ''){
+				upw.prev('label').attr('style','visibility:visible');
+			}
+		});
 	// Open ID Clear
-	$('.iText.oid').focus(function(){
-		if($(this).val() == 'Open ID'){
-			$(this).attr('value','');
-		}
-	});
-	$('.iText.oid').blur(function(){
-		if($(this).val() == ''){
-			$(this).attr('value','Open ID');
-		}
-	});
+	oid
+		.focus(function(){
+			if($(this).val() == ''){
+				oid.prev('label').attr('style','visibility:hidden');
+			}
+		})
+		.blur(function(){
+			if($(this).val() == ''){
+				oid.prev('label').attr('style','visibility:visible');
+			}
+		});
 	// Validation
 	$('#login>.gLogin input[type=submit]').click(function(){
-		if($('.iText.uid').val() == 'ID' && $('.iText.upw').val() == 'PASSWORD'){
+		if(uid.val() == '' && upw.val() == ''){
 			alert('ID와 PASSWORD를 입력하세요!');
 			return false;
 		}
-		else if($('.iText.uid').val() == 'ID'){
+		else if(uid.val() == ''){
 			alert('ID를 입력하세요!');
 			return false;
 		}
-		else if($('.iText.upw').val() == 'PASSWORD'){
+		else if(upw.val() == ''){
 			alert('PASSWORD를 입력하세요!');
 			return false;
 		}
 	});
 	$('#login>.oLogin input[type=submit]').click(function(){
-		if($('.iText.oid').val() == 'Open ID'){
+		if(oid.val() == ''){
 			alert('Open ID를 입력하세요!');
 			return false;
 		}
+	});
+	// ESC Event
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true;
+		if (loginWindow.hasClass('open')) {
+			loginWindow.removeClass('open');
+		}
+		return false;
+	});
+	// Hide Window
+	loginWindow.find('>.bg').mousedown(function(event){
+		loginWindow.removeClass('open');
+		return false;
 	});
 });
