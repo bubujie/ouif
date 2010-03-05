@@ -31,39 +31,36 @@ jQuery(function($){
 	// ID Clear
 	uid
 		.focus(function(){
-			if($(this).val() == ''){
-				uid.prev('label').attr('style','visibility:hidden');
-			}
+			uid.prev('label').css('visibility','hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				uid.prev('label').attr('style','visibility:visible');
+				uid.prev('label').css('visibility','visible');
 			}
 		});
+	if (uid.val()) uid.prev('label').css('visibility','hidden');
 	// PW Clear
 	upw
 		.focus(function(){
-			if($(this).val() == ''){
-				upw.prev('label').attr('style','visibility:hidden');
-			}
+			upw.prev('label').css('visibility','hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				upw.prev('label').attr('style','visibility:visible');
+				upw.prev('label').css('visibility','visible');
 			}
 		});
+	if (upw.val()) upw.prev('label').css('visibility','hidden');
 	// Open ID Clear
 	oid
 		.focus(function(){
-			if($(this).val() == ''){
-				oid.prev('label').attr('style','visibility:hidden');
-			}
+			oid.prev('label').css('visibility','hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				oid.prev('label').attr('style','visibility:visible');
+				oid.prev('label').css('visibility','visible');
 			}
 		});
+	if (oid.val()) oid.prev('label').css('visibility','hidden');
 	// Validation
 	$('#login>.gLogin input[type=submit]').click(function(){
 		if(uid.val() == '' && upw.val() == ''){
