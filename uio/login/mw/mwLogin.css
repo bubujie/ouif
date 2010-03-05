@@ -32,7 +32,7 @@ html, body{ height:100%; margin:0;}
 #login .gLogin .warning.open{ display:block;}
 #login .oLogin{ text-align:center;}
 #login .oLogin label{ position:absolute; top:10px; left:36px; font:bold 11px Tahoma;}
-#login .oLogin .iText{ width:291px; padding:8px 0 0 35px; margin:0; background:url(iconOpenId.gif) no-repeat 10px center;}
+#login .oLogin .iText{ width:291px; padding:8px 0 0 35px; margin:0; background-image:url(iconOpenId.gif); background-repeat:no-repeat; background-position:10px center;}
 #login .oLogin .btnLogin{ margin-top:10px; margin-bottom:10px;}
 #login.gLogin .gLogin,
 #login.oLogin .oLogin{ display:block;}
