@@ -29,38 +29,38 @@ jQuery(function($){
 		};
 	});
 	// ID Clear
+	uid.attr('value','');
 	uid
 		.focus(function(){
-			uid.prev('label').css('visibility','hidden');
+			uid.prev('label').attr('style','visibility:hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				uid.prev('label').css('visibility','visible');
+				uid.prev('label').attr('style','visibility:visible');
 			}
 		});
-	if (uid.val()) uid.prev('label').css('visibility','hidden');
 	// PW Clear
+	upw.attr('value','');
 	upw
 		.focus(function(){
-			upw.prev('label').css('visibility','hidden');
+			upw.prev('label').attr('style','visibility:hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				upw.prev('label').css('visibility','visible');
+				upw.prev('label').attr('style','visibility:visible');
 			}
 		});
-	if (upw.val()) upw.prev('label').css('visibility','hidden');
 	// Open ID Clear
+	oid.attr('value','');
 	oid
 		.focus(function(){
-			oid.prev('label').css('visibility','hidden');
+			oid.prev('label').attr('style','visibility:hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				oid.prev('label').css('visibility','visible');
+				oid.prev('label').attr('style','visibility:visible');
 			}
 		});
-	if (oid.val()) oid.prev('label').css('visibility','hidden');
 	// Validation
 	$('#login>.gLogin input[type=submit]').click(function(){
 		if(uid.val() == '' && upw.val() == ''){
