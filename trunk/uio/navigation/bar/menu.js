@@ -53,6 +53,16 @@ jQuery(function($){
 		li_list.removeClass('active');
 		aside_li.removeClass('active');
 		$(this).parent('li').addClass('active');
+
+		// IE7 or IE7 documentMode bug fix
+		if($.browser.msie) {
+			var v = document.documentMode || parseInt($.browser.version);
+
+			if (v == 7) {
+				var sub = $(this).next('div.sub').eq(-1);
+				sub.css('width', '').css('width', sub.width()+'px');
+			}
+		}
 	}	
 	aside_a.mouseover(show_aside).focus(show_aside);
 	
