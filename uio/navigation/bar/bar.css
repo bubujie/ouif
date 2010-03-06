@@ -2,7 +2,7 @@
 /* OUIF : JCM */
 
 /* Menu Common */
-.menu{ position:relative; overflow:visible; border:1px solid; font-size:12px; line-height:normal; *zoom:1; white-space:nowrap;}
+.menu{ position:relative; overflow:visible; border:1px solid; font-size:12px; line-height:normal; *zoom:1; white-space:nowrap; font-family:Tahoma, Geneva, sans-serif;}
 .menu:after{ content:""; display:block; clear:both;}
 .menu .inset{ position:relative; overflow:visible; border:1px solid; z-index:2; *zoom:1; background-image:url(bgBar.png); background-repeat:repeat-x; _background-image:none;}
 .menu .inset:after{ content:""; display:block; clear:both;}
