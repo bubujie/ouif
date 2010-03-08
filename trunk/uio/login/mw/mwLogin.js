@@ -28,37 +28,16 @@ jQuery(function($){
 			$('.warning').toggleClass('open');
 		};
 	});
-	// ID Clear
-	uid.attr('value','');
-	uid
+	// Input Clear
+	var iText = $('label.iLabel').next('.iText');
+	iText.attr('value','');
+	iText
 		.focus(function(){
-			uid.prev('label').attr('style','visibility:hidden');
+			$(this).prev('label.iLabel').attr('style','visibility:hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				uid.prev('label').attr('style','visibility:visible');
-			}
-		});
-	// PW Clear
-	upw.attr('value','');
-	upw
-		.focus(function(){
-			upw.prev('label').attr('style','visibility:hidden');
-		})
-		.blur(function(){
-			if($(this).val() == ''){
-				upw.prev('label').attr('style','visibility:visible');
-			}
-		});
-	// Open ID Clear
-	oid.attr('value','');
-	oid
-		.focus(function(){
-			oid.prev('label').attr('style','visibility:hidden');
-		})
-		.blur(function(){
-			if($(this).val() == ''){
-				oid.prev('label').attr('style','visibility:visible');
+				$(this).prev('label.iLabel').attr('style','visibility:visible');
 			}
 		});
 	// Validation
