@@ -24,7 +24,7 @@ html, body{ height:100%; margin:0;}
 #login .help a:focus{ text-decoration:underline; color:#000;}
 #login .gLogin .iLabel{ position:absolute; top:9px; left:10px; font:bold 11px Tahoma;}
 #login .gLogin .iText{ width:316px; padding:8px 0 6px 10px; margin:0 0 5px 0;}
-#login .gLogin .btnLogin{ position:absolute; top:107px; right:28px;}
+#login .gLogin .btnLogin{ position:absolute; top:103px; right:28px;}
 #login .gLogin .keeping{ float:none; height:32px; line-height:32px; margin:10px 0; padding:0;}
 #login .gLogin .keeping label{ position:static; cursor:pointer; font-family:Dotum, 돋움, Thahoma;}
 #login .gLogin .iCheck{ width:13px; height:13px; margin:0 4px 0 0; padding:0; vertical-align:middle;}
