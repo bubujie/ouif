@@ -13,7 +13,7 @@
 	<div class="bg"></div>
 	<div id="login" class="gLogin">
 		<a href="#loginAnchor" class="close" title="로그인 레이어 닫기">X</a>
-		<form action="" class="gLogin">
+		<form action="" id="gLogin" class="gLogin">
 			<fieldset>
 				<legend>Login</legend>
 				<div class="iContainer">
@@ -28,18 +28,18 @@
 				<ul class="help">
 					<li class="first"><a href="#">아이디/비밀번호 찾기</a></li>
 					<li><a href="#">회원 가입</a></li>
-					<li><a href="#" class="oAnchor">Open ID</a></li>
+					<li><a href="#oLogin" class="oAnchor">Open ID</a></li>
 				</ul>
 			</fieldset>
 		</form>
-		<form action="" class="oLogin">
+		<form action="" id="oLogin" class="oLogin">
 			<fieldset>
 				<legend>Open ID Login</legend>
 				<div class="iContainer">
 					<label for="oid" class="iLabel">Open ID</label><input name="" type="text" value="" id="oid" class="iText oid" />
 				</div>
 				<span class="btnLogin"><input name="" type="submit" value="로그인" /></span>
-				<p class="help"><a href="#" class="gAnchor">일반 아이디 로그인</a></p>
+				<p class="help"><a href="#gLogin" class="gAnchor">일반 아이디 로그인</a></p>
 			</fieldset>
 		</form>
 		<a href="#loginAnchor" class="close" title="로그인 레이어 닫기">X</a>
