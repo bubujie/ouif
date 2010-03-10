@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* OUIF : JCM */
+
+/* sMenu Common */
+.sMenu{ position:relative; width:200px; font-size:12px; font-family:Tahoma, Geneva, sans-serif; line-height:normal;}
+.sMenu ul{ margin:0; padding:0; list-style:none;}
+.sMenu li{ position:relative; margin:0 0 -1px 0; vertical-align:top; *zoom:1;}
+.sMenu li a{ display:block; position:relative; padding:8px 10px; text-decoration:none; color:#666; font-weight:bold; background:#fafafa; border:1px solid #eee; *zoom:1;}
+.sMenu li a .i{ position:absolute; top:50%; left:100%; margin:-4px 0 0 -16px; width:8px; height:8px; color:#ccc; background:url(iconSub.gif) no-repeat left top;}
+
+/* sMenu Sub */
+.sMenu li ul{ padding:5px 0; background:#fff;}
+.sMenu li li{ margin:0;}
+.sMenu li li a{ font-weight:normal; background:#fff; padding:5px 10px; border:0;}
+.sMenu li li a span{ color:#666;}
+
+/* sMenu Active */
+.sMenu li.active{ border:1px solid #ccc; z-index:2;}
+.sMenu li li.active{ border:0;}
+.sMenu li.active a{ color:#000; border:0;}
+.sMenu li.active .i{ background-position:0 -44px;}
+.sMenu li.active li a{ border:0;}
+.sMenu li.active ul{ display:block; border-top:1px solid #eee;}
+.sMenu li.active li.active a span{ color:#13b200; font-weight:bold; letter-spacing:-1px;}
