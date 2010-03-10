@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>OUIF : Vertical CSS Navigation Bar</title>
+<link rel="stylesheet" type="text/css" href="vrBar.css" id="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="vrBar.js"></script>
+</head>
+<body>
+<h1 style="font:bold 24px Tahoma">Vertical CSS Naviagation Bar.</h1>
+<div id="sMenu" class="sMenu">
+	<ul>
+		<li><a href="#"><span>동해물과</span></a>
+			<ul>
+				<li><a href="#"><span>동해물과</span></a></li>
+				<li><a href="#"><span>동해</span></a></li>
+			</ul>
+		</li>
+		<li><a href="#"><span>백두산이</span></a>
+			<ul>
+				<li><a href="#"><span>백두산이 마르고 닳도록</span></a></li>
+				<li><a href="#"><span>백두산</span></a></li>
+			</ul>
+		</li>
+		<li><a href="#"><span>마르고</span></a></li>
+		<li><a href="#"><span>닳도록</span></a>
+			<ul>
+				<li><a href="#"><span>닳도록</span></a></li>
+				<li><a href="#"><span>닳도</span></a></li>
+				<li><a href="#"><span>닳</span></a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<br>
+<button type="button" onclick="jQuery('link[href=vrBar.css]').attr('href',''); jQuery('ul').removeAttr('style')">CSS X</button>
+<button type="button" onclick="jQuery('link[href]').attr('href','vrBar.css'); jQuery('#sMenu>ul>li>ul').attr('style','display:none'); jQuery('#sMenu li').removeClass('active');">CSS O</button>
+</body>
+</html>
