@@ -1,11 +1,11 @@
 jQuery(function($){
-	var tab = $('ul.tab');
+	var tab = $('div.tab');
 	
 	function onSelectTab(){
 		var t = $(this);
 		var myclass = [];
 		
-		t.parentsUntil('ul.tab').filter('li').each(function(){
+		t.parentsUntil('div.tab').filter('li').each(function(){
 			myclass.push( $(this).attr('class') );
 		});
 		
@@ -15,8 +15,3 @@ jQuery(function($){
 	
 	tab.find('li>a').click(onSelectTab).focus(onSelectTab);
 });
-
-
-
-
-
