@@ -2,7 +2,7 @@
 /* OUIF | JCM */
 /* Lined Tab */
 .tab{ padding:0 0 35px 0;}
-.tab ul{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #ccc; font-family:Tahoma, Sans-serif; font-size:12px; background:#fff; *zoom:1;}
+.tab ul{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #ccc; font-family:Tahoma, Sans-serif; font-size:12px; *zoom:1;}
 .tab ul:after{ content:""; display:block; clear:both;}
 .tab li{ float:left; margin-bottom:-1px;}
 .tab li a{ position:relative; float:left; text-decoration:none; border:1px solid #eee; border-bottom-color:#ccc; background:#fafafa; color:#666;}
@@ -22,7 +22,7 @@
 .tab.m9 .m9 a,
 .tab.m10 .m10 a,
 .tab.m11 .m11 a,
-.tab.m12 .m12 a{ border:1px solid #ccc; border-bottom:1px solid #fff; margin-top:-1px; background:#fff; color:#333;}
+.tab.m12 .m12 a{ border:1px solid #ccc; border-bottom:1px solid #fff; margin-top:-1px; background:transparent; color:#333;}
 .tab.m1 .m1 a span,
 .tab.m2 .m2 a span,
 .tab.m3 .m3 a span,
