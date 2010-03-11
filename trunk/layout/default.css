@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* NHN > UIT Center > Open UI Technology Team > Jeong Chan Myeong(dece24@nhncorp.com) */
+
+/* Reset */
+* { margin:0; padding:0; font-family:Tahoma, Sans-serif; }
+body { margin:1em 2em; font-size:.8em;}
+img,
+fieldset{ border:0; }
+hr,
+button img { display:none; }
+ol,
+ul { margin-left:2em; margin-bottom:1em; clear:both; }
+ol ol,
+ul ul,
+ol ul,
+ul ol { margin-bottom:0; }
+a[href^="http"] { padding-right:1em; margin-right:.2em; background:url(/open_content/lecture/UIO/img/iconExternalLink.gif) no-repeat right center;}
+a:hover,
+a:active,
+a:focus { text-decoration:underline; }
+textarea { overflow:auto; }
+html:first-child select { padding-right:6px; height:20px; }
+option { padding-right:6px; }
+button,
+label { cursor:pointer; cursor:hand; }
+button * { position:relative; }
+abbr,
+acronym { cursor:help; }
+p { margin-bottom:1em; line-height:1.5em; }
+legend { position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0; }
+table { border-collapse:collapse; border:1px solid #ccc; border-right:none; border-bottom:none; margin-bottom:1em; }
+th,
+td { padding:.3em .5em; vertical-align:top; border:1px solid #ccc; border-top:none; border-left:none; vertical-align:top;}
+th { background:#f4f4f4; }
+tbody th { text-align:left; }
+code { background:#eee; }
+dl { margin-bottom:1em; zoom:1; }
+li dl{ margin-bottom:0; }
+dt { font-weight:bold; }
+em { color:#f00;}
+/* Layout */
+#container {}
+#header { padding:.5em 0; border-bottom:3px solid #000; }
+#body { clear:both; margin:2em 0; }
+#body:after { content:""; display:block; clear:both; }
+#content { float:left; width:100%;}
+#footer { position:relative; clear:both; padding:1em 0; border-top:1px solid #000; }
+/* Heading */
+h1,
+h1 a { text-decoration:none; color:#000; font-family:Tahoma; }
+h2 { clear:both; padding:0 0 .3em 0; margin:0 0 1em 0; border-bottom:2px solid #ddd; }
+h3 { clear:both; padding:0 0 .3em 0; margin:0 0 1em 0; border-bottom:1px solid #ccc; }
+h4 { clear:both; padding:0 0 .3em 0; margin:0 0 1em 0; border-bottom:1px dotted #ccc; }
+/* Footer */
+#footer p { margin-bottom:0; }
+/* Content */
+.section { position:relative; margin:0 0 2em 0; clear:both; line-height:1.5em; }
+.section:after{ content:""; display:block; clear:both; font:0/0 Sans-serif; height:0; overflow:hidden; visibility:hidden;}
+.comment { margin:0 0 2em 0; clear:both; padding:1em; border:1px dotted #ccc; }
+h2+.section p { font-size:1em; }
+h2+.section p:first-child:first-letter { display:block; float:left; margin:0 .1em 0 0; font-size:3em; line-height:1em; }
+dl.noBr { position:relative; *zoom:1; clear:both;}
+dl.noBr:after{ content:""; display:block; clear:both; font:0/0 Sans-serif; height:0; overflow:hidden; visibility:hidden;}
+dl.noBr dt { position:relative; float:left; margin-right:.5em; clear:left;}
+dl.noBr dd { position:relative;  /* float:left; */ *float:none; clear:right; display:block;}
+div.preview { position:relative; clear:both; padding:1em; border:1px solid #ccc; margin-bottom:1em; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+ol.layout{ list-style:none; margin:0; clear:both; width:100%; *zoom:1;}
+ol.layout:after { content:""; display:block; clear:both;}
+ol.layout li{ float:left; width:270px; margin:0 1em 1em 0; overflow:hidden; }
+ol.layout li a { display:block; padding:10px; float:left; }
+ol.layout li a:hover,
+ol.layout li a:active,
+ol.layout li a:focus{ background:#ddd; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
+ol.layout li a img { display:block; margin-bottom:.3em;}
+ol.layout li a code { display:block; float:left; clear:both; white-space:nowrap; letter-spacing:-1px; text-decoration:none;}
+ol.layout li a code em{ font-style:normal;}
+ol.layout li a span { display:block; white-space:nowrap; letter-spacing:-1px; }
+ol.layout li.important a img{ border:3px solid #6c0;}

@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Open UI Project &gt; Layout</title>
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1>Xpress Engine CSS  Framework for Layout</h1>
+	</div>
+	<hr />
+	<div id="body">
+		<div id="content">
+			<h2>Overview</h2>
+			<div class="section">
+				<p><a href="http://xpressengine.com/">Xpress Engine</a>에서 사용되는 웹 페이지의 다양한 레이아웃 요소들을 정의 하였습니다. 레이아웃은 크게 고정폭, 가변폭, 혼합폭으로 구분할 수 있는데 각각을 직관적으로 이해하려면 아래 제시된 예제들을 볼 때 브라우저 창 너비를 조절해 보시면 됩니다. 고정폭은 변하지 않으나 가변폭은 브라우저 크기에 따라 변하는 것을 말합니다. 혼합폭은 가변폭과 고정폭이 함께 사용된 레이아웃 입니다.</p>
+				<ul>
+					<li>
+						<dl class="noBr">
+							<dt>고정폭 레이아웃 <sup>Fixed Lauout</sup> :</dt>
+							<dd>모든 레이아웃 요소들의 너비가 절대 단위(px)로 지정된 레이아웃을 말합니다.</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="noBr">
+							<dt>가변폭 레이아웃 <sup>Liquid Lauout</sup> :</dt>
+							<dd>모든 레이아웃 요소들의 너비가 상대 단위(%)로 지정된 레이아웃을 말합니다.</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="noBr">
+							<dt>혼합폭 레이아웃 <sup>Hybrid Lauout</sup> :</dt>
+							<dd>레이아웃 너비에 상대 단위(%)와 절대 단위(px)가 함께 사용된 것을 말합니다.</dd>
+						</dl>
+					</li>
+				</ul>
+				<p>아래 제시된 모든 예제들의 HTML 구조는 동일합니다. <a href="layoutTemplate.html">HTML 파일 보기</a>. CSS 파일 보기 [<a href="css/layout.css">1</a>], [<a href="css/layout@style.css">2</a>].</p>
+			</div>
+			<h2>Table of contents</h2>
+			<div class="section">
+				<ol>
+					<li><a href="#C1">1 Column Layout</a>
+						<ol>
+							<li><a href="#C1F1">Fixed 1 Column Layout</a></li>
+							<li><a href="#C1L1">Liquid 1 Column Layout</a></li>
+							<li><a href="#C1H1">Hybrid 1 Column Layout</a></li>
+						</ol>
+					</li>
+					<li><a href="#C2">2 Columns Layout</a>
+						<ol>
+							<li><a href="#C2F2">Fixed 2 Columns Layout</a></li>
+							<li><a href="#C2L2">Liquid 2 Columns Layout</a></li>
+							<li><a href="#C2H2">Hybrid 2 Columns Layout</a></li>
+						</ol>
+					</li>
+					<li><a href="#C3">3 Columns Layout</a>
+						<ol>
+							<li><a href="#C3F3">Fixed 3 Columns Layout</a></li>
+							<li><a href="#C3L3">Liquid 3 Columns Layout</a></li>
+							<li><a href="#C3H3">Hybrid 3 Columns Layout</a></li>
+						</ol>
+					</li>
+					<li><a href="#AL">Align Layout (center, left, right)</a></li>
+					<li><a href="#HM">HTML Markup</a></li>
+					<li><a href="#DH">DOM Hierarch</a></li>
+					<li><a href="#CS">CSS Selector</a></li>
+				</ol>
+			</div>
+			<h2 id="C1">1 Column Layout</h2>
+			<div class="section">
+				<h3 id="C1F1">Fixed 1 Column Layout</h3>
+				<p>모든 레이아웃 요소의 너비가 <strong>고정폭</strong>으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 1개인 레이아웃 입니다. #container 영역이 960px <strong>고정폭</strong>으로 설정 되어있고 .extension 영역은 #container 너비의 3등분 <strong>고정폭</strong>으로 잡혀 있습니다. #content 영역을 넓게 사용하려는 경우 적합하지만 모니터의 수평 해상도가 1024px 보다 작은 경우 가로 스크롤을 유발하는 단점도 있습니다.</p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="fixed_c.html"><img src="img/c.gif" width="200" height="150" alt="fixed_c" />fixed_c.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>fixed</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>c</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="section">
+				<h3 id="C1L1">Liquid 1 Column Layout</h3>
+				<p>모든 레이아웃 요소의 너비가 <strong>가변폭</strong>으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 1개인 레이아웃 입니다. #container 영역은 화면크기의 80% <strong>가변폭</strong>으로 설정 되어있고 .extension 영역은 #container 너비의 3등분 <strong>가변폭</strong>으로 잡혀 있습니다. #content 영역을 다양한 해상도에서 폭넓게 사용하려는 경우 적합하며 브라우저의 너비에 따라 모든 레이아웃 요소들이 같은 비율로 줄어들거나 늘어나게 됩니다.</p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="liquid_c.html"><img src="img/c.gif" width="200" height="150" alt="liquid_c" />liquid_c.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>liquid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>c</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="section">
+				<h3 id="C1H1">Hybrid 1 Column Layout</h3>
+				<p><strong>가변폭</strong>과 <strong>고정폭</strong> 너비를 함께 사용한 <strong>혼합폭</strong> 레이아웃으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 1개인 레이아웃 입니다. #container 영역은 화면크기의 80% <strong>가변폭</strong>으로 설정 되어있고  .extension 영역은 #container 너비의 3등분 <strong>고정폭</strong>으로 잡혀 있습니다. #content 영역을 다양한 해상도에서 폭넓게 사용하려는 경우 적합하며 브라우저의 너비에 따라 #container의 너비는 같은 비율로 변경되지만 .extension 영역은 <strong>고정폭</strong>으로 지정되어 있어 해상도의 영향을 받지 않습니다.</p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="hybrid_c.html"><img src="img/c.gif" width="200" height="150" alt="hybrid_c" />hybrid_c.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>hybrid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>c</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<h2 id="C2">2 Columns Layout</h2>
+			<div class="section">
+				<h3 id="C2F2">Fixed 2 Columns Layout</h3>
+				<p>모든 레이아웃 요소의 너비가 <strong>고정폭</strong>으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 2개인 레이아웃 입니다. #container 영역이 960px <strong>고정폭</strong>으로 설정 되어있고 #content 영역은 720px이며 .extension 영역은 220px 너비의 <strong>고정폭</strong>으로 잡혀 있습니다. #body 영역을 2개의 분할 컬럼으로 사용하려는 경우 적합하지만 브라우저의 너비를 1024px 보다 작게 변경하는 경우 가로 스크롤을 유발하는 단점도 있습니다.</p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="fixed_ce.html"><img src="img/ce.gif" width="200" height="150" alt="fixed_ce" />fixed_ce.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>fixed</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ce</em>&quot;&gt;</code></a></li>
+						<li><a href="fixed_ec.html"><img src="img/ec.gif" width="200" height="150" alt="fixed_ec" />fixed_ec.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>fixed</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ec</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="section">
+				<h3 id="C2L2">Liquid 2 Columns Layout</h3>
+				<p>모든 레이아웃 요소의 너비가 <strong>가변폭</strong>으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 2개인 레이아웃 입니다. #container 영역은 화면크기의 80% <strong>가변폭</strong>으로 설정 되어있고 #content 영역은 75%이며 .extension 영역은 23% 너비의 <strong>가변폭</strong>으로 잡혀 있습니다. #body 영역을 2개의 분할 컬럼으로 사용하려는 경우 적합하지만 브라우저의 너비를 매우 작게 변경하는 경우 .extension 영역의 너비도 동일 비율로 줄어들게 되는 단점도 있습니다.</p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="liquid_ce.html"><img src="img/ce.gif" width="200" height="150" alt="liquid_ce" />liquid_ce.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>liquid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ce</em>&quot;&gt;</code></a></li>
+						<li><a href="liquid_ec.html"><img src="img/ec.gif" width="200" height="150" alt="liquid_ec" />liquid_ec.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>liquid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ec</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="section">
+				<h3 id="C2H2">Hybrid 2 Columns Layout</h3>
+				<p><strong>가변폭</strong>과 <strong>고정폭</strong> 너비를 함께 사용한 <strong>혼합폭</strong> 레이아웃으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 2개인 레이아웃 입니다. #container 영역은 화면크기의 80% <strong>가변폭</strong>으로 설정 되어있고 #content 영역은 100%이며 .extension 영역은 260px 너비의 <strong>고정폭</strong>으로 잡혀 있습니다. #body 영역을 2개의 분할 컬럼으로 사용하려는 경우 적합하며 브라우저의 너비에 따라 #container의 너비는 같은 비율로 변경되지만  .extension 영역은 고정폭으로 지정되어 있어 해상도의 영향을 받지 않습니다. </p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="hybrid_ce.html"><img src="img/ce.gif" width="200" height="150" alt="hybrid_ce" />hybrid_ce.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>hybrid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ce</em>&quot;&gt;</code></a></li>
+						<li><a href="hybrid_ec.html"><img src="img/ec.gif" width="200" height="150" alt="hybrid_ec" />hybrid_ec.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>hybrid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ec</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<h2 id="C3">3 Columns Layout</h2>
+			<div class="section">
+				<h3 id="C3F3">Fixed 3 Columns Layout</h3>
+				<p>모든 레이아웃 요소의 너비가 <strong>고정폭</strong>으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 3개인 레이아웃 입니다. #container 영역이  960px <strong>고정폭</strong>으로 설정 되어있고 #content 영역은 520px이며 .extension 영역은 200px 너비의 <strong>고정폭</strong>으로 잡혀 있습니다. #body 영역을 3개의 분할 컬럼으로 사용하려는 경우 적합하지만 브라우저의 너비를 1024px 보다 작게 변경하는 경우 가로 스크롤을 유발하는 단점도 있습니다.</p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="fixed_cee.html"><img src="img/cee.gif" width="200" height="150" alt="fixed_cee" />fixed_cee.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>fixed</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>cee</em>&quot;&gt;</code></a></li>
+						<li><a href="fixed_ece.html"><img src="img/ece.gif" width="200" height="150" alt="fixed_ece" />fixed_ece.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>fixed</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ece</em>&quot;&gt;</code></a></li>
+						<li><a href="fixed_eec.html"><img src="img/eec.gif" width="200" height="150" alt="fixed_eec" />fixed_eec.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>fixed</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>eec</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="section">
+				<h3 id="C3L3">Liquid 3 Columns Layout</h3>
+				<p>모든 레이아웃 요소의 너비가 <strong>가변폭</strong>으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 3개인 레이아웃 입니다. #container 영역은 화면크기의 80% <strong>가변폭</strong>으로 설정 되어있고 #content 영역은 56%이며 .extension 영역은 20% 너비의 <strong>가변폭</strong>으로 잡혀 있습니다. #body 영역을 3개의 분할 컬럼으로 사용하려는 경우 적합하지만 브라우저의 너비를 매우 작게 변경하는 경우 .extension 영역의 너비도 동일 비율로 줄어들게 되는 단점도 있습니다.</p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="liquid_cee.html"><img src="img/cee.gif" width="200" height="150" alt="liquid_cee" />liquid_cee.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>liquid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>cee</em>&quot;&gt;</code></a></li>
+						<li><a href="liquid_ece.html"><img src="img/ece.gif" width="200" height="150" alt="liquid_ece" />liquid_ece.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>liquid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ece</em>&quot;&gt;</code></a></li>
+						<li><a href="liquid_eec.html"><img src="img/eec.gif" width="200" height="150" alt="liquid_eec" />liquid_eec.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>liquid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>eec</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="section">
+				<h3 id="C3H3">Hybrid 3 Columns Layout</h3>
+				<p><strong>가변폭</strong>과 <strong>고정폭</strong> 너비를 함께 사용한 <strong>혼합폭</strong> 레이아웃으로써 콘텐츠가 위치한 블럭의 컬럼 개수가 3개인 레이아웃 입니다. #container 영역은 화면크기의 80% <strong>가변폭</strong>으로 설정 되어있고 #content 영역은 100%이며 .extension 영역은 220px 너비의 <strong>고정폭</strong>으로 잡혀 있습니다. #body 영역을 3개의 분할 컬럼으로 사용하려는 경우 적합하며 브라우저의 너비에 따라 #container의 너비는 같은 비율로 변경되지만 .extension 영역은 고정폭으로 지정되어 있어 해상도의 영향을 받지 않습니다. </p>
+				<div class="preview">
+					<ol class="layout">
+						<li><a href="hybrid_cee.html"><img src="img/cee.gif" width="200" height="150" alt="hybrid_cee" />hybrid_cee.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>hybrid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>cee</em>&quot;&gt;</code></a></li>
+						<li><a href="hybrid_ece.html"><img src="img/ece.gif" width="200" height="150" alt="hybrid_ece" />hybrid_ece.html<code>&lt;divid=&quot;xe&quot; class=&quot;<em>hybrid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>ece</em>&quot;&gt;</code></a></li>
+						<li><a href="hybrid_eec.html"><img src="img/eec.gif" width="200" height="150" alt="hybrid_eec" />hybrid_eec.html<code>&lt;div id=&quot;xe&quot; class=&quot;<em>hybrid</em>&quot;&gt;</code><code>&lt;div id=&quot;container&quot; class=&quot;<em>eec</em>&quot;&gt;</code></a></li>
+					</ol>
+				</div>
+			</div>
+			<h2 id="DN">Align Layout (center, left, right)</h2>
+			<div class="section">
+				<p>'#container' 요소를 화면의 '중앙' 또는 '좌측' 또는 '우측'으로 배치할 수 있습니다. 기본값은 '중앙 정렬'이며 '좌측' 또는 '우측'으로 배치할 때 클래스가 필요합니다. '#xe' 요소에 '.aLeft' 또는 '.aRight' 클래스를 추가하면 됩니다. 예제에는 적용되어 있지 않으나 클래스로 제어할 수 있도록 이미 처리되어 있습니다.</p>
+			</div>
+			<h2 id="HM">HTML Markup</h2>
+			<div class="section">
+				<div class="preview"> <code>&lt;div id=&quot;<em>xe</em>&quot; class=&quot;<em>fixed</em> | <em>liquid</em> | <em>hybrid</em> | <em>aLeft</em> | <em>aRight</em>&quot;&gt;<br />
+					&nbsp;&nbsp;&lt;div id=&quot;<em>container</em>&quot; class=&quot;<em>c | ce | ec | cee | ece | eec</em>&quot;&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;<em>header</em>&quot;&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;&lt;/h1&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;extension&quot;&gt;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;<em>body</em>&quot;&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;extension e1&quot;&gt;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;extension e2&quot;&gt;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;<em>footer</em>&quot;&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;extension&quot;&gt;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;address&gt;&lt;/address&gt;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+					&nbsp;&nbsp;&lt;/div&gt;<br />
+					&lt;/body&gt;<br />
+					</code></div>
+			</div>
+			<h2 id="DH">DOM Hierarch</h2>
+			<div class="section">
+				<div class="preview">
+					<ul>
+						<li><em>#xe</em> <em>.fixed</em> | <em>.liquid</em> | <em>.hybrid</em> | <em>.aLeft</em> | <em>.aRight</em>
+							<ul>
+								<li><em>#container</em> <em>.c</em> | <em>.ce</em> | <em>.ec</em> | <em>.cee</em> | <em>.ece</em> | <em>.eec</em>
+<ul>
+										<li><em>#header</em>
+											<ul>
+												<li>h1</li>
+												<li>.extension</li>
+											</ul>
+										</li>
+										<li><em>#body</em>
+											<ul>
+												<li>#content</li>
+												<li>.extension .e1</li>
+												<li>.extension	.e2</li>
+											</ul>
+										</li>
+										<li><em>#footer</em>
+											<ul>
+												<li>.extension</li>
+												<li>address</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<h2 id="CS">CSS Selector</h2>
+			<div class="section">
+				<table border="1" cellspacing="0" id="layoutTable" class="displayOn">
+					<thead>
+						<tr>
+							<th scope="col">Selector</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">#xe</th>
+							<td>'body' 요소의 최초의 자손으로써 현재의 layout이 XE의 layout용 CSS Framework을 사용하고 있다는 것을 의미 합니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">.fixed | .liquid | .hybrid</th>
+							<td>'#xe' 요소에 함께 선언되는 클래스로써 현재의 layout이 어떤 성질(고정폭, 가변폭, 혼합폭)을 갖는지를 클래스 이름으로 정의 합니다. 스스로는 아무 속성이 없지만 클래스로 하여금 자식 '#container'가 다양한 성질을 가질 수 있도록 제어합니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">.aLeft | .aRight</th>
+							<td>'#xe' 요소에 함께 선언되는 클래스로써  현재 layout에 대한 수평 정렬을 제어 합니다. 스스로는 아무 속성이 없지만 클래스로 하여금 자식 '#container'가 '좌/우'로 정렬 될  수 있도록 제어합니다. 사용하지 않으면 가운데로 정렬 됩니다. </td>
+						</tr>
+						<tr>
+							<th scope="row">#container</th>
+							<td>'#xe' 요소의 첫 번째 자손으로써 '#header, #body, #footer'를 자식으로 두며 현재 레이아웃의 너비와 성질(고정폭, 가변폭)에 대한 속성을 지니고 있습니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">.c</th>
+							<td>'#content'를 의미하며 '#content' 영역을 하나의 컬럼으로 배치 합니다. '.c' 클래스가 사용된 경우 '.extension' 요소들은 컬럼이 되지 못하고 아래쪽에 흐릅니다.</td>
+						</tr>
+						<tr>
+							<th scope="row"> .ce | .ec</th>
+							<td>2컬럼 레이아웃 요소들의 수평 배치 순서를 결정하는 클래스 입니다. 각각 'c=#content,  e=.extension'을 의미합니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">.cee |  .ece | .eec</th>
+							<td>3컬럼 레이아웃 요소들의 수평 배치 순서를 결정하는 클래스 입니다. 각각 'c=#content,  e=.extension'을 의미합니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">#header</th>
+							<td>현재 페이지의 '가장 큰 제목<sup>h1</sup>'이 들어가며 보통은 웹 사이트의 제목이 출력되고 상단에 배치 됩니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">#body</th>
+							<td> 현재 페이지의 본문인 '#content'와 네비게이션 또는 확장 요소인 '.extension'을 자손으로 두고 있습니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">#footer</th>
+							<td>'저작자 정보<sup>address</sup>' 또는 웹 사이트 이용안내등 부가 콘텐츠가 포함 되며 보통 하단에 배치 됩니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">#content</th>
+							<td>'본문'으로써 다양한 형태의 정보들이 포함되며 '.section' 요소를 자손으로 지닐 수 있습니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">.extension</th>
+							<td>현재 사이트를 탐색하기 위한 '네비게이션' 또는 '확장' 으로써 '.section' 요소를 자손으로 지닐 수 있습니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">.e1 | .e2</th>
+							<td>'#body'의 자손인 '.extension' 클래스와 동일한 요소에  적용되어 있는 클래스로써 두 개의 '.extension'이 각자 다른 배치를 가질 수 있도록 식별하는 역할을 합니다.</td>
+						</tr>
+						<tr>
+							<th scope="row">.section</th>
+							<td>내용을 더욱 의미있는 단위로 작게 구분할 필요가 있을 때 어느 곳에서든 사용합니다. 하나인 경우 생략할 수 있고 두 덩어리 이상을 구분할 필요가 있을 때 반드시 사용 합니다.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="comment">
+				<p>더욱 다양한 형태의 레이아웃이 존재하지만 상기 제시된 소스코드의 원리를 이해하고  응용하게 되면  대부분의 레이아웃 형태를 구현할 수 있습니다. 더욱 많은 레이아웃 예제가 <a href="http://blog.html.it/layoutgala/">Layout Gala</a>, <a href="http://www.thenoodleincident.com/tutorials/box_lesson/boxes.html">Little Boxes</a> 에도 존재합니다. 한편 Layout Gala, Little Boxes 방식은 콘텐츠 영역 또는 측면 네비게이션 영역이 자신의 높이값을 부모 엘리먼트에게 전달하지 못하는 단점이 있습니다.</p>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<div id="footer">
+		<address>
+		만든이 : 정찬명(<a href="/">http://naradesign.net/</a>)<br />
+		연락처 : dece24앳gmail.com
+		</address>
+	</div>
+</div>
+</body>
+</html>
