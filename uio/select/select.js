@@ -54,7 +54,7 @@ jQuery(function($){
 
 	// Anchor Focus Out
 	$('*:not("div.select a")').focus(function(){
-		select_root.removeClass('open');
+		$('.aList').parent('.select').removeClass('open');
 	});
 			
 	select_value.click(show_option);

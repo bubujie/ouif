@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* OUIF | JCM */
 /* Lined Tab */
-.tab{ padding:0 0 35px 0;}
+.tab{ padding:0 0 120px 0;}
 .tab ul{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #ccc; font-family:Tahoma, Sans-serif; font-size:12px; background:#fff; *zoom:1;}
 .tab ul:after{ content:""; display:block; clear:both;}
 .tab li{ float:left; margin-bottom:-1px;}
@@ -9,8 +9,11 @@
 .tab li a span{ display:inline-block; padding:6px 25px 6px 25px; letter-spacing:-1px; cursor:pointer;}
 .tab li ul{ display:none; width:100%; position:absolute; top:40px; left:0; list-style:none; border:0; margin:0; padding:0; white-space:nowrap; overflow:hidden; *zoom:1;}
 .tab li ul:after{ content:""; display:block; clear:both;}
-.tab li li{ position:relative; left:-1px; padding:0 10px; border-left:1px solid #ddd; overflow:visible;}
-.tab li li a{ padding:0; margin:0; border:0 !important; color:#666 !important; font-weight:normal; background:transparent; letter-spacing:normal;}
+.tab li li{ float:none; position:relative; margin:0 0 10px 0; color:#999;}
+.tab li li a{ float:none; padding:0; margin:0; border:0 !important; color:#666 !important; font-weight:normal; background:transparent; letter-spacing:normal;}
+.tab li li a:hover,
+.tab li li a:active,
+.tab li li a:focus{ color:#000 !important; text-decoration:underline;}
 .tab.m1 .m1 a,
 .tab.m2 .m2 a,
 .tab.m3 .m3 a,
@@ -47,18 +50,3 @@
 .tab.m10 .m10 ul,
 .tab.m11 .m11 ul,
 .tab.m12 .m12 ul{ display:block;}
-.tab li li a:hover,
-.tab li li a:active,
-.tab li li a:focus,
-.tab.s1 .s1 a,
-.tab.s2 .s2 a,
-.tab.s3 .s3 a,
-.tab.s4 .s4 a,
-.tab.s5 .s5 a,
-.tab.s6 .s6 a,
-.tab.s7 .s7 a,
-.tab.s8 .s8 a,
-.tab.s9 .s9 a,
-.tab.s10 .s10 a,
-.tab.s11 .s11 a,
-.tab.s12 .s12 a{ font-weight:bold; letter-spacing:-1px; color:#333 !important;}
