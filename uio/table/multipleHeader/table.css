@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* OUIF | JCM */
+
+/* table */
+.table{ width:100%; border:0; border-top:2px solid #999; font:12px Tahoma, Geneva, sans-serif;}
+.table caption{ padding:8px 0; font-weight:bold; text-align:left;}
+.table th,
+.table td{ border:0; padding:8px; vertical-align:top;}
+.table th{ color:#333;}
+.table td{ text-align:right; color:#767676;}
+.table thead th{ border-bottom:1px solid #ccc; background:#f8f8f8;}
+.table tbody th{ border-bottom:1px solid #ddd; background:#fafafa;}
+.table tfoot th{ border-bottom:1px solid #ddd;}
+.table tbody td{ border-bottom:1px solid #ddd;}
+.table tfoot td{ border-bottom:1px solid #ddd; font-weight:bold; color:#333;}
