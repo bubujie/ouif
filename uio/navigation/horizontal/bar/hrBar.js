@@ -19,16 +19,15 @@ jQuery(function($){
 	
 	// Show Menu
 	function show_menu(){
+		t = $(this);
 		li_list.removeClass('active');
-		$(this).parent('li').addClass('active');
-		
+		t.parent('li').addClass('active');
 		// IE7 or IE7 documentMode bug fix
 		if($.browser.msie) {
 			var v = document.documentMode || parseInt($.browser.version);
-
 			if (v == 7) {
-				var sub = $(this).next('div.sub').eq(-1);
-				sub.css('width', '').css('width', sub.width()+'px');
+				var subWidth = t.next('div.sub').eq(-1).width();
+				t.next('div.sub').css('width',subWidth);
 			}
 		}
 	}

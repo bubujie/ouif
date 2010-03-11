@@ -1,5 +1,8 @@
 jQuery(function($){
 	var tab = $('div.tab');
+	var tabHeight = tab.find('>ul>li>ul').height()+40;
+	
+	tab.css('height',tabHeight);
 	
 	function onSelectTab(){
 		var t = $(this);

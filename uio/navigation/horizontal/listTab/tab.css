@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* OUIF | JCM */
 /* Lined Tab */
-.tab{ padding:0 0 120px 0;}
 .tab ul{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #ccc; font-family:Tahoma, Sans-serif; font-size:12px; background:#fff; *zoom:1;}
 .tab ul:after{ content:""; display:block; clear:both;}
 .tab li{ float:left; margin-bottom:-1px;}
