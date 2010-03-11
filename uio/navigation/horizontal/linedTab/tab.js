@@ -1,7 +1,7 @@
 jQuery(function($){
 	var tab = $('ul.tab');
 	
-	function onselecttab(){
+	function onSelectTab(){
 		var t = $(this);
 		var myclass = [];
 		
@@ -13,7 +13,7 @@ jQuery(function($){
 		if (!tab.hasClass(myclass)) tab.attr('class','tab').addClass(myclass);
 	}
 	
-	tab.find('li>a').hover(onselecttab).focus(onselecttab);
+	tab.find('li>a').click(onSelectTab).focus(onSelectTab);
 });
 
 

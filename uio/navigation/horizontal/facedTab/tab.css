@@ -3,27 +3,63 @@
 /* Faced Tab */
 .tab{ position:relative; margin:0; padding:0; _padding:2px 0 0 0; list-style:none; border-bottom:2px solid #315593; font-family:Tahoma, Sans-serif; font-size:12px; background:#fff; *zoom:1;}
 .tab:after{ content:""; display:block; clear:both;}
-.tab li{ float:left; margin-right:2px; background:#4CB1E5;}
+.tab li{ float:left; margin-right:1px; background:#4CB1E5;}
 .tab li a,
 .tab li a span{ position:relative; background:url(bgTab.gif) no-repeat; cursor:pointer;}
 .tab li a{ float:left; text-decoration:none; background-position:left top;}
-.tab li a span{ display:inline-block; background-position:right top; padding:6px 20px 4px 20px; color:#fff;}
+.tab li a span{ display:inline-block; background-position:right top; padding:6px 25px 6px 25px; color:#fff;}
 .tab li ul{ display:none; width:100%; position:absolute; top:40px; left:0; list-style:none; margin:0; padding:0; white-space:nowrap; overflow:hidden; *zoom:1;}
 .tab li ul:after{ content:""; display:block; clear:both;}
 .tab li li{ position:relative; left:-1px; padding:0 10px; border-left:1px solid #ddd; overflow:visible; background:#fff;}
 .tab li li a{ padding:0; margin:0; font-weight:normal; color:#333;}
 .tab.m1 .m1,
 .tab.m2 .m2,
-.tab.m3 .m3{ background-color:#315593; margin-top:-2px;}
+.tab.m3 .m3,
+.tab.m4 .m4,
+.tab.m5 .m5,
+.tab.m6 .m6,
+.tab.m7 .m7,
+.tab.m8 .m8,
+.tab.m9 .m9,
+.tab.m10 .m10,
+.tab.m11 .m11,
+.tab.m12 .m12{ background-color:#315593; margin-top:-1px;}
 .tab.m1 .m1 a span,
 .tab.m2 .m2 a span,
-.tab.m3 .m3 a span{ padding:8px 20px 6px 20px; font-weight:bold; letter-spacing:-1px;}
+.tab.m3 .m3 a span,
+.tab.m4 .m4 a span,
+.tab.m5 .m5 a span,
+.tab.m6 .m6 a span,
+.tab.m7 .m7 a span,
+.tab.m8 .m8 a span,
+.tab.m9 .m9 a span,
+.tab.m10 .m10 a span,
+.tab.m11 .m11 a span,
+.tab.m12 .m12 a span{ padding-top:7px; padding-bottom:7px; font-weight:bold; letter-spacing:-1px;}
 .tab.m1 .m1 ul,
 .tab.m2 .m2 ul,
-.tab.m3 .m3 ul{ display:block;}
+.tab.m3 .m3 ul,
+.tab.m4 .m4 ul,
+.tab.m5 .m5 ul,
+.tab.m6 .m6 ul,
+.tab.m7 .m7 ul,
+.tab.m8 .m8 ul,
+.tab.m9 .m9 ul,
+.tab.m10 .m10 ul,
+.tab.m11 .m11 ul,
+.tab.m12 .m12 ul{ display:block;}
 .tab li li a:hover,
 .tab li li a:active,
 .tab li li a:focus,
 .tab.s1 .s1 a,
 .tab.s2 .s2 a,
-.tab.s3 .s3 a{ font-weight:bold; letter-spacing:-1px;}
+.tab.s3 .s3 a,
+.tab.s4 .s4 a,
+.tab.s5 .s5 a,
+.tab.s6 .s6 a,
+.tab.s7 .s7 a,
+.tab.s8 .s8 a,
+.tab.s9 .s9 a,
+.tab.s10 .s10 a,
+.tab.s11 .s11 a,
+.tab.s12 .s12 a{ font-weight:bold; letter-spacing:-1px;}

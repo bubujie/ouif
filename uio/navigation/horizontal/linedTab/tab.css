@@ -3,25 +3,61 @@
 /* Lined Tab */
 .tab{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #ccc; font-family:Tahoma, Sans-serif; font-size:12px; background:#fff; *zoom:1;}
 .tab:after{ content:""; display:block; clear:both;}
-.tab li{ float:left; margin-right:-1px; margin-bottom:-1px; }
-.tab li a{ position:relative; float:left; text-decoration:none; border:1px solid #ccc; background:#f8f8f8; color:#333; -moz-border-radius-topleft:3px; -moz-border-radius-topright:3px; -webkit-border-top-left-radius:3px; -webkit-border-top-right-radius:3px; }
-.tab li a span{ display:inline-block; padding:6px 20px 4px 20px; letter-spacing:-1px; cursor:pointer;}
+.tab li{ float:left; margin-bottom:-1px;}
+.tab li a{ position:relative; float:left; text-decoration:none; border:1px solid #eee; border-bottom-color:#ccc; background:#fafafa; color:#333;}
+.tab li a span{ display:inline-block; padding:6px 25px 6px 25px; letter-spacing:-1px; cursor:pointer;}
 .tab li ul{ display:none; width:100%; position:absolute; top:40px; left:0; list-style:none; margin:0; padding:0; white-space:nowrap; overflow:hidden; *zoom:1;}
 .tab li ul:after{ content:""; display:block; clear:both;}
 .tab li li{ position:relative; left:-1px; padding:0 10px; border-left:1px solid #ddd; overflow:visible;}
-.tab li li a{ padding:0; margin:0; border:0; font-weight:normal; background:transparent; letter-spacing:normal;}
+.tab li li a{ padding:0; margin:0; border:0 !important; font-weight:normal; background:transparent; letter-spacing:normal;}
 .tab.m1 .m1 a,
 .tab.m2 .m2 a,
-.tab.m3 .m3 a{ border-bottom:1px solid #fff; margin-top:-2px; background:#fff; }
+.tab.m3 .m3 a,
+.tab.m4 .m4 a,
+.tab.m5 .m5 a,
+.tab.m6 .m6 a,
+.tab.m7 .m7 a,
+.tab.m8 .m8 a,
+.tab.m9 .m9 a,
+.tab.m10 .m10 a,
+.tab.m11 .m11 a,
+.tab.m12 .m12 a{ border:1px solid #ccc; border-bottom:1px solid #fff; margin-top:-1px; background:#fff; z-index:2;}
 .tab.m1 .m1 a span,
 .tab.m2 .m2 a span,
-.tab.m3 .m3 a span{ padding:8px 20px 4px 20px; font-weight:bold;}
+.tab.m3 .m3 a span,
+.tab.m4 .m4 a span,
+.tab.m5 .m5 a span,
+.tab.m6 .m6 a span,
+.tab.m7 .m7 a span,
+.tab.m8 .m8 a span,
+.tab.m9 .m9 a span,
+.tab.m10 .m10 a span,
+.tab.m11 .m11 a span,
+.tab.m12 .m12 a span{ padding-top:7px; font-weight:bold;}
 .tab.m1 .m1 ul,
 .tab.m2 .m2 ul,
-.tab.m3 .m3 ul{ display:block;}
+.tab.m3 .m3 ul,
+.tab.m4 .m4 ul,
+.tab.m5 .m5 ul,
+.tab.m6 .m6 ul,
+.tab.m7 .m7 ul,
+.tab.m8 .m8 ul,
+.tab.m9 .m9 ul,
+.tab.m10 .m10 ul,
+.tab.m11 .m11 ul,
+.tab.m12 .m12 ul{ display:block;}
 .tab li li a:hover,
 .tab li li a:active,
 .tab li li a:focus,
 .tab.s1 .s1 a,
 .tab.s2 .s2 a,
-.tab.s3 .s3 a{ font-weight:bold; letter-spacing:-1px;}
+.tab.s3 .s3 a,
+.tab.s4 .s4 a,
+.tab.s5 .s5 a,
+.tab.s6 .s6 a,
+.tab.s7 .s7 a,
+.tab.s8 .s8 a,
+.tab.s9 .s9 a,
+.tab.s10 .s10 a,
+.tab.s11 .s11 a,
+.tab.s12 .s12 a{ font-weight:bold; letter-spacing:-1px;}

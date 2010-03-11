@@ -5,6 +5,9 @@
 <title>OUIF : CSS Selector Rules</title>
 <link rel="stylesheet" type="text/css" href="../com/css/framework.css"/>
 <link rel="stylesheet" type="text/css" href="../com/css/default.css"/>
+<style type="text/css">
+th, td{ vertical-align:top;}
+</style>
 </head>
 <body>
 <div id="ouif">
@@ -21,18 +24,16 @@
 					<li>Use only camelCase format alphabet and numbers</li>
 					<li>Don't use numbers  at the first letter</li>
 				</ol>
-				<h2>Naming Rule Exception</h2>
-				<ol>
-					<li>Must use PascalCase if you are javascript/AJAX developer or server-side developer</li>
-				</ol>
-<h2>Reserved Selector</h2>
+				<h2>Reserved Selector</h2>
 				<table cellspacing="0" border="1">
 					<tbody>
 						<tr>
+							<th scope="col">&nbsp;</th>
 							<th scope="col">Selector</th>
 							<th scope="col">Description</th>
 						</tr>
 						<tr>
+							<th rowspan="6" scope="row">ID</th>
 							<th scope="row">#ouif</th>
 							<td>root container</td>
 						</tr>
@@ -57,144 +58,242 @@
 							<td>main content</td>
 						</tr>
 						<tr>
-							<th scope="row">.gnb</th>
-							<td>global navigation bar</td>
+							<th rowspan="9" scope="row">A</th>
+							<th scope="row">.active</th>
+							<td>active</td>
 						</tr>
 						<tr>
-							<th scope="row">.lnb</th>
-							<td>local navigation bar</td>
-						</tr>
-						<tr>
-							<th scope="row">.snb</th>
-							<td>side navigation bar</td>
-						</tr>
-						<tr>
-							<th scope="row">.aside</th>
-							<td>aside </td>
-						</tr>
-						<tr>
-							<th scope="row">.section</th>
-							<td>section  containing heading element</td>
-						</tr>
-						<tr>
-							<th scope="row">.article</th>
-							<td>article  containing heading element</td>
-						</tr>
-						<tr>
-							<th scope="row">.path</th>
-							<td>path </td>
-						</tr>
-						<tr>
-							<th scope="row">.nav</th>
-							<td>navigation</td>
-						</tr>
-						<tr>
-							<th scope="row">.pagination</th>
-							<td>page navigation</td>
-						</tr>
-						<tr>
-							<th scope="row">.btn</th>
-							<td>button</td>
-						</tr>
-						<tr>
-							<th scope="row">.ico</th>
-							<td>icon</td>
+							<th scope="row">.ad</th>
+							<td>advertisement</td>
 						</tr>
 						<tr>
 							<th scope="row">.alt</th>
 							<td>hidden alternative content</td>
 						</tr>
 						<tr>
-							<th scope="row">.iText</th>
-							<td>text input control</td>
+							<th scope="row">.aLeft</th>
+							<td>align left</td>
 						</tr>
 						<tr>
-							<th scope="row">.iCheck</th>
-							<td>checkbox input control</td>
+							<th scope="row">.aRight</th>
+							<td>align right</td>
 						</tr>
 						<tr>
-							<th scope="row">.iRadio</th>
-							<td>radio input control</td>
+							<th scope="row">.arrow</th>
+							<td>arrow</td>
 						</tr>
 						<tr>
-							<th scope="row">.h</th>
-							<td>heading</td>
+							<th scope="row">.article</th>
+							<td>article  containing heading element</td>
 						</tr>
 						<tr>
-							<th scope="row">.tab</th>
-							<td>tab</td>
+							<th scope="row">.aside</th>
+							<td>aside </td>
 						</tr>
 						<tr>
-							<th scope="row">.list</th>
-							<td>list</td>
+							<th scope="row">.author</th>
+							<td>author</td>
 						</tr>
 						<tr>
-							<th scope="row">.read</th>
-							<td>read</td>
+							<th rowspan="3" scope="row">B</th>
+							<th scope="row">.bottom</th>
+							<td>bottom</td>
 						</tr>
 						<tr>
-							<th scope="row">.write</th>
-							<td>write</td>
+							<th scope="row">.btn</th>
+							<td>button</td>
 						</tr>
 						<tr>
-							<th scope="row">.edit</th>
-							<td>edit</td>
+							<th scope="row">.btnArea</th>
+							<td>button area</td>
 						</tr>
 						<tr>
-							<th scope="row">.delete</th>
-							<td>delete</td>
-						</tr>
-						<tr>
-							<th scope="row">.reply</th>
-							<td>reply</td>
-						</tr>
-						<tr>
+							<th rowspan="4" scope="row">C</th>
 							<th scope="row">.cancel</th>
 							<td>cancel</td>
 						</tr>
 						<tr>
-							<th scope="row">.search</th>
-							<td>search</td>
+							<th scope="row">.center</th>
+							<td>center</td>
 						</tr>
 						<tr>
-							<th scope="row">.find</th>
-							<td>find</td>
-						</tr>
-						<tr>
-							<th scope="row">.registration</th>
-							<td>registration</td>
-						</tr>
-						<tr>
-							<th scope="row">.submit</th>
-							<td>submit</td>
+							<th scope="row">.close</th>
+							<td>close</td>
 						</tr>
 						<tr>
 							<th scope="row">.confirm</th>
 							<td>confirm</td>
 						</tr>
 						<tr>
-							<th scope="row">.permit</th>
-							<td>permit</td>
+							<th rowspan="4" scope="row">D</th>
+							<th scope="row">.delete</th>
+							<td>delete</td>
 						</tr>
 						<tr>
-							<th scope="row">.upload</th>
-							<td>upload</td>
+							<th scope="row">.description</th>
+							<td>description</td>
+						</tr>
+						<tr>
+							<th scope="row">.down</th>
+							<td>down</td>
 						</tr>
 						<tr>
 							<th scope="row">.download</th>
 							<td>download</td>
 						</tr>
 						<tr>
-							<th scope="row">.install</th>
-							<td>install</td>
+							<th scope="row">E</th>
+							<th scope="row">.edit</th>
+							<td>edit</td>
 						</tr>
 						<tr>
+							<th rowspan="5" scope="row">F</th>
 							<th scope="row">.file</th>
 							<td>file</td>
 						</tr>
 						<tr>
-							<th scope="row">.stop</th>
-							<td>stop</td>
+							<th scope="row">.find</th>
+							<td>find</td>
+						</tr>
+						<tr>
+							<th scope="row">.first</th>
+							<td>first</td>
+						</tr>
+						<tr>
+							<th scope="row">.fLeft</th>
+							<td>float left</td>
+						</tr>
+						<tr>
+							<th scope="row">.fRight</th>
+							<td>float right</td>
+						</tr>
+						<tr>
+							<th rowspan="2" scope="row">G</th>
+							<th scope="row">.gnb</th>
+							<td>global navigation bar</td>
+						</tr>
+						<tr>
+							<th scope="row">.go</th>
+							<td>go</td>
+						</tr>
+						<tr>
+							<th rowspan="2" scope="row">H</th>
+							<th scope="row">.h</th>
+							<td>heading</td>
+						</tr>
+						<tr>
+							<th scope="row">.hr</th>
+							<td>horizontal rule</td>
+						</tr>
+						<tr>
+							<th rowspan="6" scope="row">I</th>
+							<th scope="row">.ico</th>
+							<td>icon</td>
+						</tr>
+						<tr>
+							<th scope="row">.iCheck</th>
+							<td>checkbox input control</td>
+						</tr>
+						<tr>
+							<th scope="row">.img</th>
+							<td>image</td>
+						</tr>
+						<tr>
+							<th scope="row">.install</th>
+							<td>install</td>
+						</tr>
+						<tr>
+							<th scope="row">.iRadio</th>
+							<td>radio input control</td>
+						</tr>
+						<tr>
+							<th scope="row">.iText</th>
+							<td>text input control</td>
+						</tr>
+						<tr>
+							<th rowspan="5" scope="row">L</th>
+							<th scope="row">.last</th>
+							<td>last</td>
+						</tr>
+						<tr>
+							<th scope="row">.lb</th>
+							<td>left bottom</td>
+						</tr>
+						<tr>
+							<th scope="row">.list</th>
+							<td>list</td>
+						</tr>
+						<tr>
+							<th scope="row">.lnb</th>
+							<td>local navigation bar</td>
+						</tr>
+						<tr>
+							<th scope="row">.lt</th>
+							<td>left top</td>
+						</tr>
+						<tr>
+							<th rowspan="3" scope="row">M</th>
+							<th scope="row">.middle</th>
+							<td>middle</td>
+						</tr>
+						<tr>
+							<th scope="row">.more</th>
+							<td>more</td>
+						</tr>
+						<tr>
+							<th scope="row">.movie</th>
+							<td>movie</td>
+						</tr>
+						<tr>
+							<th rowspan="5" scope="row">N</th>
+							<th scope="row">.nav</th>
+							<td>navigation</td>
+						</tr>
+						<tr>
+							<th scope="row">.new</th>
+							<td>new</td>
+						</tr>
+						<tr>
+							<th scope="row">.next</th>
+							<td>next</td>
+						</tr>
+						<tr>
+							<th scope="row">.noti</th>
+							<td>notification</td>
+						</tr>
+						<tr>
+							<th scope="row">.num</th>
+							<td>num</td>
+						</tr>
+						<tr>
+							<th rowspan="3" scope="row">O</th>
+							<th scope="row">.off</th>
+							<td>off</td>
+						</tr>
+						<tr>
+							<th scope="row">.on</th>
+							<td>on</td>
+						</tr>
+						<tr>
+							<th scope="row">.open</th>
+							<td>open</td>
+						</tr>
+						<tr>
+							<th rowspan="6" scope="row">P</th>
+							<th scope="row">.pagination</th>
+							<td>page navigation</td>
+						</tr>
+						<tr>
+							<th scope="row">.path</th>
+							<td>path </td>
+						</tr>
+						<tr>
+							<th scope="row">.permit</th>
+							<td>permit</td>
+						</tr>
+						<tr>
+							<th scope="row">.photo</th>
+							<td>photo</td>
 						</tr>
 						<tr>
 							<th scope="row">.play</th>
@@ -205,152 +304,99 @@
 							<td>previous</td>
 						</tr>
 						<tr>
-							<th scope="row">.next</th>
-							<td>next</td>
+							<th rowspan="6" scope="row">R</th>
+							<th scope="row">.rb</th>
+							<td>right bottom</td>
 						</tr>
 						<tr>
-							<th scope="row">.first</th>
-							<td>first</td>
-						</tr>
-						<tr>
-							<th scope="row">.last</th>
-							<td>last</td>
-						</tr>
-						<tr>
-							<th scope="row">.up</th>
-							<td>up</td>
-						</tr>
-						<tr>
-							<th scope="row">.down</th>
-							<td>down</td>
-						</tr>
-						<tr>
-							<th scope="row">.go</th>
-							<td>go</td>
-						</tr>
-						<tr>
-							<th scope="row">.thumb</th>
-							<td>thumb</td>
-						</tr>
-						<tr>
-							<th scope="row">.img</th>
-							<td>image</td>
+							<th scope="row">.read</th>
+							<td>read</td>
 						</tr>
 						<tr>
 							<th scope="row">.refresh</th>
 							<td>refresh</td>
 						</tr>
 						<tr>
-							<th scope="row">.open</th>
-							<td>open</td>
+							<th scope="row">.registration</th>
+							<td>registration</td>
 						</tr>
 						<tr>
-							<th scope="row">.close</th>
-							<td>close</td>
-						</tr>
-						<tr>
-							<th scope="row">.zIn</th>
-							<td>zoom in</td>
-						</tr>
-						<tr>
-							<th scope="row">.zOut</th>
-							<td>zoom out</td>
-						</tr>
-						<tr>
-							<th scope="row">.more</th>
-							<td>more</td>
-						</tr>
-						<tr>
-							<th scope="row">.arrow</th>
-							<td>arrow</td>
-						</tr>
-						<tr>
-							<th scope="row">.num</th>
-							<td>num</td>
-						</tr>
-						<tr>
-							<th scope="row">.new</th>
-							<td>new</td>
-						</tr>
-						<tr>
-							<th scope="row">.update</th>
-							<td>update</td>
-						</tr>
-						<tr>
-							<th scope="row">.movie</th>
-							<td>movie</td>
-						</tr>
-						<tr>
-							<th scope="row">.photo</th>
-							<td>photo</td>
-						</tr>
-						<tr>
-							<th scope="row">.noti</th>
-							<td>notification</td>
-						</tr>
-						<tr>
-							<th scope="row">.hr</th>
-							<td>horizontal rule</td>
-						</tr>
-						<tr>
-							<th scope="row">.vr</th>
-							<td>vertical rule</td>
-						</tr>
-						<tr>
-							<th scope="row">.top</th>
-							<td>top</td>
-						</tr>
-						<tr>
-							<th scope="row">.middle</th>
-							<td>middle</td>
-						</tr>
-						<tr>
-							<th scope="row">.center</th>
-							<td>center</td>
-						</tr>
-						<tr>
-							<th scope="row">.bottom</th>
-							<td>bottom</td>
-						</tr>
-						<tr>
-							<th scope="row">.lt</th>
-							<td>left top</td>
+							<th scope="row">.reply</th>
+							<td>reply</td>
 						</tr>
 						<tr>
 							<th scope="row">.rt</th>
 							<td>right top</td>
 						</tr>
 						<tr>
-							<th scope="row">.lb</th>
-							<td>left bottom</td>
+							<th rowspan="5" scope="row">S</th>
+							<th scope="row">.search</th>
+							<td>search</td>
 						</tr>
 						<tr>
-							<th scope="row">.rb</th>
-							<td>right bottom</td>
+							<th scope="row">.section</th>
+							<td>section  containing heading element</td>
+						</tr>
+						<tr>
+							<th scope="row">.snb</th>
+							<td>side navigation bar</td>
+						</tr>
+						<tr>
+							<th scope="row">.stop</th>
+							<td>stop</td>
+						</tr>
+						<tr>
+							<th scope="row">.submit</th>
+							<td>submit</td>
+						</tr>
+						<tr>
+							<th rowspan="4" scope="row">T</th>
+							<th scope="row">.tab</th>
+							<td>tab</td>
 						</tr>
 						<tr>
 							<th scope="row">.temp</th>
 							<td>temporary</td>
 						</tr>
 						<tr>
-							<th scope="row">.ad</th>
-							<td>advertisement</td>
+							<th scope="row">.thumb</th>
+							<td>thumb</td>
 						</tr>
 						<tr>
-							<th scope="row">.on</th>
-							<td>on</td>
+							<th scope="row">.top</th>
+							<td>top</td>
 						</tr>
 						<tr>
-							<th scope="row">.off</th>
-							<td>off</td>
+							<th rowspan="3" scope="row">U</th>
+							<th scope="row">.up</th>
+							<td>up</td>
 						</tr>
 						<tr>
-							<th scope="row">.layer</th>
-							<td>layer</td>
+							<th scope="row">.update</th>
+							<td>update</td>
 						</tr>
 						<tr>
-							<th scope="row">.description</th>
-							<td>description</td>
+							<th scope="row">.upload</th>
+							<td>upload</td>
+						</tr>
+						<tr>
+							<th scope="row">V</th>
+							<th scope="row">.vr</th>
+							<td>vertical rule</td>
+						</tr>
+						<tr>
+							<th scope="row">W</th>
+							<th scope="row">.write</th>
+							<td>write</td>
+						</tr>
+						<tr>
+							<th rowspan="2" scope="row">Z</th>
+							<th scope="row">.zIn</th>
+							<td>zoom in</td>
+						</tr>
+						<tr>
+							<th scope="row">.zOut</th>
+							<td>zoom out</td>
 						</tr>
 					</tbody>
 				</table>
@@ -360,7 +406,7 @@
 						<ul>
 							<li>#container
 								<ul>
-									<li>#header 
+									<li>#header
 										<ul>
 											<li>h1.h</li>
 										</ul>
@@ -371,7 +417,7 @@
 												<ul>
 													<li>.section
 														<ul>
-															<li>h1.h													</li>
+															<li>h1.h </li>
 														</ul>
 													</li>
 												</ul>
@@ -389,7 +435,7 @@
 		<hr />
 		<div id="footer">
 			<address>
-			NHN UIT Lab.
+				<abbr title="Open User Interface Framework">OUIF</abbr>
 			</address>
 		</div>
 	</div>
