@@ -37,7 +37,6 @@ jQuery(function($){
 		ssItem.removeClass('active');
 		$(this).parent(ssItem).addClass('active');
 	}; 
-	
 	ssItem.find('>a').click(subMenuActive).focus(subMenuActive);
 	
 	//icon
