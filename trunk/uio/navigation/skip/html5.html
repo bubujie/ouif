@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>OUIF | Skip Navigation</title>
+<link rel="stylesheet" type="text/css" href="skip.css">
+</head>
+<body>
+<h1>Skip Navigation Example</h1>
+<p>이 페이지는 키보드만으로 웹 페이지를 탐색하는 사람이 글로벌 네비게이션을 쉽게 건너 뛸 수 있도록 설계 되어 있습니다.</p>
+<div id="container">
+	<!-- Skip To Content -->
+	<a href="#content" class="skip">&raquo; 메뉴 건너 뛰기</a>
+	<!-- /Skip To Content -->
+	<div id="header">
+		<p><a href="#">#header</a> : 웹 페이지에 반복되는 글로벌 네비게이션</p>
+	</div>
+	<div id="body">
+		<div id="content">
+			<p><a href="#">#content</a> : 본문 콘텐츠</p>
+		</div>
+		<div id="aside">
+			<p><a href="#">#aside</a></p>
+		</div>
+	</div>
+	<div id="footer">
+		<p><a href="#">#footer</a></p>
+	</div>
+</div>
+<button type="button" onclick="$('link').attr('href', '')">CSS (X)</button>
+<button type="button" onclick="$('link').attr('href', 'skip.css')">CSS(O)</button>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> 
+</body>
+</html>
