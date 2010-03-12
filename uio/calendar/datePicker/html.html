@@ -3,28 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>OUIF | Datepicker</title>
-<style type="text/css">
-.ui-datepicker{ font-size:.75em !important;}
-</style>
-<link rel="stylesheet" type="text/css" href="http://jqueryui.com/themes/base/jquery.ui.all.css">
+<link rel="stylesheet" type="text/css" href="http://jqueryui.com/themes/base/jquery.ui.all.css" />
+<link rel="stylesheet" type="text/css" href="datePicker.css"/>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="http://jqueryui.com/ui/jquery.ui.core.js"></script>
 <script type="text/javascript" src="http://jqueryui.com/ui/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="http://jqueryui.com/ui/jquery.ui.datepicker.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$('.datepicker')
-		.datepicker({
-			dateFormat:'yy-mm-dd', 
-			showButtonPanel:true, 
-			changeMonth:true, 
-			changeYear:true,
-			showOtherMonths:true,
-			selectOtherMonths: true,
-			showAnim:'fadeIn' // show|slideDown|fadeIn
-		})
-	});
-</script>
+<!--<script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/trunk/ui/i18n/jquery.ui.datepicker-ko.js"></script>-->
+<script type="text/javascript" src="datePicker.js"></script>
 </head>
 <body>
 <p><input class="datepicker" type="text" title="From:YY-MM-DD"> - <input class="datepicker" type="text" title="To:YY-MM-DD"></p>
