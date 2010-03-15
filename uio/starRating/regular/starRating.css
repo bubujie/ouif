@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* OUIF | JCM */
+
+/* Star Rating */
+.starRating,
+.starRating span{ display:inline-block; height:14px; height:14px; background:transparent url(icoFiveStar.gif) no-repeat; overflow:hidden;}
+.starRating{ width:79px; vertical-align:middle;}
+.starRating span{ font-size:0; line-height:0; vertical-align:top; text-indent:-79px; *text-indent:0; background-position:0 -14px;}
+
+/* You should remove it */
+h1{ font:24px Tahoma, Geneva, sans-serif;}
+body{ font-size:12px;}
