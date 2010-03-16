@@ -62,3 +62,15 @@
 .tab.s10 .s10 a,
 .tab.s11 .s11 a,
 .tab.s12 .s12 a{ font-weight:bold; letter-spacing:-1px; color:#333 !important;}
+
+/* jsOff */
+.tab.jsOff{ padding:0;}
+.tab.jsOff ul{ border:0;}
+.tab.jsOff li{ float:none;}
+.tab.jsOff li a{ float:none; display:block; font-weight:bold; color:#333; border:1px solid #eee !important; border-bottom-color:#ccc !important; background:#fafafa !important;}
+.tab.jsOff li ul{ position:static; display:block; padding:5px 0; left:0; top:0;}
+.tab.jsOff li li{ display:inline;}
+.tab.jsOff li li a{ display:inline; letter-spacing:normal; border:0 !important; font-weight:normal !important; color:#333 !important; background:none !important;}
+.tab.jsOff li li a:hover,
+.tab.jsOff li li a:active,
+.tab.jsOff li li a:focus{ text-decoration:underline;}

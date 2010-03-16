@@ -6,9 +6,9 @@
 .tab ul:after{ content:""; display:block; clear:both;}
 .tab li{ float:left; margin-right:1px; background:#4CB1E5;}
 .tab li a,
-.tab li a span{ position:relative; background:url(bgTab.gif) no-repeat; cursor:pointer;}
-.tab li a{ float:left; text-decoration:none; background-position:left top;}
-.tab li a span{ display:inline-block; background-position:right top; padding:6px 25px 6px 25px; color:#fff;}
+.tab li a span{ position:relative; cursor:pointer;}
+.tab li a{ float:left; text-decoration:none;}
+.tab li a span{ display:inline-block; padding:6px 25px 6px 25px; color:#fff;}
 .tab li ul{ display:none; width:100%; position:absolute; top:40px; left:0; list-style:none; border:0; margin:0; padding:0; white-space:nowrap; overflow:hidden; *zoom:1;}
 .tab li ul:after{ content:""; display:block; clear:both;}
 .tab li li{ position:relative; left:-1px; padding:0 10px; border-left:1px solid #ddd; overflow:visible; background:transparent;}
@@ -64,3 +64,15 @@
 .tab.s10 .s10 a,
 .tab.s11 .s11 a,
 .tab.s12 .s12 a{ font-weight:bold; letter-spacing:-1px; color:#333;}
+
+/* jsOff */
+.tab.jsOff{ padding:0;}
+.tab.jsOff ul{ border:0;}
+.tab.jsOff li{ float:none;}
+.tab.jsOff li a{ float:none; font-weight:bold;}
+.tab.jsOff li ul{ display:block; position:static; padding:5px 0; left:0; top:0; background:#fff;}
+.tab.jsOff li li{ display:inline;}
+.tab.jsOff li li a{ font-weight:normal !important; color:#333; letter-spacing:normal;}
+.tab.jsOff li li a:hover,
+.tab.jsOff li li a:active,
+.tab.jsOff li li a:focus{ text-decoration:underline;}
