@@ -1,0 +1,9 @@
+@charset "utf-8"; 
+/* OUIF : JCM */
+
+/* Horizontal Bar Graph */
+.hGraph{ position:relative; white-space:nowrap; line-height:normal;}
+.hGraph .hBar{ position:relative; display:inline-block; width:250px; height:14px; margin:0 5px 0 0; border:1px solid #ccc; background:#e9e9e9; font-size:11px;}
+.hGraph .hAction{ position:relative; display:inline-block; height:14px; border:1px solid #8c9bac; background:#99a6b6; margin:-1px;}
+.hGraph .hPercent{ font:16px Arial, Helvetica, sans-serif; color:#ccc;}
+.hGraph .hPercent strong{ font-size:18px; color:#e88b30;}
