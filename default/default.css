@@ -12,6 +12,6 @@ a { text-decoration:none;}
 a:hover, a:active, a:focus {text-decoration:underline;}
 
 /* Common Class */
-.iText, textarea{ border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1;}
+.iText, textarea{ border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1; background:transparent;}
 .iCheck, .iRadio{ width:13px; height:13px; margin:0; padding:0; vertical-align:middle;}
 .alt{ position:absolute; left:0; top:0; width:1px; height:1px; font-size:0; line-height:0; visibility:hidden;}
