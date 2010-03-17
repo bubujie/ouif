@@ -7,7 +7,7 @@
 .table th,
 .table td{ border:0; padding:8px; vertical-align:top;}
 .table th{ color:#333;}
-.table td{ text-align:right; color:#767676;}
+.table td{ color:#767676;}
 .table thead th{ border-bottom:1px solid #ccc; background:#f8f8f8;}
 .table tbody th{ border-bottom:1px solid #ddd; background:#fafafa;}
 .table tfoot th{ border-bottom:1px solid #ddd;}
