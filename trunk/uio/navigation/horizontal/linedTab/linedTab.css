@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* OUIF | JCM */
+/* Lined Tab */
+.linedTab{ padding:0 0 35px 0;}
+.linedTab ul{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #ccc; font-family:Tahoma, Sans-serif; font-size:12px; *zoom:1;}
+.linedTab ul:after{ content:""; display:block; clear:both;}
+.linedTab li{ float:left; margin-bottom:-1px;}
+.linedTab li a{ position:relative; float:left; text-decoration:none; border:1px solid #eee; border-bottom-color:#ccc; background:#fafafa; color:#666;}
+.linedTab li a span{ display:inline-block; padding:6px 25px 6px 25px; letter-spacing:-1px; cursor:pointer;}
+.linedTab li ul{ display:none; width:100%; position:absolute; top:40px; left:0; list-style:none; border:0; margin:0; padding:0; white-space:nowrap; overflow:hidden; *zoom:1;}
+.linedTab li ul:after{ content:""; display:block; clear:both;}
+.linedTab li li{ position:relative; left:-1px; padding:0 10px; border-left:1px solid #ddd; overflow:visible;}
+.linedTab li li a{ padding:0; margin:0; border:0 !important; color:#666 !important; font-weight:normal; background:transparent; letter-spacing:normal;}
+.linedTab.m1 .m1 a,
+.linedTab.m2 .m2 a,
+.linedTab.m3 .m3 a,
+.linedTab.m4 .m4 a,
+.linedTab.m5 .m5 a,
+.linedTab.m6 .m6 a,
+.linedTab.m7 .m7 a,
+.linedTab.m8 .m8 a,
+.linedTab.m9 .m9 a,
+.linedTab.m10 .m10 a,
+.linedTab.m11 .m11 a,
+.linedTab.m12 .m12 a{ border:1px solid #ccc; border-bottom:1px solid #fff; margin-top:-1px; background:transparent; color:#333;}
+.linedTab.m1 .m1 a span,
+.linedTab.m2 .m2 a span,
+.linedTab.m3 .m3 a span,
+.linedTab.m4 .m4 a span,
+.linedTab.m5 .m5 a span,
+.linedTab.m6 .m6 a span,
+.linedTab.m7 .m7 a span,
+.linedTab.m8 .m8 a span,
+.linedTab.m9 .m9 a span,
+.linedTab.m10 .m10 a span,
+.linedTab.m11 .m11 a span,
+.linedTab.m12 .m12 a span{ padding-top:7px; font-weight:bold;}
+.linedTab.m1 .m1 ul,
+.linedTab.m2 .m2 ul,
+.linedTab.m3 .m3 ul,
+.linedTab.m4 .m4 ul,
+.linedTab.m5 .m5 ul,
+.linedTab.m6 .m6 ul,
+.linedTab.m7 .m7 ul,
+.linedTab.m8 .m8 ul,
+.linedTab.m9 .m9 ul,
+.linedTab.m10 .m10 ul,
+.linedTab.m11 .m11 ul,
+.linedTab.m12 .m12 ul{ display:block;}
+.linedTab li li a:hover,
+.linedTab li li a:active,
+.linedTab li li a:focus,
+.linedTab.s1 .s1 a,
+.linedTab.s2 .s2 a,
+.linedTab.s3 .s3 a,
+.linedTab.s4 .s4 a,
+.linedTab.s5 .s5 a,
+.linedTab.s6 .s6 a,
+.linedTab.s7 .s7 a,
+.linedTab.s8 .s8 a,
+.linedTab.s9 .s9 a,
+.linedTab.s10 .s10 a,
+.linedTab.s11 .s11 a,
+.linedTab.s12 .s12 a{ font-weight:bold; letter-spacing:-1px; color:#333 !important;}
+
+/* jsOff */
+.linedTab.jsOff{ padding:0;}
+.linedTab.jsOff ul{ border:0;}
+.linedTab.jsOff li{ float:none;}
+.linedTab.jsOff li a{ float:none; display:block; font-weight:bold; color:#333; border:1px solid #eee !important; border-bottom-color:#ccc !important; background:#fafafa !important;}
+.linedTab.jsOff li ul{ position:static; display:block; padding:5px 0; left:0; top:0;}
+.linedTab.jsOff li li{ display:inline;}
+.linedTab.jsOff li li a{ display:inline; letter-spacing:normal; border:0 !important; font-weight:normal !important; color:#333 !important; background:none !important;}
+.linedTab.jsOff li li a:hover,
+.linedTab.jsOff li li a:active,
+.linedTab.jsOff li li a:focus{ text-decoration:underline;}
