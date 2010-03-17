@@ -29,17 +29,20 @@ jQuery(function($){
 		};
 	});
 	// Input Clear
-	var iText = $('label.iLabel').next('.iText');
-	iText.attr('value','');
+	var iText = $('.iClear>.iLabel').next('.iText');
+	$('.iClear>.iLabel').css('position','absolute');
 	iText
 		.focus(function(){
-			$(this).prev('label.iLabel').attr('style','visibility:hidden');
+			$(this).prev('.iLabel').css('visibility','hidden');
 		})
 		.blur(function(){
 			if($(this).val() == ''){
-				$(this).prev('label.iLabel').attr('style','visibility:visible');
+				$(this).prev('.iLabel').css('visibility','visible');
+			} else {
+				$(this).prev('.iLabel').css('visibility','hidden');
 			}
-		});
+		})
+		.blur();
 	// Validation
 	$('#login>.gLogin input[type=submit]').click(function(){
 		if(uid.val() == '' && upw.val() == ''){
