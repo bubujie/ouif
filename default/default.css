@@ -5,7 +5,6 @@
 body, input, textarea, select, table, button { font-family:Tahoma, Geneva, sans-serif; font-size:12px;}
 img, fieldset { border:0;}
 form, fieldset { margin:0; padding:0;}
-hr{ display:none;}
 em, address { font-style:normal;}
 button{ margin:0; padding:0; overflow:visible; cursor:pointer;}
 a { text-decoration:none;}
@@ -14,4 +13,4 @@ a:hover, a:active, a:focus {text-decoration:underline;}
 /* Common Class */
 .iText, textarea{ border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1; background:transparent;}
 .iCheck, .iRadio{ width:13px; height:13px; margin:0; padding:0; vertical-align:middle;}
-.alt{ position:absolute; left:0; top:0; width:1px; height:1px; font-size:0; line-height:0; visibility:hidden;}
+.hide{ position:absolute; left:0; top:0; width:1px; height:1px; font-size:0; line-height:0; visibility:hidden;}

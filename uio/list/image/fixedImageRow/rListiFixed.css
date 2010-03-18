@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* OUIF | JCM */
+
+/* Image Fixed Row List */
+.rListiFixed ul{ margin:0; padding:0; list-style:none; font-size:12px; font-family:Tahoma, Geneva, sans-serif;}
+.rListiFixed li{ position:relative; padding:15px 0 15px 135px; margin:0 0 -1px 0; border:1px solid #eee; border-left:0; border-right:0; vertical-align:top; *zoom:1;}
+.rListiFixed li:after{ content:""; display:block; clear:both;}
+.rListiFixed a{ text-decoration:none; cursor:pointer;}
+.rListiFixed a strong{ display:inline-block; margin:0 0 4px 0; color:#333;}
+.rListiFixed a:hover strong,
+.rListiFixed a:active strong,
+.rListiFixed a:focus strong{ text-decoration:underline;}
+.rListiFixed .thumb{ float:left; display:inline-block; width:120px; line-height:80px; overflow:hidden; margin:0 15px 0 -135px; background:#eee; text-align:center; color:#666; -moz-box-shadow:0 0 5px #666; -webkit-box-shadow:0 0 5px #666;}
+.rListiFixed .thumb img{ border:0; display:block;}
+.rListiFixed p{ margin:0; line-height:1.4; color:#767676;}

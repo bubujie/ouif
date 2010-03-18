@@ -1,7 +1,7 @@
 @charset "utf-8"; 
 /* OUIF : JCM */
-/* Mask */
+/* Modal Windowed Layer */
 html, body{ height:100%; margin:0;}
-.mask{ position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%;}
-.mask .background{ position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
-.mask .foreground{ position:absolute; top:50%; left:50%; background:#fff; border:3px solid #ccc;}
+.mw{ position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%;}
+.mw .bg{ position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
+.mw .fg{ position:absolute; width:400px; height:200px; margin:-100px 0 0 -200px; top:50%; left:50%; background:#fff; border:3px solid #ccc;}
