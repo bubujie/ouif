@@ -1,2 +1,23 @@
+@charset "utf-8";
 /* CSS Document */
 
+/* Image Fixed Col List */
+.cListiFixed ul{ position:relative; margin:0; padding:0; border:1px solid #ddd; border-left:0; border-right:0; list-style:none; overflow:hidden; font-size:12px; font-family:Tahoma, Geneva, sans-serif; *zoom:1;}
+.cListiFixed ul:after{ content:""; display:block; clear:both;}
+.cListiFixed li{ position:relative; top:1px; float:left; width:150px; height:210px; overflow:hidden; border-bottom:1px solid #eee;}
+.cListiFixed .thumb{ position:relative; display:block; width:120px; height:120px; line-height:120px; overflow:hidden; text-align:center; background:#eee; color:#666; white-space:nowrap;}
+.cListiFixed .thumb img{ display:block; border:0; width:120px; height:120px;}
+.cListiFixed .thumb em{ position:absolute; visibility:hidden; width:1px; height:1px; left:0; bottom:0; text-align:center; background:#000; opacity:.6; filter:alpha(opacity=60); color:#fff; font-weight:bold; font-style:normal;}
+.cListiFixed .thumb em{ _width:100%; _height:auto; _line-height:20px; _visibility:visible;}
+.cListiFixed a{ display:block; width:120px; padding:20px 0 0 0; margin:0 auto; text-decoration:none; cursor:pointer;}
+.cListiFixed a strong{ display:inline-block; margin:8px 0 0 0; color:#333;}
+.cListiFixed p{ width:120px; margin:0 auto; font-size:11px; color:#767676;}
+.cListiFixed a:hover strong,
+.cListiFixed a:active strong,
+.cListiFixed a:focus strong{ text-decoration:underline;}
+.cListiFixed a:hover .thumb,
+.cListiFixed a:active .thumb,
+.cListiFixed a:focus .thumb{ border:3px solid #eee; margin:-3px; -moz-box-shadow:0 0 5px #666; -webkit-box-shadow:0 0 5px #666;}
+.cListiFixed a:hover .thumb em,
+.cListiFixed a:active .thumb em,
+.cListiFixed a:focus .thumb em{ width:100%; height:auto; visibility:visible;}
