@@ -7,9 +7,17 @@
 .rListiFixed li:after{ content:""; display:block; clear:both;}
 .rListiFixed a{ text-decoration:none; cursor:pointer;}
 .rListiFixed a strong{ display:inline-block; margin:0 0 4px 0; color:#333;}
+.rListiFixed .thumb{ position:relative; float:left; display:inline; width:120px; line-height:80px; overflow:hidden; margin:0 15px 0 -135px; background:#eee; text-align:center; color:#666; -moz-box-shadow:0 0 5px #666; -webkit-box-shadow:0 0 5px #666;}
+.rListiFixed .thumb img{ border:0; display:block;}
+.rListiFixed .thumb em{ position:absolute; visibility:hidden; width:1px; height:1px; left:0; top:50%; margin:-40px 0 0 0; text-align:center; background:#000; opacity:.6; filter:alpha(opacity=60); color:#fff; font-weight:bold; font-style:normal;}
+.rListiFixed .thumb em{ _width:100%; _height:auto; _line-height:20px; _visibility:visible;}
+.rListiFixed p{ margin:0; line-height:1.4; color:#767676;}
 .rListiFixed a:hover strong,
 .rListiFixed a:active strong,
 .rListiFixed a:focus strong{ text-decoration:underline;}
-.rListiFixed .thumb{ float:left; display:inline-block; width:120px; line-height:80px; overflow:hidden; margin:0 15px 0 -135px; background:#eee; text-align:center; color:#666; -moz-box-shadow:0 0 5px #666; -webkit-box-shadow:0 0 5px #666;}
-.rListiFixed .thumb img{ border:0; display:block;}
-.rListiFixed p{ margin:0; line-height:1.4; color:#767676;}
+.rListiFixed a:hover .thumb,
+.rListiFixed a:active .thumb,
+.rListiFixed a:focus .thumb{ border:3px solid #eee; margin:-3px -3px -3px -138px; -moz-box-shadow:0 0 5px #666; -webkit-box-shadow:0 0 5px #666;}
+.rListiFixed a:hover .thumb em,
+.rListiFixed a:active .thumb em,
+.rListiFixed a:focus .thumb em{ width:100%; height:100%; height:auto; visibility:visible;}
