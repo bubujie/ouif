@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* OUIF | JCM */
 
-/* Image Fixed Row List */
+/* Fixed Image Row List */
 .rListiFixed ul{ margin:0; padding:0; list-style:none; font-size:12px; font-family:Tahoma, Geneva, sans-serif;}
 .rListiFixed li{ position:relative; padding:15px 0 15px 135px; margin:0 0 -1px 0; border:1px solid #eee; border-left:0; border-right:0; vertical-align:top; *zoom:1;}
 .rListiFixed li:after{ content:""; display:block; clear:both;}
