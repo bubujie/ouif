@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* Image Fixed Col List */
+/* Fixed Image Col List */
 .cListiFixed ul{ position:relative; margin:0; padding:0; border:1px solid #ddd; border-left:0; border-right:0; list-style:none; overflow:hidden; font-size:12px; font-family:Tahoma, Geneva, sans-serif; *zoom:1;}
 .cListiFixed ul:after{ content:""; display:block; clear:both;}
 .cListiFixed li{ position:relative; top:1px; float:left; width:150px; height:210px; overflow:hidden; border-bottom:1px solid #eee;}
