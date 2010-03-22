@@ -2,7 +2,8 @@
 /* OUIF | JCM */
 
 /* table */
-.table{ width:100%; border:0; border-top:2px solid #999; font:12px Tahoma, Geneva, sans-serif;}
+.table{ margin:1em 0;}
+.table table{ width:100%; border:0; border-top:2px solid #999; font:12px Tahoma, Geneva, sans-serif;}
 .table caption{ padding:8px 0; font-weight:bold; text-align:left;}
 .table th,
 .table td{ border:0; padding:8px; vertical-align:top;}
