@@ -6,7 +6,8 @@ jQuery(function($){
 	var ssItem = sMenu.find('>ul>li>ul>li');
 	var lastEvent = null;
 	
-	sItem.find('ul').attr('style','display:none');
+	sItem.find('>ul').css('display','none');
+	sMenu.find('>ul>li[class=active]').find('>ul').css('display','block');
 
 	function sMenuToggle(event){
 		var t = $(this);
