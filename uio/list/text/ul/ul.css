@@ -1,5 +1,5 @@
-@charset "utf-8";
-/* OUIF | JCM */
+@charset "utf-8"; 
+
 /* List Section */
 .listSection{ position:relative; border:1px solid #ddd; font-size:12px; line-height:normal; *zoom:1; background:#fff;}
 .listSection a{ text-decoration:none; color:#666;}

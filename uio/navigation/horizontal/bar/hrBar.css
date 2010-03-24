@@ -1,5 +1,4 @@
-@charset "utf-8";
-/* OUIF : JCM */
+@charset "utf-8"; 
 
 /* Menu Common */
 .menu{ position:relative; overflow:visible; border:1px solid; font-size:12px; line-height:normal; *zoom:1; white-space:nowrap; font-family:Tahoma, Geneva, sans-serif;}
