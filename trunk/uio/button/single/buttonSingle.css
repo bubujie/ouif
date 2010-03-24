@@ -1,5 +1,5 @@
 @charset "utf-8"; 
-/* OUIF : JCM */
+
 /* btnSingle */
 .btnSingle,
 .btnSingle a{ position:relative; display:inline-block; vertical-align:top; height:56px; line-height:56px; font-size:14px; background:url(btnSingle.gif) no-repeat; white-space:nowrap; font-weight:bold; text-decoration:none; color:#333;}
