@@ -2,8 +2,9 @@
 
 /* QnA */
 .qna{ font-size:12px; border-bottom:1px solid #ddd;}
-.qna .hgroup{ position:relative;}
+.qna .hgroup{ position:relative; *zoom:1;}
 .qna .hgroup .trigger{ position:absolute; bottom:0; right:0; font-size:12px; border:0; padding:0; overflow:visible; background:none; cursor:pointer;}
+.qna ul{ list-style:none; margin:0; padding:0;}
 .qna .q{ margin:0; border-top:1px solid #ddd;}
 .qna .q a.trigger{ display:block; padding:10px 15px; text-align:left; font-weight:bold; color:#333; background:#fafafa; text-decoration:none !important;}
 .qna .hide .q a.trigger{ font-weight:normal; background:none;}
