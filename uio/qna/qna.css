@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* QnA */
+.qna{ font-size:12px; border-bottom:1px solid #ddd;}
+.qna .hgroup{ position:relative;}
+.qna .hgroup .trigger{ position:absolute; bottom:0; right:0; font-size:12px; border:0; padding:0; overflow:visible; background:none; cursor:pointer;}
+.qna .q{ margin:0; border-top:1px solid #ddd;}
+.qna .q a.trigger{ display:block; padding:10px 15px; text-align:left; font-weight:bold; color:#333; background:#fafafa; text-decoration:none !important;}
+.qna .hide .q a.trigger{ font-weight:normal; background:none;}
+.qna .q a.trigger:hover,
+.qna .q a.trigger:active,
+.qna .q a.trigger:focus{ color:#000; background:#f8f8f8;}
+.qna .a{ margin:0; padding:10px 15px; line-height:1.5;}
+.qna .hide .a{ display:none;}
