@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* Form Table */
+.formTable{ margin:1em 0; font-size:12px; font-family:Tahoma, Geneva, sans-serif;}
+.formTable input,
+.formTable textarea,
+.formTable select,
+.formTable table,
+.formTable button{ font-size:12px;}
+.formTable table{ width:100%; border:0; border-top:2px solid #999;}
+.formTable caption{ padding:8px 0; font-weight:bold; text-align:left;}
+.formTable th,
+.formTable td{ border:0; padding:8px; vertical-align:top;}
+.formTable th{ color:#333;}
+.formTable td{ color:#666;}
+.formTable thead th{ border-bottom:1px solid #ccc; background:#f8f8f8;}
+.formTable tbody th{ border-bottom:1px solid #ddd; background:#fafafa; text-align:left;}
+.formTable tfoot th{ border-bottom:1px solid #ddd;}
+.formTable tbody td{ border-bottom:1px solid #ddd;}
+.formTable tfoot td{ border-bottom:1px solid #ddd; font-weight:bold; color:#333;}
+.formTable .ic{ position:relative; margin:-4px 0;}
+.formTable .ic .iHelp{ position:absolute; top:4px; right:0;}
+.formTable .ic .desc{ margin:2px 0;}
+.formTable .ic .iCheck,
+.formTable .ic .iRadio{ width:13px; height:13px; padding:0; margin:2px 5px 2px 0; vertical-align:middle;}
+.formTable .ic .iText{ padding:3px 4px; margin:2px; border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1; background:transparent;}
+.formTable .ic .hide{ position:absolute; left:0; top:0; width:1px; height:1px; font-size:0; line-height:0; visibility:hidden;}
+.formTable .ic select{ margin:2px;}
+.formTable .ic label{ margin:0 10px 0 0; cursor:pointer;}
