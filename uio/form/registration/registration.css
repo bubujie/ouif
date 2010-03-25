@@ -44,12 +44,3 @@
 .regist .btnRegist{ background-position:left top; margin-right:2px;}
 .regist .btnRegist *{ background-position:right top; left:2px; padding:0 8px 0 6px; font-size:12px; color:#333; text-decoration:none !important;}
 .regist .btnRegist.strong *{ font-weight:bold;}
-
-/*.tableAdmin .ic{ position:relative; margin:-4px 0;}
-.tableAdmin .ic .iHelp{ position:absolute; top:4px; right:0;}
-.tableAdmin .ic .desc{ margin:2px 0;}
-.tableAdmin .ic .iText,
-.tableAdmin .ic select{ margin:2px;}
-.tableAdmin .ic .iCheck,
-.tableAdmin .ic .iRadio{ margin:2px 5px 2px 0;}
-.tableAdmin .ic label{ margin:0 10px 0 0;}*/
