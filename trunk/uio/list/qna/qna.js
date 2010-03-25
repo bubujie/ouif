@@ -3,17 +3,22 @@ jQuery(function(){
 	var article = $('.qna .article');
 	article.addClass('hide');
 	
-	$('.qna .article .q .trigger').click(function(){
-		article.addClass('hide'); //다른 답변이 닫히지 않도록 하려면 이 라인을 주석 처리
-		$(this).parents('.article').toggleClass('hide');
+	$('.qna .article .trigger').click(function(){
+		var myArticle = $(this).parents('.article:first');
+		if(myArticle.hasClass('hide')){
+			article.addClass('hide').removeClass('show'); // 아코디언 효과를 원치 않으면 이 라인을 지우세요
+			myArticle.removeClass('hide').addClass('show');
+		} else {
+			myArticle.removeClass('show').addClass('hide');
+		}
 	});
 	
 	$('.qna .hgroup .trigger').click(function(){
 		var hidden = $('.qna .article.hide').length;
 		if(hidden > 0){
-			article.removeClass('hide');
+			article.removeClass('hide').addClass('show');
 		} else {
-			article.addClass('hide');
+			article.removeClass('show').addClass('hide');
 		}
 	});
 	
