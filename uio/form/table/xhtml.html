@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>OUIF : Form Table</title>
+<link rel="stylesheet" type="text/css" href="formTable.css"/>
+</head>
+<body>
+<form action="" method="post">
+	<div class="formTable">
+		<table border="1" cellspacing="0" summary="표의 요약을 반드시 넣어 주세요">
+			<tbody>
+				<tr>
+					<th scope="row">인풋: 설명 숨기고 줄 바꿈 없는</th>
+					<td>
+						<div class="ic">
+							<input type="text" name="" class="iText" title="레이블 텍스트" />
+							<button type="button" class="iHelp"><span>?</span></button>
+							<span class="desc hide">숨겨둔 설명 입니다. 줄 바꿈 없습니다.</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">인풋: 설명 숨기고 줄 바꿈</th>
+					<td>
+						<div class="ic">
+							<input type="text" name="" class="iText" title="레이블 텍스트" />
+							<button type="button" class="iHelp"><span>?</span></button>
+							<p class="desc hide">숨겨둔 설명 입니다. 줄 바꿈 했습니다.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">인풋: 설명 보이고 줄 바꿈 없는</th>
+					<td>
+						<div class="ic">
+							<input type="text" name="" class="iText" title="레이블 텍스트" /> 숨겨두지 않은 설명 입니다. 줄 바꿈 없습니다.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">인풋: 설명 보이고 줄 바꿈</th>
+					<td>
+						<div class="ic">
+							<input type="text" name="" class="iText" title="레이블 텍스트" />
+							<p class="desc">숨겨두지 않은 설명 입니다. 줄 바꿈 했습니다.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">인풋: 줄 바꿈 없는 인풋</th>
+					<td>
+						<div class="ic">
+							<input type="text" name="" class="iText" title="레이블 텍스트" /> <input type="text" name="" class="iText" title="레이블 텍스트" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">인풋: 줄 바꿈</th>
+					<td>
+						<div class="ic">
+							<input type="text" name="" class="iText" title="레이블 텍스트" /><br />
+							<input type="text" name="" class="iText" title="레이블 텍스트" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">멀티라인 인풋</th>
+					<td>
+						<div class="ic">
+							<textarea name="" cols="50" rows="5" class="iText" title="레이블 텍스트"></textarea>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">셀렉트: 단일 선택</th>
+					<td>
+						<div class="ic">
+							<select name="">
+								<option>옵션 하나</option>
+								<option>옵션 둘</option>
+								<option>옵션 셋</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">셀렉트: 복수 선택</th>
+					<td>
+						<div class="ic">
+							<select name="" multiple="multiple">
+								<option>옵션 하나</option>
+								<option>옵션 둘</option>
+								<option>옵션 셋</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">체크박스 인풋: 줄 바꿈 없는</th>
+					<td>
+						<div class="ic">
+							<input name="" type="checkbox" value="" class="iCheck" id="a1" /><label for="a1">레이블</label> <input name="" type="checkbox" value="" class="iCheck" id="a2" /><label for="a2">레이블</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">체크박스 인풋: 줄 바꿈 있는</th>
+					<td>
+						<div class="ic">
+							<input name="" type="checkbox" value="" class="iCheck" id="b1" /><label for="b1">레이블</label><br />
+							<input name="" type="checkbox" value="" class="iCheck" id="b2" /><label for="b2">레이블</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">라디오 인풋: 줄 바꿈 없는</th>
+					<td>
+						<div class="ic">
+							<input name="" type="radio" value="" class="iRadio" id="c1" /><label for="c1">레이블</label> <input name="" type="radio" value="" class="iRadio" id="c2" /><label for="c2">레이블</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">라디오 인풋: 줄 바꿈 있는</th>
+					<td>
+						<div class="ic">
+							<input name="" type="radio" value="" class="iRadio" id="d1" /><label for="d1">레이블</label><br />
+							<input name="" type="radio" value="" class="iRadio" id="d2" /><label for="d2">레이블</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">파일</th>
+					<td>
+						<div class="ic">
+							<input name="" type="file" title="레이블 텍스트" />
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> 
+<script type="text/javascript" src="formTable.js"></script>
+</body>
+</html>

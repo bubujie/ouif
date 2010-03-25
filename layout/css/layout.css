@@ -14,7 +14,7 @@ A CSS framework begins here. We don't recommend modifying framework. You can ove
 #header:after{ content:""; display:block; clear:both;}
 #body{ position:relative; clear:both; *zoom:1;}
 #body:after{ content:""; display:block; clear:both;}
-#content{ position:relative; text-align:justify; *zoom:1;}
+#content{ position:relative; *zoom:1;}
 #content:after{ content:""; display:block; clear:both;}
 #footer{ position:relative; clear:both; *zoom:1;}
 #footer:after{ content:""; display:block; clear:both;}
