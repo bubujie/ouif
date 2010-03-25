@@ -9,15 +9,15 @@ jQuery(function($){
 	
 	// Radio Default Value
 	$('div.myValue').each(function(){
-		var default_value = $(this).next('ul').find('label:first').text();
+		var default_value = $(this).next('.iList').find('input[checked]').next('label').text();
 		$(this).append(default_value);
 	});
 	
 	// Line
-	select_value.focusin(function(){$(this).addClass('outLine');});
-	select_value.focusout(function(){$(this).removeClass('outLine');});
-	select_input.focusin(function(){$(this).parents('div.select').children('div.myValue').addClass('outLine');});
-	select_input.focusout(function(){$(this).parents('div.select').children('div.myValue').removeClass('outLine');});
+	select_value.bind('focusin',function(){$(this).addClass('outLine');});
+	select_value.bind('focusout',function(){$(this).removeClass('outLine');});
+	select_input.bind('focusin',function(){$(this).parents('div.select').children('div.myValue').addClass('outLine');});
+	select_input.bind('focusout',function(){$(this).parents('div.select').children('div.myValue').removeClass('outLine');});
 	
 	// Show
 	function show_option(){
@@ -41,15 +41,15 @@ jQuery(function($){
 	// Set Input
 	function set_label(){
 		var v = $(this).next('label').text();
-		$(this).parents('ul:first').prev(select_value).text('').append(v);
-		$(this).parents('ul:first').prev(select_value).addClass('selected');
+		$(this).parents('ul:first').prev('.myValue').text('').append(v);
+		$(this).parents('ul:first').prev('.myValue').addClass('selected');
 	}
 	
 	// Set Anchor
 	function set_anchor(){
 		var v = $(this).text();
-		$(this).parents('ul:first').prev(select_value).text('').append(v);
-		$(this).parents('ul:first').prev(select_value).addClass('selected');
+		$(this).parents('ul:first').prev('.myValue').text('').append(v);
+		$(this).parents('ul:first').prev('.myValue').addClass('selected');
 	}
 
 	// Anchor Focus Out
