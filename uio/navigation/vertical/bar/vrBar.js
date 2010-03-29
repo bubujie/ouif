@@ -27,7 +27,7 @@ jQuery(function($){
 		}
 		
 		if (t.parent('li').hasClass('active')){
-			sItem.removeClass('active');
+			t.parent('li').removeClass('active');
 		} else {
 			sItem.removeClass('active');
 			t.parent('li').addClass('active');
