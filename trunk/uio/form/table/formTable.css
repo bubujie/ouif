@@ -23,7 +23,7 @@
 .formTable .item .desc{ margin:2px 0;}
 .formTable .item .itemheck,
 .formTable .item .iRadio{ width:13px; height:13px; padding:0; margin:2px 5px 2px 0; vertical-align:middle;}
-.formTable .item .iText{ padding:3px 4px; margin:2px; border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1; background:transparent;}
+.formTable .item .iText{ position:relative; padding:3px 4px; margin:2px; border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1; background:transparent;}
 .formTable .item .hide{ position:absolute; left:0; top:0; width:1px; height:1px; font-size:0; line-height:0; visibility:hidden;}
 .formTable .item select{ margin:2px;}
 .formTable .item label{ margin:0 10px 0 0; cursor:pointer;}
