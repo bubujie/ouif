@@ -29,8 +29,8 @@ jQuery(function($){
 		};
 	});
 	// Input Clear
-	var iText = $('.iClear>.iLabel').next('.iText');
-	$('.iClear>.iLabel').css('position','absolute');
+	var iText = $('.item>.iLabel').next('.iText');
+	$('.item>.iLabel').css('position','absolute');
 	iText
 		.focus(function(){
 			$(this).prev('.iLabel').css('visibility','hidden');

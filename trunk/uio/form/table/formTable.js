@@ -1,6 +1,6 @@
 jQuery(function(){
 	// Help Toggle
-	$('.ic>.iHelp').click(function(){
-		$(this).parent('.ic').find('.desc').toggleClass('hide');
+	$('.item>.iHelp').click(function(){
+		$(this).parent('.item').find('.desc').toggleClass('hide');
 	});
 });
