@@ -8,7 +8,7 @@
 .search select{ vertical-align:top; height:23px; *margin-top:2px;}
 .search .item{ display:inline-block; position:relative; vertical-align:top;}
 .search .iLabel{ position:absolute; top:4px; left:5px; color:#767676; white-space:nowrap;}
-.search .iText{ padding:4px 4px 3px; *margin:-1px 0; color:#333; border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1;}
+.search .iText{ position:relative; padding:4px 4px 3px; *margin:-1px 0; color:#333; border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1;}
 .search .btnSearch,
 .search .btnSearch input{ position:relative; display:inline-block; vertical-align:top; height:24px; line-height:24px; border:0; overflow:visible; background:url(btnSearch.gif) no-repeat; white-space:nowrap; cursor:pointer;}
 .search .btnSearch{ background-position:left top; margin-right:2px;}
