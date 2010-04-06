@@ -20,7 +20,8 @@
 .formTable tfoot td{ border-bottom:1px solid #ddd; font-weight:bold; color:#333;}
 .formTable .item{ position:relative; margin:-4px 0;}
 .formTable .item .iHelp{ position:absolute; top:4px; right:0;}
-.formTable .item .desc{ margin:2px 0;}
+.formTable .item .iLabel{ top:5px; left:6px;}
+.formTable .item .iDesc{ margin:2px 0;}
 .formTable .item .itemheck,
 .formTable .item .iRadio{ width:13px; height:13px; padding:0; margin:2px 5px 2px 0; vertical-align:middle;}
 .formTable .item .iText{ position:relative; padding:3px 4px; margin:2px; border:1px solid #b7b7b7; border-right-color:#e1e1e1; border-bottom-color:#e1e1e1; background:transparent;}
