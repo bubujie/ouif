@@ -7,12 +7,13 @@
 .listU a:active,
 .listU a:focus{ text-decoration:underline;}
 .listU em{ font-style:normal;}
-.listU h2{ font-size:12px; margin:0; padding:10px 0 8px 13px; color:#333; border-bottom:1px solid #ddd;}
+.listU h2{ font-size:12px; margin:0; padding:10px 0 8px 13px; color:#333; border:1px solid #fff; background:#f7f7f7;}
 .listU h2 em{ color:#cf3292;}
-.listU ul{ margin:13px; padding:0; list-style:none;}
+.listU ul{ margin:0; padding:10px 12px 0 12px; list-style:none; border-top:1px solid #ddd;}
 .listU li{ position:relative; margin:0 0 10px 0;}
 .listU li:after{ content:""; display:block; clear:both;}
-.listU li a{ float:left; clear:left;}
+.listU li .i{ float:left; margin:0 4px 0 0;}
+.listU li a{ float:left;}
 .listU li .time{ float:right; clear:right; color:#a8a8a8; font:11px Tahoma; white-space:nowrap;}
-.listU .more{ position:absolute; top:10px; right:13px; font:11px Dotum, 돋움; text-decoration:none !important;}
+.listU .more{ position:absolute; top:10px; right:12px; font:11px Dotum, 돋움; text-decoration:none !important;}
 .listU .more span{ font-weight:bold; color:#d76ea9; font-size:16px; vertical-align:middle; margin:0 2px 0 0;}
