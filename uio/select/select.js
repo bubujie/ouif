@@ -56,12 +56,20 @@ jQuery(function($){
 	$('*:not("div.select a")').focus(function(){
 		$('.aList').parent('.select').removeClass('open');
 	});
-			
+	
 	select_value.click(show_option);
 	select_root.removeClass('open');
 	select_root.mouseleave(function(){$(this).removeClass('open');});
 	select_a.click(set_anchor).click(hide_option).focus(i_hover).hover(i_hover);
 	select_input.change(set_label).focus(set_label);
 	select_label.hover(i_hover).click(hide_option);
+	
+	// Form Reset
+	$('input[type="reset"], button[type="reset"]').click(function(){
+		$(this).parents('form:first').find('.myValue').each(function(){
+			var origin = $(this).next('ul:first').find('li:first label').text();
+			$(this).text(origin).removeClass('selected');
+		});
+	});
 	
 });

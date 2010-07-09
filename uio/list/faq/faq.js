@@ -3,6 +3,8 @@ jQuery(function(){
 	var article = $('.faq .article');
 	article.addClass('hide');
 	article.find('.a').slideUp(100);
+	article.eq(0).removeClass('hide').addClass('show'); // 첫 번째 항목을 열어 둡니다
+	article.eq(0).find('.a').slideDown(100); // 첫 번째 항목을 열어 둡니다
 	
 	$('.faq .article .trigger').click(function(){
 		var myArticle = $(this).parents('.article:first');
