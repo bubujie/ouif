@@ -1,0 +1,818 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CSS3 소개(발표용)</title>
+<style>
+html, body{ height:100%; margin:0;}
+@font-face{ font-family:ngttf; src: url(img/NanumGothic.ttf);}
+@font-face{ font-family:ngeot; src: url(img/NanumGothic.eot);}
+body, input, textarea, select, button{font-family:NanumGothic, 나눔고딕, ngttf, ngeot, Tahoma, Geneva, sans-serif;}
+header, footer, section, article, nav{ display:block;}
+header{ height:100%;}
+section{ position:relative; width:100%; height:100%;}
+nav{ position:absolute; bottom:50px; right:50px; font-size:12px; color:#ccc;}
+em{ font-style:normal;}
+img{ border:0;}
+.toc{ height:100%; position:static; color:#000; font-size:16px; margin:0 100px; padding:100px 0 0 0;}
+.fs24{ font-size:24px; margin:0 0 15px 0;}
+.boxShadow{ box-shadow:0 0 10px #333; -moz-box-shadow:0 0 10px #000; -webkit-box-shadow:0 0 10px #333; filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=10,OffY=10,Color=silver,Positive);}
+.browserSupport img{ height:32px; vertical-align:middle;}
+code{ display:block; margin:0 0 30px 0; padding:10px; font-size:36px; white-space:nowrap; overflow:auto; background:#000; color:#fff; font-family:"Lucida Console", Monaco, monospace; word-wrap:break-word; box-shadow:0 0 10px #333; -moz-box-shadow:0 0 10px #000; -webkit-box-shadow:0 0 10px #333;}
+code em{ color:#ff0;}
+article{ position:relative; height:100%; margin:0 100px; padding:1px 0; line-height:1;}
+h1{ position:relative; width:100%; height:100%; text-align:center; margin:0; font-family:Tahoma, Geneva, sans-serif;}
+h1 a{ text-decoration:none; cursor:pointer;}
+h1 span{ display:block; position:relative; z-index:2; text-shadow:0 0 30px #000; line-height:600px; font-size:400px; -webkit-transition:font-size .5s, opacity .5s; opacity:.7; filter:alpha(opacity=70); -ms-filter:"alpha(opacity=70)"; *zoom:1;}
+h1 a:hover span{ font-size:500px; opacity:1;}
+h1 strong{ position:absolute; z-index:1; left:0; top:-80px; width:100%; text-align:center; font-size:600px; vertical-align:middle; color:#3EAF0E; text-shadow:0 0 30px #3EAF0E;}
+article h2{ position:relative; font-size:60px; margin:50px 0 30px 0; line-height:1; z-index:2;}
+article p{ position:relative; margin:0; line-height:1.2;}
+article .menu{ margin:0; padding:0 20px; list-style:none; background:#eee; height:50px; border:1px solid #999; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; *zoom:1;}
+article .menu:after{ content:""; display:block; clear:both;}
+article .menu li{ float:left;}
+article .menu a{ display:inline-block; background:#eee; font-weight:bold; font-size:30px; padding:10px 15px; margin:0; border:0; text-decoration:none; color:#000; text-shadow:1px 1px 0 #fff; -o-transition:.2s; -moz-transition:.2s; -webkit-transition:.2s; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+article .menu li.on a,
+article .menu a:hover,
+article .menu a:active,
+article .menu a:focus{ position:relative; z-index:100; background:#ddd; padding:20px 20px; margin:-10px -6px; border:1px solid #999; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; opacity:0.8;}
+article .ani{ position:relative; display:block; width:300px; height:300px; border:20px solid #ccc; -o-transition:1s; -webkit-transition:1s; -webkit-animation:webkitFire infinite 1s linear; border-radius:150px; -moz-border-radius:170px; -webkit-border-radius:170px; text-align:center; line-height:300px; font-size:36px; font-weight:bold;}
+article .ani:hover{ -webkit-animation:none; border-color:#f00;}
+@-webkit-keyframes 'webkitFire'{ from{ -webkit-transform:rotate(0deg);} to{-webkit-transform:rotate(360deg);}}
+article .iPhone{ -o-transition:1s; -webkit-transition:1s;}
+:root .iPhoneText{ top:0 !important;}
+article .iPhone:hover{ -o-transform:scale(1.1, 1.1); -webkit-transform:scale(1.1, 1.1);}
+@media print{
+code{ overflow:visible; white-space:normal;}
+}
+</style>
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<header id="s0" style="background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#fff)); background:-moz-linear-gradient(top, #ccc, #fff); filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#cccccc, endColorStr=#ffffff)">
+	<h1><a href="#tc"><span>CSS</span><strong>3</strong></a></h1>
+	<p style="text-align:center; position:absolute; z-index:2; width:100%; top:50%; font-size:12px; color:#ccc; font-family:Tahoma, Geneva, sans-serif;">정찬명</p>
+	<nav>
+		<a href="#tc">다음 &gt;</a>
+	</nav>
+</header>
+<section id="tc">
+	<nav class="toc">
+		<h2>Table of Contents</h2>
+		<ol>
+			<li><a href="#s1">CSS3는 언제 지원 되는거야?</a></li>
+			<li><a href="#s10">text-shadow</a></li>
+			<li><a href="#s12">text-overflow</a></li>
+			<li><a href="#s14">word-wrap</a></li>
+			<li><a href="#s16">@font-face</a></li>
+			<li><a href="#s18">opacity</a></li>
+			<li><a href="#s20">box-shadow</a></li>
+			<li><a href="#s22">border-radius</a></li>
+			<li><a href="#s25">background(s)</a></li>
+			<li><a href="#s27">gradient</a></li>
+			<li><a href="#s29">transform</a></li>
+			<li><a href="#s31">transition</a></li>
+			<li><a href="#s33">animation</a></li>
+			<li><a href="#s35">브라우저가 '지원'하면 우리는 '실행'한다.</a></li>
+		</ol>
+	</nav>
+	<nav>
+		<a href="#s0">&lt; 이전</a>
+		|
+		<a href="#s1">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s1">
+	<article>
+		<p style="position:absolute"><img src="img/s1.jpg" style="width:100%" alt="CSS3는 언제 지원되는거야! 우리 다 죽은 다음에?" /></p>
+		<p style="position:absolute; left:0; bottom:50px">
+			<img src="img/s1_namo.png" width="77" height="77" alt="나모" style="float:left; border:1px solid #ccc; vertical-align:bottom; margin:0 1em 0 0; display:block">
+			<span style="float:left">일러스트: 조남호<br> <a href="http://namojo.tistory.com/" style="float:left">http://namojo.tistory.com/</a></span>
+		</p>
+	</article>
+	<nav>
+		<a href="#tc">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s2">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s2">
+	<article>
+		<h2><strong style="font-size:150px">CSS3,</strong> <br>기다리기만 하실껀가요?</h2>
+		<p style="font-size:48px; margin:0 0 30px 0">모든 브라우저들이 CSS3를 완벽하게 지원하고<br> IE 6, 7, 8이 사라질때 까지?</p>
+		<p style="font-size:48px">오, 마이 갓! </p>
+	</article>
+	<nav>
+		<a href="#s1">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s3">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s3">
+	<article>
+		<h2>그런 날은<br> 오지 않아요.</h2>
+		<p class="fs14 ffss"><img src="img/s3.jpg" width="300" alt="CSS의 창시자 호콘비움리와 함께." class="boxShadow" style="margin:0 0 1em 0"><br>CSS의 창시자 호콘비움리와 함께. 2010년 5월 6일.</p>
+	</article>
+	<nav>
+		<a href="#s2">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s4">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s4">
+	<article>
+		<h2>롸잇나우!</h2>
+		<p class="ffss"><img src="img/s4.jpg" width="300" class="boxShadow" alt="허경영의 롸잇나우!"></p>
+	</article>
+	<nav>
+		<a href="#s3">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s5">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s5">
+	<article>
+		<h2>더 좋은 도구를 선택한 사용자에게는 더 향상된 경험을. </h2>
+		<p class="fs24" style="margin:0 0 1em 0">이것은 좋은 도구(브라우저)를 선택하지 않은 사용자를 차별하는 것이 아니며 그래서도 안된다. <br>중요한 것은 '경험의 질'을 높이는 것이지 어떤 사용자를 '포기'하자는 것이 아니다.</p>
+		<p>
+			<img src="img/br_cr.png" width="100" height="100" alt="크롬">
+			<img src="img/br_ff.png" width="107" height="100" alt="파이어폭스">
+			<img src="img/br_sf.png" width="100" height="100" alt="사파리">
+			<img src="img/br_op.png" width="116" height="100" alt="오페라">
+			<img src="img/br_ie.png" width="105" height="100" alt="인터넷익스플로러">
+		</p>
+		<p><img src="img/s27.jpg" width="150" alt="아이폰"></p>
+	</article>
+	<nav>
+		<a href="#s4">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s6">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s6">
+	<article>
+		<h2>브라우저가 지원하면 우리도 지원한다.</h2>
+		<p class="fs14 ffss">
+			<img src="img/s6.jpg" width="500" height="375" alt="구슬이 서말이라도 꿰어야 보배" class="boxShadow" style="margin:0 0 1em 0"><br>
+			구슬이 서말이라도 꿰어야 보배.
+		</p>
+	</article>
+	<nav>
+		<a href="#s5">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s7">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s7">
+	<article>
+		<h2>혹시,<br> 한국어 잘 하세요?</h2>
+		<p style="font-size:14px">
+			<img src="img/s7.jpg" width="300" height="409" alt="표준국어대사전" class="boxShadow" style="margin:0 0 1em 0"><br>
+			새로운 표준의 모든것을 알 필요는 없다.
+		</p>
+	</article>
+	<nav>
+		<a href="#s6">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s8">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s8">
+	<article>
+		<h2>CSS3는 CSS Validation 통과 하나요?</h2>
+		<p style="font-size:14px">
+			<img src="img/s8.jpg" width="400" alt="결벽증 환자를 위한 컴퓨팅 환경" class="boxShadow" style="margin:0 0 1em 0"><br>
+			아니오. 결벽증 환자를 위한 컴퓨팅 환경.
+		</p>
+	</article>
+	<nav>
+		<a href="#s7">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s9">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s9">
+	<article>
+		<h2>당장 사용할 수 있는 CSS3를 소개합니다.</h2>
+		<p class="fs24">
+			<img src="img/s9.jpg" width="300" height="300" alt="참 잘했어요" style="margin:0 0 1em 0"><br>
+			아직 모든 브라우저들이 CSS3를 완벽하게 잘 지원하는 것은 아니지만 좋은 도구를 선택한 사용자들은 여러분의 센스에 분명히 감탄할껍니다.
+		</p>
+	</article>
+	<nav>
+		<a href="#s8">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s10">다음 &gt;</a>
+	</nav>
+</section>
+<!-- reference start -->
+<section id="s10">
+	<article>
+		<h2>1. text-shadow</h2>
+		<p style="border:1px solid #ccc; font-size:150px"><span style="display:inline-block; zoom:1; filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color=#cccccc, Positive=true)"><span style="text-shadow:5px 5px #ccc;">text</span>-<span style="text-shadow:0 0 10px #000;">shadow</span></span></p>
+		<p style="font-size:150px; background:#000; color:#666;"><span style="display:inline-block; zoom:1; filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color=#cccccc, Positive=true)"><span style="text-shadow:5px 5px #fff; color:#000;">text</span>-<span style="text-shadow:0 0 10px #fff; color:#000;">shadow</span></span></p>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s9">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s11">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s11">
+	<article>
+		<h2>1. text-shadow</h2>
+		<code>
+			<em>text-shadow</em>:5px 5px 0 #ccc;<br>
+			filter:progid:DXImageTransform.Microsoft.<em>dropshadow</em>(OffX=5, OffY=5, Color=#cccccc, Positive=true);<br>
+			display:inline-block; zoom:1;
+		</code>
+		<p class="fs24">IE 브라우저를 제외한 모든 브라우저가 이미 text-shadow 속성을 지원하고 있다. blur 값은 생략할 수 있는데 생략하는 경우 기본값은 blur 스타일이 전혀 지정되지 않은 '0'이다. IE는 DropShadow Filter를 사용할 수 있지만 그림자의 blur 값이 '0'과 같은 표현으로 처리되고 blur 값을 지정할 수 없는 단점이 있다. IE 브라우저 버전간 호환을 위해 display 속성을 block 또는 inline-block 으로 지정하고 zoom:1 속성을 추가로 부여해야 한다.</p>
+		<p>CSS Text Level 3 &rsaquo; text-shadow - <a href="http://www.w3.org/TR/css3-text/#text-shadow">http://www.w3.org/TR/css3-text/#text-shadow</a></p>
+		<p>MSDN &rsaquo; DropShadow Filter - <a href="http://msdn.microsoft.com/en-us/library/ms532985(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532985(VS.85).aspx</a></p>
+	</article>
+	<nav>
+		<a href="#s10">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s12">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s12">
+	<article>
+		<h2>2. text-overflow</h2>
+		<p style="font-size:48px; border:10px solid #666; width:200px; padding:20px; white-space:nowrap; resize:horizontal; margin:0 0 30px 0;">무궁화 꽃이 피었습니다.</p>
+		<p style="font-size:48px; border:10px solid #666; width:200px; padding:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; -o-text-overflow:ellipsis; resize:horizontal">무궁화 꽃이 피었습니다.</p>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s11">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s13">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s13">
+	<article>
+		<h2>2. text-overflow</h2>
+		<code>
+			<em>text-overflow</em>:ellipsis; <br>
+			<em>-o-text-overflow</em>:ellipsis;
+		</code>
+		<p class="fs24">Firefox 브라우저는 아직 지원하지 않고 있지만 IE는 이미 IE6 버전부터 지원하고 있다. Firefox 브라우저는 overflow-hidden 속성에 의하여 넘치는 부분이 말 줄임표 없이 잘린다.</p>
+		<p>CSS Text Level 3 &rsaquo; text-overflow - <a href="http://dev.w3.org/csswg/css3-text/#text-overflow">http://dev.w3.org/csswg/css3-text/#text-overflow</a></p>
+	</article>
+	<nav>
+		<a href="#s12">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s14">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s14">
+	<article>
+		<h2>3. word-wrap</h2>
+		<p class="fs24" style="border:10px solid #666; width:300px; margin:0 0 30px 0"><a href="#">http://abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz.com</a></p>
+		<p class="fs24" style="border:10px solid #666; width:300px; word-wrap:break-word"><a href="#">http://abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz.com</a></p>
+		<p class="fs24" style="margin:30px 0 0 0">1byte 문자열이 공백 없이 등장하는 경우 모든 브라우저들은 이를 하나의 단어로 해석하기 때문에 개행하지 않는다. 이것을 강제로 개행할 수 있다.</p>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s13">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s15">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s15">
+	<article>
+		<h2>3. word-wrap</h2>
+		<code>
+			word-wrap:break-word;
+		</code>
+		<p class="fs24">모든 브라우저가 이 속성을 지원한다.</p>
+		<p>CSS Text Level 3 &rsaquo; word-wrap - <a href="http://www.w3.org/TR/css3-text/#word-wrap">http://www.w3.org/TR/css3-text/#word-wrap</a></p>
+	</article>
+	<nav>
+		<a href="#s14">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s16">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s16">
+	<article>
+		<h2>4. @font-face</h2>
+		<p><img src="img/quick-brown-fox.gif" width="245" height="207" alt="The quick brown fox jumps over the lazy dog."></p>
+		<p style="font-size:48px">The quick brown fox jumps over the lazy dog.<br>이 문서의 기본 글꼴은 나눔고딕 입니다.<br>0123456789</p>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s15">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s17">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s17">
+	<article>
+		<h2>4. @font-face</h2>
+		<code>
+			<em>@font-face</em>{ font-family:<em>ngttf</em>; src:url(NanumGothic.<em>ttf</em>);}<br>
+	<em>@font-face</em>{ font-family:<em>ngeot</em>; src:url(NanumGothic.<em>eot</em>);}<br>
+			<em>body, input, textarea, select, button</em>{ <br>
+			&nbsp;font-family:<em>NanumGothic</em>, <em>나눔고딕</em>, <em>ngttf</em>, <em>ngeot</em>;<br>
+			}
+		</code>
+		<p class="fs24"><abbr title="True Type Font">ttf</abbr> 파일과 <abbr title="Embeded Open Type">eot</abbr> 파일을 함께 준비한다. 비 IE 브라우저는 ttf 포멧과 <abbr title="Open Type Font">otf</abbr> 포멧을 지원하지만 eot 포멧을 지원하지 않는다. 반면 IE 브라우저는 eot 포멧만 지원하기 때문에 두 가지 포멧이 모두 필요하다. 나눔고딕 글꼴을 이미 설치한 사용자는 웹 폰트를 내려받지 않고 로컬 글꼴을 사용할 수 있도록 NanumGothic을 먼저 선언한다. 한국어 글꼴인 경우 오페라 브라우저는 font-family 이름에 반드시 한글을 사용해야 한다. 나눔고딕 글꼴 내려받기 <a href="img/NanumGothic.ttf">NanumGothic.ttf</a> | <a href="img/NanumGothic.eot">NanumGothic.eot</a></p>
+		<p>CSS Fonts Module Level 3 &rsaquo; @font-face - <a href="http://www.w3.org/TR/css3-fonts/#the-font-face-rule">http://www.w3.org/TR/css3-fonts/#the-font-face-rule</a></p>
+	</article>
+	<nav>
+		<a href="#s16">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s18">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s18">
+	<article>
+		<h2>5. opacity</h2>
+		<div class="boxShadow" style="background:url(img/bgCheck32.gif)">
+			<div style="position:relative; width:200px; height:200px; margin:0 0 -100px 0; background:red; opacity:.5; filter:alpha(opacity=50);"></div>
+			<div style="position:relative; width:200px; height:200px; margin:0 0 0 100px; background:blue; opacity:.5; filter:alpha(opacity=50);"></div>
+		</div>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s17">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s19">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s19">
+	<article>
+		<h2>5. opacity</h2>
+		<code>
+			<em>opacity</em>:0.5; <br>
+			<em>filter</em>:alpha(opacity=50);
+		</code>
+		<p class="fs24">IE 브라우저를 제외한 모든 브라우저가 이미 opacity 속성을 지원하고 있다. IE는 MS전용 Alpha Filter를 적용하여 동일한 표현이 가능하다.</p>
+		<p>CSS Color Module Level 3 &rsaquo; opacity - <a href="http://www.w3.org/TR/css3-color/#transparency">http://www.w3.org/TR/css3-color/#transparency</a></p>
+		<p>MSDN &rsaquo; Alpha Filter - <a href="http://msdn.microsoft.com/en-us/library/ms532967(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532967(VS.85).aspx</a></p>
+	</article>
+	<nav>
+		<a href="#s18">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s20">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s20">
+	<article>
+		<h2>6. box-shadow</h2>
+		<p style="position:relative">
+			<img src="img/s10.jpg" width="200" alt="둘째아들 정이든" style="border:10px solid #eee; vertical-align:middle; box-shadow:10px 10px 10px silver; -moz-box-shadow:10px 10px 10px silver; -webkit-box-shadow:10px 10px 10px silver; filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=10); margin:0 30px 0 0">
+			<img src="img/s10.jpg" width="200" alt="둘째아들 정이든" style="border:10px solid #eee; vertical-align:middle; box-shadow:0 0 20px #666; -moz-box-shadow:0 0 20px #666; -webkit-box-shadow:0 0 20px #666; filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=10); margin:0 30px 0 0">
+			<span style="display:inline-block; position:relative; vertical-align:middle; border:10px solid #eee; box-shadow:inset 0 0 10px #000; -moz-box-shadow:inset 0 0 10px #000; -webkit-box-shadow:inset 0 0 10px #000;"><img src="img/s10.jpg" width="200" alt="둘째아들 정이든" style="position:relative; z-index:-1; display:block;"></span>
+		</p>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s19">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s21">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s21">
+	<article>
+		<h2>6. box-shadow</h2>
+		<code>
+			<em>box-shadow</em>:10px 10px 10px silver; <br>
+			<em>-moz-box-shadow</em>:10px 10px 10px silver; <br>
+			<em>-webkit-box-shadow</em>:10px 10px 10px silver; <br>
+			<em>filter</em>:progid:DXImageTransform.Microsoft.<em>Shadow</em>(color=silver,direction=135, strength=20);
+		</code>
+		<p class="fs24">값은 'X좌표, Y좌표, blur값, 그림자색' 순으로 선언한다. blur 값은 생략할 수 있는데 생략하는 경우 기본값은 blur 스타일이 전혀 지정되지 않은 '0'이다. IE 브라우저는 Shadow Filter를 적용할 수 있으나 그림자를 한 방향으로만 표현할 수 있고 사방으로 표현할 수 없는 제약이 따른다. inset 값을 추가하면 그림자가 상자 안쪽으로 발생하는데 IE filter 로는 이런 표현이 불가능하다. Safari4는 inset 값을 지원하지 않지만 Safari5는 지원한다.</p>
+		<p>CSS Backgrounds and Borders Module Level 3 &rsaquo; box-shadow - <a href="http://www.w3.org/TR/css3-background/#the-box-shadow">http://www.w3.org/TR/css3-background/#the-box-shadow</a></p>
+		<p>MSDN &rsaquo; Shadow Filter - <a href="http://msdn.microsoft.com/en-us/library/ms533086(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms533086(v=VS.85).aspx</a></p>
+	</article>
+	<nav>
+		<a href="#s20">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s22">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s22">
+	<article>
+		<h2>7. border-radius</h2>
+		<p>
+			<span style="display:inline-block; width:300px; height:300px; background:#ccc; border:10px solid #666; border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px; margin:0 50px 0 0"></span>
+			<span style="display:inline-block; width:300px; height:300px; background:#ccc; border:10px solid #666; border-radius:30px 0; -moz-border-radius:30px 0; -webkit-border-top-left-radius:30px; -webkit-border-bottom-right-radius:30px;"></span>
+		</p>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+		</p>
+	</article>
+	<nav>
+		<a href="#s21">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s23">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s23">
+	<article>
+		<h2>7. border-radius</h2>
+		<code>
+			<em>border-radius</em>:30px; <br>
+			<em>-moz-border-radius</em>:30px;<br>
+			<em>-webkit-border-radius</em>:30px;
+		</code>
+		<p class="fs24">네 방향 모두 적용하는 경우.</p>
+		<p>CSS Backgrounds and Borders Module Level 3 &rsaquo; border-radius - <a href="http://www.w3.org/TR/css3-background/#the-border-radius">http://www.w3.org/TR/css3-background/#the-border-radius</a></p>
+	</article>
+	<nav>
+		<a href="#s22">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s24">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s24">
+	<article>
+		<h2>7. border-radius</h2>
+		<code>
+			<em>border-radius</em>:30px 0; <br>
+			<em>-moz-border-radius</em>:30px 0;<br>
+			<em>-webkit-border-top-left-radius</em>:30px; <br>
+			<em>-webkit-border-bottom-right-radius</em>:30px;
+		</code>
+		<p class="fs24">원하는 방향에만 적용하는 경우. 웹킷 브라우저 가운데 사파리4가 단축 속성을 지원하지 않아 현재로써는 단축 속성을 사용할 수 없다.</p>
+		<p>CSS Backgrounds and Borders Module Level 3 &rsaquo; border-radius - <a href="http://www.w3.org/TR/css3-background/#the-border-radius">http://www.w3.org/TR/css3-background/#the-border-radius</a></p>
+	</article>
+	<nav>
+		<a href="#s23">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s25">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s25">
+	<article>
+		<h2>8. background(s)</h2>
+		<div style="width:200px; height:200px; border:10px solid #666; background:url(img/bgCheck32.gif) no-repeat left top, url(img/bgCheck32.gif) no-repeat right top, url(img/bgCheck32.gif) no-repeat left bottom, url(img/bgCheck32.gif) no-repeat right bottom;"></div>
+		<p class="fs24" style="margin:30px 0 0 0">하나의 요소에 <img src="img/bgCheck32.gif" width="32" height="32" alt="배경 이미지"> 이런 배경 이미지가 4번 적용되었다.</p>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+		</p>
+	</article>
+	<nav>
+		<a href="#s24">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s26">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s26">
+	<article>
+		<h2>8. background(s)</h2>
+		<code>
+			<em>background</em>:<br>
+			url(bg.gif) no-repeat left top, <br>
+			url(bg.gif) no-repeat right top, <br>
+			url(bg.gif) no-repeat left bottom, <br>
+			url(bg.gif) no-repeat right bottom;
+		</code>
+		<p class="fs24">속성의 값을 쉼표(,)로 분리하면 배경 이미지의 사용 횟수를 무한대로 늘릴 수 있다.</p>
+		<p>CSS Backgrounds and Borders Module Level 3 &rsaquo; background - <a href="http://www.w3.org/TR/css3-background/#background">http://www.w3.org/TR/css3-background/#background</a></p>
+	</article>
+	<nav>
+		<a href="#s25">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s27">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s27">
+	<article>
+		<h2>9. gradient</h2>
+		<div style="height:300px; background:#3EAF0E -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3EAF0E), to(#fff)); background:#3EAF0E -moz-linear-gradient(top, #3EAF0E, #fff); filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#3EAF0E, endColorStr=#ffffff)"></div>		
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s26">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s28">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s28">
+	<article>
+		<h2>9. gradient</h2>
+		<code>
+			background:#3EAF0E <em>-webkit-gradient</em>(linear, 0% 0%, 0% 100%, from(#3EAF0E), to(#fff));<br>
+			background:#3EAF0E <em>-moz-linear-gradient</em>(top, #3EAF0E, #fff);<br>
+			filter:progid:DXImageTransform.Microsoft.<em>gradient</em>(startColorStr=#3EAF0E, endColorStr=#ffffff);
+		</code>
+		<p class="fs24">웹킷(크롬, 사파리)과 파이어폭스 및 IE의 속성 및 값 선언 방식이 모두 다름에 유의한다. 웹킷은 (타입, X시작점 Y시작점, X종료점 Y종료점, 시작색, 종료색) 형식으로 선언하고 파이어폭스는 (시작점, 시작색, 종료색) 순으로 선언한다. gradients를 지원하지 않는 브라우저를 위하여 기본 배경색을 지정해두어야 함에 유의한다. IE는 IE 전용 Gradient Filter를 사용한다.</p>
+		<p>Safari CSS Visual Effects Guide &rsaquo; gradients - <a href="http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html">http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html</a></p>
+		<p>Mozila Developer Center &rsaquo; -moz-linear-gradient - <a href="https://developer.mozilla.org/en/CSS/-moz-linear-gradient">https://developer.mozilla.org/en/CSS/-moz-linear-gradient</a></p>
+		<p>MSDN &rsaquo; Gradient Filter - <a href="http://msdn.microsoft.com/en-us/library/ms532997(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532997(v=VS.85).aspx</a></p>
+	</article>
+	<nav>
+		<a href="#s27">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s29">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s29">
+	<article>
+		<h2>10. transform</h2>
+		<div style="position:relative; width:300px">
+			<p><img src="img/s27.jpg" width="300" alt="아이폰4" class="iPhone"></p>
+			<p style="position:absolute; top:150px; left:40px; font-size:50px; font-weight:bold; margin:0; padding:0; border:10px solid #f00; color:#fff; -o-transform:rotate(-30deg); -moz-transform:rotate(-30deg); -webkit-transform:rotate(-30deg); box-shadow:0 0 10px #000; -moz-box-shadow:0 0 10px #000;  -webkit-box-shadow:0 0 10px #000; text-shadow:0 0 10px #000; filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.8660253882408142, M12=0.5, M21=-0.5, M22=0.8660253882408142, sizingmethod='auto expand')">Sold Out</p>
+			<p class="iPhoneText" style="position:absolute; top:40px; top:70px; left:100%; font-size:70px; font-weight:bold; white-space:nowrap; -o-transform:rotate(90deg); -o-transform-origin:0 100%; -moz-transform:rotate(90deg); -moz-transform-origin:0 100%; -webkit-transform:rotate(90deg); -webkit-transform-origin:0 100%; text-shadow:0 0 10px #666; filter:progid:DXImageTransform.Microsoft.Matrix(M11=6.123031769111886e-17, M12=-1, M21=1, M22=6.123031769111886e-17, sizingmethod='auto expand');">iPhone 4</p>
+		</div>
+		<p class="fs24 browserSupport" style="clear:both;">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+	</article>
+	<nav>
+		<a href="#s28">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s30">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s30">
+	<article>
+		<h2>10. transform</h2>
+		<code>
+			<em>-o-transform</em>:rotate(90deg); <br>
+			<em>-o-transform-origin</em>:0 100%; <br>
+			<em>-moz-transform</em>:rotate(90deg);<br>
+			<em>-moz-transform-origin</em>:0 100%;<br>
+			<em>-webkit-transform</em>:rotate(90deg);<br>
+			<em>-webkit-transform-origin</em>:0 100%;<br>
+			filter:progid:DXImageTransform.Microsoft.<em>Matrix</em>(M11=6.123031769111886e-17, M12=-1, M21=1, M22=6.123031769111886e-17, sizingmethod='auto expand');
+		</code>
+		<p class="fs24">시계 방향으로 90도 회전시키는 코드. translate(이동), scale(크기), rotate(회전), skew(비틀기)가 가능하다. transform-oriain 속성은 transform의 축을 지정하는 속성으로써 값은 기본 값이 50%(X축) 50%(Y축) 이기 때문에 기본 값을 따르는 경우 생략할 수 있다. IE의 경우 Matrix Filter를 사용할 수 있으나 사용법이 다소 복잡하다.</p>
+		<p>CSS 2D Transforms Module Level 3 &rsaquo; transform - <a href="http://www.w3.org/TR/css3-2d-transforms/#transform-property">http://www.w3.org/TR/css3-2d-transforms/#transform-property</a></p>
+		<p>MSDN &rsaquo; Matrix Filter - <a href="http://msdn.microsoft.com/en-us/library/ms533014(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms533014(v=VS.85).aspx</a></p>
+	</article>
+	<nav>
+		<a href="#s29">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s31">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s31">
+	<article>
+		<h2>11. transition</h2>
+		<ul class="menu">
+			<li class="on"><a href="#">Menu1</a></li>
+			<li><a href="#">Menu2</a></li>
+			<li><a href="#">Menu3</a></li>
+			<li><a href="#">Menu4</a></li>
+			<li><a href="#">Menu5</a></li>
+			<li><a href="#">Menu6</a></li>
+			<li><a href="#">Menu7</a></li>
+		</ul>
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_op.png" alt="오페라">
+		</p>
+	</article>
+	<nav>
+		<a href="#s30">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s32">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s32">
+	<article>
+		<h2>11. transition</h2>
+		<code>
+			a{padding:10px 15px; margin:0;<br>
+			&nbsp;&nbsp;<em>-o-transition</em>:0.2s; <br>
+			&nbsp;&nbsp;<em>-webkit-transition</em>:0.2s;<br>
+			&nbsp;&nbsp;<del><em>-moz-transition</em>:.2s;</del>}<br><br>
+			a:hover{padding:15px 20px; <br>
+			&nbsp;&nbsp;margin:-6px; <br>
+			&nbsp;&nbsp;opacity:0.8;}
+		</code>
+		<p class="fs24">transition 속성의 값으로는 어떤 속성을 몇 초간 진행할 것인지 정의한다. 어떤 속성을 transition 할 것인지 지정하지 않으면 기본 값 all이 지정되어 모든 속성을 transition 시킨다. 파이어폭스 브라우저는 3.7 버전부터 지원을 기대할 수 있다.</p>
+		<p>CSS Transitions Module Level 3 &rsaquo; transition - <a href="http://www.w3.org/TR/css3-transitions/#the-transition-shorthand-property-">http://www.w3.org/TR/css3-transitions/#the-transition-shorthand-property-</a></p>
+	</article>
+	<nav>
+		<a href="#s31">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s33">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s33">
+	<article>
+		<h2>12. animation</h2>
+		<p><a href="#" class="ani">animation?</a></p>		
+		<p class="fs24 browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+		</p>
+	</article>
+	<nav>
+		<a href="#s32">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s34">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s34">
+	<article>
+		<h2>12. animation</h2>
+		<code>
+			.ani{<em>-webkit-animation</em>:<em>webkitFire</em> infinite 1s linear;}<br><br>
+			<em>@-webkit-keyframes</em> '<em>webkitFire</em>'{<br>
+			&nbsp;&nbsp;<em>from</em>{ -webkit-transform:rotate(<em>0deg</em>);} <br>
+			&nbsp;&nbsp;<em>to</em>{-webkit-transform:rotate(<em>360deg</em>);} <br>
+			}
+		</code>
+		<p class="fs24">'webkitFire'라는 사용자 정의 에니메이션이 실행 된다. 일정한(linear) 속도로 1초(1s)에 한 바퀴(0~360deg)씩 영원히(infinite) 돌게 된다.</p>
+		<p>CSS Animations Module Level 3 &rsaquo; animation - <a href="http://www.w3.org/TR/css3-animations/#the-animation-shorthand-property-">http://www.w3.org/TR/css3-animations/#the-animation-shorthand-property-</a></p>
+	</article>
+	<nav>
+		<a href="#s33">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s35">다음 &gt;</a>
+	</nav>
+</section>
+<!-- reference end -->
+<section id="s35">
+	<article>
+		<h2>브라우저가 '지원'하면...</h2>
+		<p>
+			<img src="img/s29.png" width="750" alt="웹 브라우저들">
+		</p>
+	</article>
+	<nav>
+		<a href="#s34">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s36">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s36">
+	<article>
+		<h2>우리는 '실행'한다.</h2>
+		<p>
+			<img src="img/s30.jpg" class="boxShadow" alt="네가 말한 그 실행이 응급실행은 아니겠지~">
+		</p>
+	</article>
+	<nav>
+		<a href="#s35">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s37">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s37">
+	<article>
+		<h2>그것이 바로 사용자 경험을 향상 시키는 일이고 사용자 경험이 곧 국가 경쟁력이다.</h2>
+		<p>
+			<img src="img/s32.jpg" width="500" class="boxShadow" alt="사용자 경험 향상이 곧 국가 경쟁력.">
+		</p>
+	</article>
+	<nav>
+		<a href="#s36">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+		|
+		<a href="#s38">다음 &gt;</a>
+	</nav>
+</section>
+<section id="s38">
+	<article>
+		<h2>감사합니다.</h2>
+		<p>이 프리젠테이션은 HTML5와 CSS3를 사용하여 제작했습니다.</p>
+	</article>
+	<nav>
+		<a href="#s37">&lt; 이전</a>
+		|
+		<a href="#tc">목차</a>
+	</nav>
+</section>
+<hr>
+<footer>
+	<address style="margin:0 100px">
+		<p>이 저작물은 크리에이티브 커먼즈의 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.ko">3.0 라이센스</a>(저작자표시, 비영리, 변경금지)에 따라 이용하실 수 있습니다.</p>
+		<p>정찬명 - <a href="http://naradesign.net/">http://naradesign.net/</a></p>
+	</address>
+</footer>
+</body>
+</html>

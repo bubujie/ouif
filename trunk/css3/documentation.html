@@ -1,0 +1,1661 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CSS3 소개(인쇄용)</title>
+<style>
+@font-face{font-family:ngttf; src:url(img/NanumGothic.ttf);}
+@font-face{font-family:ngeot; src:url(img/NanumGothic.eot);}
+body,input,textarea,select,button{ font-family:NanumGothic, 나눔고딕, ngttf, ngeot, Tahoma, Geneva, sans-serif;}
+section, header, footer, article, nav{ display:block;}
+h2{ padding:.2em .4em; background:#666; color:#fff; border-left:10px solid #333; text-shadow:0 0 5px #000;}
+h3{ padding:.2em .4em; border-left:10px solid #666; border-bottom:2px solid #666;}
+em{ font-style:normal;}
+code{ display:block; margin:1em 0; padding:10px; overflow:auto; background:#eee; font-family:"Lucida Console", Monaco, monospace; word-wrap:break-word; box-shadow:0 0 5px #000 inset; -moz-box-shadow:0 0 5px #000 inset; -webkit-box-shadow:0 0 5px #000 inset;}
+code em{ color:#f00;}
+*:target{ color:#f00;}
+table{ margin:0 0 1em 0; width:100%; font-size:14px; border:1px solid #666; border-collapse:collapse;}
+caption{ font-weight:bold; text-align:left; font-size:1.17em;}
+th,td{ border:1px solid #666; padding:3px 5px;}
+th{ white-space:nowrap; background:#eee;}
+thaed th{ width:100%;}
+.caption{ float:left;}
+.legend{ float:right; font-weight:normal; font-size:.75em;}
+.no{ background:#f00; color:#fff;}
+.fs100{ font-size:100px;}
+.fs48{ font-size:48px;}
+.fs24{ font-size:24px; margin:0 0 15px 0;}
+.browserSupport img{ height:32px; vertical-align:middle;}
+.iPhone{ -o-transition:1s; -webkit-transition:1s;}
+:root .iPhoneText{ top:0 !important;}
+.iPhone:hover{ -o-transform:scale(1.1, 1.1); -webkit-transform:scale(1.1, 1.1);}
+.menu{ margin:2em 0; padding:0 20px; list-style:none; background:#eee -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ccc)); background:#eee -moz-linear-gradient(top, #eee, #ccc); filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#eeeeee, endColorStr=#cccccc); height:50px; border:1px solid #999; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; *zoom:1;}
+.menu:after{ content:""; display:block; clear:both;}
+.menu li{ float:left;}
+.menu a{ display:inline-block; background:#eee -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ccc)); background:#eee -moz-linear-gradient(top, #eee, #ccc); filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#eeeeee, endColorStr=#cccccc); font-weight:bold; font-size:24px; padding:10px 15px; margin:0; border:0; text-decoration:none; color:#000; text-shadow:1px 1px 0 #fff; -o-transition:.2s; -moz-transition:.2s; -webkit-transition:.2s; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+.menu li.on a,
+.menu a:hover,
+.menu a:active,
+.menu a:focus{ position:relative; z-index:100; padding:20px 20px; margin:-10px -6px; border:1px solid #999; box-shadow:0 0 5px #999; -moz-box-shadow:0 0 5px #999; -webkit-box-shadow:0 0 5px #999; opacity:0.8;}
+.ani{ position:relative; display:block; width:300px; height:300px; border:20px solid #ccc; -webkit-animation:webkitFire infinite 1s linear; -o-transition:1s; -webkit-transition:1s; border-radius:150px; -moz-border-radius:170px; -webkit-border-radius:170px; text-align:center; line-height:300px; font-size:36px; font-weight:bold;}
+.ani:hover{ -webkit-animation:none; border-color:#f00;}
+@-webkit-keyframes 'webkitFire'{ from{ -webkit-transform:rotate(0deg);} to{-webkit-transform:rotate(360deg);}}
+</style>
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+	<h1>3 _ CSS3 소개</h1>
+</header>
+<hr>
+<nav>
+	<ul>
+		<li>3.1 _ <a href="#difference">CSS2와 CSS3의 차이점</a>
+		</li>
+		<li>3.2 _ <a href="#support">CSS3 브라우저 지원현황</a>
+			<ul>
+				<li>3.2.1 _ <a href="#bs1">12가지 유용한 CSS3 속성들</a></li>
+				<li>3.2.2 _ <a href="#bs2">42가지 CSS3 선택자들</a></li>
+			</ul>
+		</li>
+		<li>3.3 <a href="#example">CSS3 실전 적용</a>
+			<ul>
+				<li>3.3.1 _ <a href="#text-shadow">text-shadow</a></li>
+				<li>3.3.2 _ <a href="#text-overflow">text-overflow</a></li>
+				<li>3.3.3 _ <a href="#word-wrap">word-wrap</a></li>
+				<li>3.3.4 _ <a href="#font-face">@font-face</a></li>
+				<li>3.3.5 _ <a href="#opacity">opacity</a></li>
+				<li>3.3.6 _ <a href="#box-shadow">box-shadow</a></li>
+				<li>3.3.7 _ <a href="#border-radius">border-radius</a></li>
+				<li>3.3.8 _ <a href="#background">background(s)</a></li>
+				<li>3.3.9 _ <a href="#gradient">gradient</a></li>
+				<li>3.3.10 _ <a href="#transform">transform</a></li>
+				<li>3.3.11 _ <a href="#transition">transition</a></li>
+				<li>3.3.12 _ <a href="#animation">animation</a></li>
+			</ul>
+		</li>
+		<li>3.4 _ <a href="#explain">CSS3 명세 읽는 법</a></li>
+		<li>3.5 _ <a href="#faq">CSS3 FAQ</a>
+			<ul>
+				<li>3.5.1 _ <a href="#faq1">CSS3는 언제 지원 되나?</a></li>
+				<li>3.5.2 _ <a href="#faq2">CSS3를 사용하면 이를 잘 지원하지 못하는 하위 버전 브라우저를 선택한 사용자를 차별하는 것이 아닌가?</a></li>
+				<li>3.5.3 _ <a href="#faq3">CSS3를 사용하면 CSS 문법 유효성 검사를 만족할 수 없지 않나?</a></li>
+				<li>3.5.4 _ <a href="#faq4">CSS3의  명세를 지금부터 공부해야 하나?</a></li>
+				<li>3.5.5 _ <a href="#faq5">CSS3 명세가 갑자기 바뀌면 어떻게 하나?</a></li>
+				<li>3.5.6 _ <a href="#faq6">CSS3 명세를 보면서 공부했지만 대부분의 브라우저들이 지원하지 않는것 같다.</a></li>
+				<li>3.5.7 _ <a href="#faq7">우리 고객들은 IE 브라우저에서도 CSS3 기법들이 적용되길 원한다.</a></li>
+			</ul>
+		</li>
+		<li>3.6 _ <a href="#ref">참고자료</a></li>
+	</ul>
+</nav>
+<hr>
+<section>
+	<h2 id="difference">3.1  _ CSS2와 CSS3의 차이점</h2>
+	<p>CSS2와 CSS3의 가장 큰 차이점은 CSS3가 모듈 기반으로 개발되고 있다는 점이다. 이것은 각종 브라우저나 디바이스가 필요에 따라 원하는 CSS 모듈만을 탑재하거나 또는 필요한 모듈만을 빠르게 자주 업데이트 하는 것을 돕는다. CSS3는 text, fonts, color, backgrounds &amp; borders, transforms, transitions, animaitons와 같은 종류의 모듈들을 추가로 개발하고 있다. CSS3는 기존의 CSS2가 갖지 못했던 화려하고 역동적인 면모를  추가하여 포토샵과 자바스크립트 및 서버측 기술에만 완전히 의존하던 영역들을 개척했다. 상자의 크기에 따른 말줄임 표시, 투명한 배경, 그림자 효과, 둥근 모서리, 그라디언트, 도형의 회전과 비틀기, 애니메이션 효과 등이 가능해진 것이다. 특히 그래픽 디자인에만 의존하던 영역이 CSS3만으로도 상당부분 가능해지면서 웹 사이트의 성능 향상에 크게 기여할 수 있게 되었다.</p>
+</section>
+<hr>
+<section>
+	<h2 id="support">3.2 _ CSS3 브라우저 지원현황</h2>
+	<article>
+		<p>CSS3는 아직 개발이 완료되지 않은 초안이기 때문에 현재 시점(2010년 7월)을 기준으로 12 종류의 속성(CSS3의 모든 속성을 다루지 않았다) 및 CSS level 1~3 선택자 지원 현황을 파악했다. </p>
+		<h3 id="bs1">3.2.1 _ 12가지 유용한 CSS3 속성들</h3>
+		<table>
+			<caption>
+			<span class="caption">12 Useful CSS3 Properties</span> <span class="legend"><strong>CR</strong>:Chrome, <strong>SF</strong>:Safari, <strong>FF</strong>:Firefox, <strong>OP</strong>:Opera, <strong>IE</strong>:Internet Explorer</span>
+			</caption>
+			<thead>
+				<tr>
+					<th scope="col">Module</th>
+					<th scope="col">Properties</th>
+					<th scope="col">CR 5</th>
+					<th scope="col">SF 4</th>
+					<th scope="col">FF 3.6</th>
+					<th scope="col">OP 10.5</th>
+					<th scope="col">IE 8</th>
+					<th scope="col">IE 7</th>
+					<th scope="col">IE 6</th>
+					<th scope="col">Fallback for IE 6, 7, 8 </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th rowspan="3" scope="row">text</th>
+					<th scope="row"><a href="#text-shadow">text-shadow</a></th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td><a href="http://msdn.microsoft.com/en-us/library/ms532985(VS.85).aspx">DropShadow Filter</a></td>
+				</tr>
+				<tr>
+					<th scope="row"><a href="#text-overflow">text-overflow</a></th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>no</td>
+					<td>yes / -o-</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th scope="row"><a href="#word-wrap">word-wrap</a></th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th scope="row">fonts</th>
+					<th scope="row"><a href="#font-face">@font-face</a></th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>IE를 위한 'eot' 포멧 필요</td>
+				</tr>
+				<tr>
+					<th scope="row">color</th>
+					<th scope="row"><a href="#opacity">opacity</a></th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td><a href="http://msdn.microsoft.com/en-us/library/ms532967%28VS.85%29.aspx">Alpha Filter</a></td>
+				</tr>
+				<tr>
+					<th rowspan="4" scope="row">backgrounds &amp; borders</th>
+					<th scope="row"><a href="#box-shadow">box-shadow</a></th>
+					<td>yes / -webkit-</td>
+					<td>yes / -webkit-</td>
+					<td>yes / -moz-</td>
+					<td>yes</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td><a href="http://msdn.microsoft.com/en-us/library/ms533086(v=VS.85).aspx">Shadow Filter</a></td>
+				</tr>
+				<tr>
+					<th scope="row"><a href="#border-radius">border-radius</a></th>
+					<td>yes / -webkit-</td>
+					<td>yes / -webkit-</td>
+					<td>yes / -moz-</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th scope="row"><a href="#backgrounds">background(s)</a></th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th scope="row"><a href="#gradient">gradient</a></th>
+					<td>yes / -webkit-</td>
+					<td>yes / -webkit-</td>
+					<td>yes / -moz-</td>
+					<td>no</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td><a href="http://msdn.microsoft.com/en-us/library/ms532997(v=VS.85).aspx">Gradient Filter</a></td>
+				</tr>
+				<tr>
+					<th scope="row">transforms</th>
+					<th scope="row"><a href="#transform">transform</a></th>
+					<td>yes / -webkit-</td>
+					<td>yes / -webkit-</td>
+					<td>yes / -moz-</td>
+					<td>yes / -o-</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td>yes / filter</td>
+					<td><a href="http://msdn.microsoft.com/en-us/library/ms533014(v=VS.85).aspx">Matrix Filter</a></td>
+				</tr>
+				<tr>
+					<th scope="row">transitions</th>
+					<th scope="row"><a href="#transition">transition</a></th>
+					<td>yes / -webkit-</td>
+					<td>yes / -webkit-</td>
+					<td class="no">no / -moz- (3.7 or later)</td>
+					<td>yes / -o-</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th scope="row">animations</th>
+					<th scope="row"><a href="#animation">animation</a></th>
+					<td>yes / -webkit-</td>
+					<td>yes / -webkit-</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>한편 <a href="http://fetchak.com/ie-css3/">fetchak.com</a>은 <a href="http://fetchak.com/ie-css3/ie-css3.htc">ie-css3.htc</a>(11.8KB) 파일을 사용하여 IE 6~8 브라우저에서 text-shadow, box-shadow, border-radius 렌더링을 흉내내는 스크립트를 제안하고 있다. 이 스크립트를 사용하면 IE 브라우저에서도 border-radius 표현이 가능해지고 text-shadow, box-shadow 표현은 더욱 풍부해 진다. 이 스크립트를 사용하면 DropShadow, Shadow filter를 사용할 필요가 없다. htc 포멧은 IE 브라우저에서만 기능하는 벤더 확장 자바스크립트 파일이다.</p>
+	</article>
+	<article>
+		<h3 id="bs2">3.2.2 _ 42가지 CSS3 선택자들</h3>
+		<table>
+			<caption>
+			<span class="caption">42 CSS3 Selectors</span> <span class="legend"><strong>CR</strong>:Chrome, <strong>SF</strong>:Safari, <strong>FF</strong>:Firefox, <strong>OP</strong>:Opera, <strong>IE</strong>:Internet Explorer</span>
+			</caption>
+			<thead>
+				<tr>
+					<th scope="col">CSS level</th>
+					<th scope="col">Selectors</th>
+					<th scope="col">CR 5</th>
+					<th scope="col">SF 5</th>
+					<th scope="col">FF 3.6</th>
+					<th scope="col">OP 10.5</th>
+					<th scope="col">IE 8</th>
+					<th scope="col">IE 7</th>
+					<th scope="col">IE 6</th>
+					<th scope="col">Meaning</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th rowspan="20" scope="row">CSS3</th>
+					<th scope="row">E[attr^=val]</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>'attr' 속성의 값이 'val'으로 시작하는 요소를 선택(공백으로 분리된 값이 일치해야 한다)</td>
+				</tr>
+				<tr>
+					<th scope="row">E[attr$=val]</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>'attr' 속성의 값이 'val'으로 끝나는 요소를 선택(공백으로 분리된 값이 일치해야 한다)</td>
+				</tr>
+				<tr>
+					<th scope="row">E[attr*=val]</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>'attr' 속성의 값에 'val'이 포함되는 요소를 선택(공백으로 분리된 값과 정확하게 일치하지 않아도 선택)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:root</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>문서의 최상위 요소(html)를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:nth-child(n)</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>앞으로부터 지정된 순서와 일치하는 요소가 E 라면 선택(E 아닌 요소의 순서가  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:nth-last-child(n)</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>뒤로부터 지정된 순서와 일치하는 요소가 E 라면 선택(E 아닌 요소의 순서가  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:nth-of-type(n)</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td> E 요소 중 앞으로부터 순서가 일치하는 E 요소를 선택(E 요소의 순서만  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:nth-last-of-type(n)</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E 요소 중 끝으로부터 순서가 일치하는 E 요소를 선택(E 요소의 순서만  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:last-child</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>마지막에 등장하는 요소가 E 라면 선택(E 아닌 요소의 순서가  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:first-of-type</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E 요소 중 첫 번째 E를 선택(E 요소의 순서만  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:last-of-type</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E 요소 중 마지막 E를 선택(E 요소의 순서만  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:only-child</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E 요소가 유일한 자식이면 선택(E 아닌 요소가 하나라도 포함되면 선택 안함)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:only-of-type</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E 요소가 유일한 타입이면 선택(E 아닌 요소가 포함되어도 E 타입이 유일하면 선택)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:empty</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>텍스트 및 공백을 포함하여 자식 요소가 없는 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:target</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E의 URI가 요청되면 선택(따라서 E는 ID가 지정되어 있어야 한다)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:enabled</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>사용 가능한 폼 콘트롤(input, textarea, select, button) E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:disabled</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>사용 불가능한 폼 콘트롤(input, textarea, select, button)  E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:checked</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td> 선택된 폼 콘트롤(input checked=&quot;checked&quot;)을 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:not(s)</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>S가 아닌 E 요소를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E~F</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>E 요소가 앞에 존재하면 F를 선택(E가 F보다 먼저 등장하지 않으면 선택 안함)</td>
+				</tr>
+				<tr>
+					<th rowspan="11" scope="row">CSS2</th>
+					<th scope="row">*</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>모든 요소를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E[attr]</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>'attr'  속성이 포함된 요소 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E[attr=val]</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>'attr' 속성의 값이 정확하게 'val'과 일치하는 요소 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E[attr~=val]</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>'attr' 속성의 값에 'val'이 포함되는 요소를 선택(공백으로 분리된 값이 일치해야 한다)</td>
+				</tr>
+				<tr>
+					<th scope="row">E[attr|=val]</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>'attr' 속성의 값이 'val' 또는 'val-' 으로 시작되는 요소 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:first-child</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>첫 번째  등장하는 요소가 E 라면 선택(E 아닌 요소의 순서가  계산에 포함됨)</td>
+				</tr>
+				<tr>
+					<th scope="row">E:lang(en)</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>HTML lang 속성의 값이 'en'으로 지정된 요소를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:before</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E 요소의 시작 지점에 생성된 요소를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:after</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td class="no">no</td>
+					<td>E 요소의 끝 지점에 생성된 요소를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E&gt;F</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>E 요소의 자식인 F 요소를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E+F</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>E 요소를 뒤따르는 F 요소를 선택(E와 F 사이에 다른 요소가 존재하면 선택 안함)</td>
+				</tr>
+				<tr>
+					<th rowspan="11" scope="row">CSS 1</th>
+					<th scope="row">E</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>E 요소를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:link</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>방문하지 않은 앵커 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:visited</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>방문한 앵커 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:hover</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>E 요소에 마우스가 올라가 있는 동안 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:active</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>E 요소에 마우스 클릭 또는 키보드 엔터가 눌린 동안 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:focus </th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>E 요소에 포커스가 머물러 있는 동안 E를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:first-line</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>E 요소의 첫 번째 라인을 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E:first-letter</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td class="no">no</td>
+					<td>E 요소의 첫 번째 문자를 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">.class</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>클래스 이름이 class로 지정된  요소 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">#id</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>아이디 이름이 id로 지정된 요소 선택</td>
+				</tr>
+				<tr>
+					<th scope="row">E F</th>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>yes</td>
+					<td>E 요소의 자손인 F 요소를 선택</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>한편 Keith Clark 이라는 웹 개발자는 IE 5.5~8 버전의 브라우저에서 CSS3의 모든 가상 클래스  선택자를 사용할 수 있도록 <a href="http://www.keithclark.co.uk/labs/ie-css3/">ie-css3.js</a> 라는 자바스크립트 라이브러리를 제작 MIT라이선스 형태(무료)로 배포하고 있다.</p>
+	</article>
+</section>
+<hr>
+<section>
+	<h2 id="example">3.3 _ CSS3 실전 적용</h2>
+	<article>
+		<h3 id="text-shadow">3.3.1 _ text-shadow</h3>
+		<p class="fs100" style="border:1px solid #ccc; margin:0"><span style="display:inline-block; zoom:1; filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color=#cccccc, Positive=true)"><span style="text-shadow:5px 5px #ccc;">text</span>-<span style="text-shadow:0 0 10px #000;">shadow</span></span></p>
+		<p class="fs100" style="background:#000; color:#666; margin:0"><span style="display:inline-block; zoom:1; filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color=#cccccc, Positive=true)"><span style="text-shadow:5px 5px #fff; color:#000;">text</span>-<span style="text-shadow:0 0 10px #fff; color:#000;">shadow</span></span></p>
+		<code><em>text-shadow</em>:5px 5px 0 #ccc;<br>
+		filter:progid:DXImageTransform.Microsoft.<em>dropshadow</em>(OffX=5, OffY=5, Color=#cccccc, Positive=true);<br>
+		display:inline-block; zoom:1; </code>
+		<code><em>text-shadow</em>:x_offset y_offset blur_radius color</code>
+		<p class="browserSupport">지원 브라우저 : <img src="img/br_cr.png" alt="크롬"> <img src="img/br_sf.png" alt="사파리"> <img src="img/br_ff.png" alt="파이어폭스"> <img src="img/br_op.png" alt="오페라"> <img src="img/br_ie.png" alt="인터넷익스플로러"> </p>
+		<p>IE 브라우저를 제외한 모든 브라우저가 이미 text-shadow 속성을 지원하고 있다. blur 값은 생략할 수 있는데 생략하는 경우 기본값은 blur 스타일이 전혀 지정되지 않은 '0'이다. IE는 DropShadow Filter를 사용할 수 있지만 그림자의 blur 값이 '0'과 같은 표현으로 처리되고 blur 값을 지정할 수 없는 단점이 있다. IE 브라우저 버전간 호환(버그 해결)을 위해 display 속성을 block 또는 inline-block 으로 지정하고 zoom:1 속성을 추가로 부여해야 한다.</p>
+		<table>
+			<caption>문법</caption>
+			<tbody>
+				<tr>
+					<th>Name:</th>
+					<td><dfn>text-shadow</dfn></td>
+				</tr>
+				<tr>
+					<th>Value:</th>
+					<td>none | [ &lt;color&gt;? &lt;length&gt;  &lt;length&gt;  &lt;length&gt;? | &lt;length&gt;  &lt;length&gt;  &lt;length&gt;? &lt;color&gt;? ]<var></var> </td>
+				</tr>
+				<tr>
+					<th>Initial:</th>
+					<td>none</td>
+				</tr>
+				<tr>
+					<th>Applies to:</th>
+					<td>all elements and generated content</td>
+				</tr>
+				<tr>
+					<th>Inherited:</th>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<th>Percentages:</th>
+					<td>N/A</td>
+				</tr>
+				<tr>
+					<th>Media:</th>
+					<td>visual</td>
+				</tr>
+				<tr>
+					<th>Computed&nbsp;value:</th>
+					<td>a color plus three absolute &lt;length&gt;s</td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Text Level 3 &rsaquo; text-shadow - <a href="http://www.w3.org/TR/css3-text/#text-shadow">http://www.w3.org/TR/css3-text/#text-shadow</a></li>
+			<li>MSDN &rsaquo; DropShadow Filter - <a href="http://msdn.microsoft.com/en-us/library/ms532985(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532985(VS.85).aspx</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="text-overflow">3.3.2 _ text-overflow</h3>
+		<p class="fs48" style="border:10px solid #666; width:200px; padding:20px; white-space:nowrap; resize:horizontal; margin:0 0 30px 0;">무궁화 꽃이 피었습니다.</p>
+		<p class="fs48" style="border:10px solid #666; width:200px; padding:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; -o-text-overflow:ellipsis; resize:horizontal">무궁화 꽃이 피었습니다.</p>
+		<code>
+			<em>text-overflow</em>:ellipsis; <br>
+			<em>-o-text-overflow</em>:ellipsis;
+		</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+		<p>Firefox 브라우저는 아직 지원하지 않고 있지만 IE는 이미 IE6 버전부터 지원하고 있다. Firefox 브라우저는 overflow-hidden 속성에 의하여 넘치는 부분이 말 줄임표 없이 잘린다.</p>
+		<table>
+			<caption>문법</caption>
+			<tbody>
+				<tr>
+					<th>Name:</th>
+					<td><dfn>text-overflow</dfn></td>
+				</tr>
+				<tr>
+					<th>Value:</th>
+					<td>clip | ellipsis | <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-string" class="noxref"><span class="value-inst-string">&lt;string&gt;</span></a> </td>
+				</tr>
+				<tr>
+					<th>Initial:</th>
+					<td>clip</td>
+				</tr>
+				<tr>
+					<th>Applies to:</th>
+					<td>block-level, inline-block elements and table cells</td>
+				</tr>
+				<tr>
+					<th>Inherited:</th>
+					<td>no</td>
+				</tr>
+				<tr>
+					<th>Percentages:</th>
+					<td>N/A</td>
+				</tr>
+				<tr>
+					<th>Media:</th>
+					<td>visual</td>
+				</tr>
+				<tr>
+					<th>Computed&nbsp;value:</th>
+					<td>as specified</td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Text Level 3 &rsaquo; text-overflow - <a href="http://dev.w3.org/csswg/css3-text/#text-overflow">http://dev.w3.org/csswg/css3-text/#text-overflow</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="word-wrap">3.3.3 _ word-wrap</h3>
+		<p class="fs24" style="border:10px solid #666; width:300px; margin:0 0 30px 0"><a href="#">http://abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz.com</a></p>
+		<p class="fs24" style="border:10px solid #666; width:300px; word-wrap:break-word"><a href="#">http://abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz.com</a></p>
+		<code>
+			<em>word-wrap</em>:break-word;
+		</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+		<p>1byte 문자열이 공백 없이 등장하는 경우 모든 브라우저들은 이를 하나의 단어로 해석하기 때문에 개행하지 않는다. 이것을 강제로 개행할 수 있다. 모든 브라우저가 이 속성을 지원한다.</p>
+		<table>
+			<caption>문법</caption>
+			<thead>
+				<tr>
+					<th>Name:</th>
+					<td><dfn>word-wrap</dfn></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Value:</th>
+					<td>normal | break-word</td>
+				</tr>
+				<tr>
+					<th>Initial:</th>
+					<td>normal</td>
+				</tr>
+				<tr>
+					<th>Applies to:</th>
+					<td>all elements</td>
+				</tr>
+				<tr>
+					<th>Inherited:</th>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<th>Percentages:</th>
+					<td>N/A</td>
+				</tr>
+				<tr>
+					<th>Media:</th>
+					<td>visual</td>
+				</tr>
+				<tr>
+					<th>Computed&nbsp;value:</th>
+					<td>specified value</td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Text Level 3 &rsaquo; word-wrap - <a href="http://www.w3.org/TR/css3-text/#word-wrap">http://www.w3.org/TR/css3-text/#word-wrap</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="font-face">3.3.4 _ @font-face</h3>
+		<p class="fs48">The quick brown fox jumps over the lazy dog.<br>
+		이 문서의 기본 글꼴은 나눔고딕  입니다.<br>0123456789</p>
+		<code>
+			<em>@font-face</em>{ font-family:<em>ngttf</em>; src:url(NanumGothic.<em>ttf</em>);}<br>
+			<em>@font-face</em>{ font-family:<em>ngeot</em>; src:url(NanumGothic.<em>eot</em>);}<br>
+			<em>body, input, textarea, select, button</em>{ font-family:<em>NanumGothic</em>, <em>맑은고딕</em>, <em>ngttf</em>, <em>ngeot</em>;}
+		</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+		<p><abbr title="True Type Font">ttf</abbr> 파일과 <abbr title="Embeded Open Type">eot</abbr> 파일을 함께 준비한다. 비 IE 브라우저는 ttf 포멧과 <abbr title="Open Type Font">otf</abbr> 포멧을 지원하지만 eot 포멧을 지원하지 않는다. 반면 IE 브라우저는 eot 포멧만 지원하기 때문에 두 가지 포멧이 모두 필요하다. 나눔고딕 글꼴을 이미 설치한 사용자는 웹 폰트를 내려받지 않고 로컬 글꼴을 사용할 수 있도록 NanumGothic을 먼저 선언한다. 한국어 글꼴인 경우 오페라 브라우저는 font-family 이름에 반드시 한글을 사용해야 한다. 나눔고딕 글꼴 내려받기 <a href="img/NanumGothic.ttf">NanumGothic.ttf</a> | <a href="img/NanumGothic.eot">NanumGothic.eot</a></p>
+		<table>
+			<caption>
+				font-family 문법
+			</caption>
+			<tbody>
+				<tr>
+					<th>Name:</th>
+					<td><dfn>font-family</dfn></td>
+				</tr>
+				<tr>
+					<th>Value:</th>
+					<td>&lt;family-name&gt; </td>
+				</tr>
+				<tr>
+					<th>Initial:</th>
+					<td>N/A</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<caption>
+				src 문법
+			</caption>
+			<tbody>
+				<tr>
+					<th>Name:</th>
+					<td><dfn>src</dfn></td>
+				</tr>
+				<tr>
+					<th>Value:</th>
+					<td>[ &lt;uri&gt; [format(&lt;string&gt; [, &lt;string&gt;]*)] | &lt;font-face-name&gt; ] [, &lt;uri&gt; [format(&lt;string&gt; [, &lt;string&gt;]*)] | &lt;font-face-name&gt; ]* </td>
+				</tr>
+				<tr>
+					<th>Initial:</th>
+					<td>N/A</td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Fonts Module Level 3 &rsaquo; @font-face - <a href="http://www.w3.org/TR/css3-fonts/#the-font-face-rule">http://www.w3.org/TR/css3-fonts/#the-font-face-rule</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="opacity">3.3.5 _ opacity</h3>
+		<div class="boxShadow" style="background:url(img/bgCheck32.gif)">
+			<div style="position:relative; width:200px; height:200px; margin:0 0 -100px 0; background:red; opacity:.5; filter:alpha(opacity=50);"></div>
+			<div style="position:relative; width:200px; height:200px; margin:0 0 0 100px; background:blue; opacity:.5; filter:alpha(opacity=50);"></div>
+		</div>
+		<code>
+			<em>opacity</em>:0.5; <br>
+			<em>filter</em>:alpha(opacity=50);
+		</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+		<p>IE 브라우저를 제외한 모든 브라우저가 이미 opacity 속성을 지원하고 있다. IE는 MS전용 Alpha Filter를 적용하여 동일한 표현이 가능하다.</p>
+		<table>
+			<caption>
+				문법
+			</caption>
+			<tbody>
+				<tr>
+					<th>Name:</th>
+					<td><dfn>opacity</dfn></td>
+				</tr>
+				<tr>
+					<th>Value: </th>
+					<td>&lt;alphavalue&gt; | inherit </td>
+				</tr>
+				<tr>
+					<th>Initial: </th>
+					<td>1 </td>
+				</tr>
+				<tr>
+					<th>Applies&nbsp;to: </th>
+					<td>all elements </td>
+				</tr>
+				<tr>
+					<th>Inherited: </th>
+					<td>no </td>
+				</tr>
+				<tr>
+					<th>Percentages: </th>
+					<td>N/A </td>
+				</tr>
+				<tr>
+					<th>Media: </th>
+					<td>visual </td>
+				</tr>
+				<tr>
+					<th>Computed value: </th>
+					<td>The same as the specified value after clipping the
+						&lt;alphavalue&gt; to the range [0.0,1.0]. </td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Color Module Level 3 &rsaquo; opacity - <a href="http://www.w3.org/TR/css3-color/#transparency">http://www.w3.org/TR/css3-color/#transparency</a></li>
+			<li>MSDN &rsaquo; Alpha Filter - <a href="http://msdn.microsoft.com/en-us/library/ms532967(VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532967(VS.85).aspx</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="box-shadow">3.3.6 _ box-shadow</h3>
+		<p style="position:relative; padding:30px 0">
+			<img src="img/s10.jpg" width="200" alt="둘째아들 정이든" style="border:10px solid #eee; vertical-align:middle; box-shadow:10px 10px 10px silver; -moz-box-shadow:10px 10px 10px silver; -webkit-box-shadow:10px 10px 10px silver; filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=10); margin:0 30px 30px 0">
+			<img src="img/s10.jpg" width="200" alt="둘째아들 정이든" style="border:10px solid #eee; vertical-align:middle; box-shadow:0 0 20px #666; -moz-box-shadow:0 0 20px #666; -webkit-box-shadow:0 0 20px #666; filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=10); margin:0 30px 30px 0">
+			<span style="display:inline-block; position:relative; vertical-align:middle; border:10px solid #eee; box-shadow:inset 0 0 10px #000; -moz-box-shadow:inset 0 0 10px #000; -webkit-box-shadow:inset 0 0 10px #000;"><img src="img/s10.jpg" width="200" alt="둘째아들 정이든" style="position:relative; z-index:-1; display:block;"></span>
+		</p>
+		<code>
+			<em>box-shadow</em>:10px 10px 10px silver; <br>
+			<em>-moz-box-shadow</em>:10px 10px 10px silver; <br>
+			<em>-webkit-box-shadow</em>:10px 10px 10px silver; <br>
+			<em>filter</em>:progid:DXImageTransform.Microsoft.<em>Shadow</em>(color=silver,direction=135, strength=10);
+		</code>
+		<code><em>box-shadow</em>:x_offset y_offset blur_radius color</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+		<p>값은 'X좌표, Y좌표, blur값, 그림자색' 순으로 선언한다. blur 값은 생략할 수 있는데 생략하는 경우 기본값은 blur 스타일이 전혀 지정되지 않은 '0'이다. IE 브라우저는 Shadow Filter를 적용할 수 있으나 그림자를 한 방향으로만 표현할 수 있고 사방으로 표현할 수 없는 제약이 따른다. inset 값을 추가하면 그림자가 상자 안쪽으로 발생하는데 IE filter 로는 이런 표현이 불가능하다. Safari4는 inset 값을 지원하지 않지만 Safari5는 지원한다.</p>
+		<table>
+			<caption>문법</caption>
+			<tbody>
+				<tr>
+					<th>Name: </th>
+					<td><dfn>box-shadow</dfn> </td>
+				</tr>
+				<tr>
+					<th>Value: </th>
+					<td>none | <a href="http://www.w3.org/TR/css3-background/#ltshadowgt"><var>&lt;shadow&gt;</var></a> [ , <a href="http://www.w3.org/TR/css3-background/#ltshadowgt"><var>&lt;shadow&gt;</var></a> ]* </td>
+				</tr>
+				<tr>
+					<th>Initial: </th>
+					<td>none </td>
+				</tr>
+				<tr>
+					<th>Applies to: </th>
+					<td>all elements </td>
+				</tr>
+				<tr>
+					<th>Inherited: </th>
+					<td>no </td>
+				</tr>
+				<tr>
+					<th>Percentages: </th>
+					<td>N/A </td>
+				</tr>
+				<tr>
+					<th>Media: </th>
+					<td>visual </td>
+				</tr>
+				<tr>
+					<th>Computed value: </th>
+					<td>any &lt;length&gt; made absolute; any color computed; otherwise as
+						specified </td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Backgrounds and Borders Module Level 3 &rsaquo; box-shadow - <a href="http://www.w3.org/TR/css3-background/#the-box-shadow">http://www.w3.org/TR/css3-background/#the-box-shadow</a></li>
+			<li>MSDN &rsaquo; Shadow Filter - <a href="http://msdn.microsoft.com/en-us/library/ms533086(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms533086(v=VS.85).aspx</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="border-radius">3.3.7 _ border-radius</h3>
+		<p>
+			<span style="display:inline-block; width:200px; height:200px; background:#ccc; border:10px solid #666; border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px; margin:0 50px 0 0"></span>
+			<span style="display:inline-block; width:200px; height:200px; background:#ccc; border:10px solid #666; border-radius:30px 0; -moz-border-radius:30px 0; -webkit-border-top-left-radius:30px; -webkit-border-bottom-right-radius:30px;"></span>
+		</p>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+		</p>
+		<code>
+			<em>border-radius</em>:30px; <br>
+		<em>-moz-border-radius</em>:30px;<br>
+		<em>-webkit-border-radius</em>:30px;
+		</code>
+		<p>네 방향 모두 적용하는 경우.</p>
+		<code>
+			<em>border-radius</em>:30px 0; <br>
+			<em>-moz-border-radius</em>:30px 0;<br>
+			<em>-webkit-border-top-left-radius</em>:30px; <br>
+			<em>-webkit-border-bottom-right-radius</em>:30px;
+			</code>
+			<p>원하는 방향에만 적용하는 경우. 웹킷 브라우저 가운데 사파리 4는 단축 속성을 지원하지 않아 현재로써는 단축 속성을 사용할 수 없다.</p>
+			<table>
+				<caption>문법</caption>
+				<tbody>
+					<tr>
+						<th>Name: </th>
+						<td><dfn>border-radius</dfn></td>
+					</tr>
+					<tr>
+						<th>Value: </th>
+						<td>[ <var>&lt;length&gt;</var> | <var>&lt;percentage&gt;</var> ]{1,4} [ / [ <var>&lt;length&gt;</var> | <var>&lt;percentage&gt;</var> ]{1,4} ]? </td>
+					</tr>
+					<tr>
+						<th>Initial: </th>
+						<td>0 </td>
+					</tr>
+					<tr>
+						<th>Applies to: </th>
+						<td>all elements, except table element when 'border-collapse' is 'collapse' </td>
+					</tr>
+					<tr>
+						<th>Inherited: </th>
+						<td>no </td>
+					</tr>
+					<tr>
+						<th>Percentages: </th>
+						<td>Refer to corresponding dimension of the <a href="http://www.w3.org/TR/CSS21/box.html#box-dimensions">border
+							box</a>. </td>
+					</tr>
+					<tr>
+						<th>Media: </th>
+						<td>visual </td>
+					</tr>
+					<tr>
+						<th>Computed value: </th>
+						<td>see individual properties </td>
+					</tr>
+				</tbody>
+			</table>
+		<ul>
+			<li>CSS Backgrounds and Borders Module Level 3 &rsaquo; border-radius - <a href="http://www.w3.org/TR/css3-background/#the-border-radius">http://www.w3.org/TR/css3-background/#the-border-radius</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="background">3.3.8 _ background(s)</h3>
+		<div style="width:200px; height:200px; border:10px solid #666; background:url(img/bgCheck32.gif) no-repeat left top, url(img/bgCheck32.gif) no-repeat right top, url(img/bgCheck32.gif) no-repeat left bottom, url(img/bgCheck32.gif) no-repeat right bottom;"></div>
+		<code>
+			<em>background</em>:<br>
+			url(bg.gif) no-repeat left top, <br>
+			url(bg.gif) no-repeat right top, <br>
+			url(bg.gif) no-repeat left bottom, <br>
+			url(bg.gif) no-repeat right bottom;
+		</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+		</p>
+		<p>하나의 요소에 <img src="img/bgCheck32.gif" width="32" height="32" alt="배경 이미지"> 이런 배경 이미지가 4번 적용되었다. 속성의 값을 쉼표(,)로 분리하면 배경 이미지의 사용 횟수를 무한대로 늘릴 수 있다.</p>
+		<table>
+			<caption>문법</caption>
+			<tbody>
+				<tr>
+					<th>Name: </th>
+					<td><dfn>background</dfn></td>
+				</tr>
+				<tr>
+					<th>Value: </th>
+					<td>[ <var><a href="http://www.w3.org/TR/css3-background/#ltbg-layergt">&lt;bg-layer&gt;</a></var> , ]* <var><a href="http://www.w3.org/TR/css3-background/#ltfinal-bg-layergt">&lt;final-bg-layer&gt;</a></var></td>
+				</tr>
+				<tr>
+					<th>Initial: </th>
+					<td>see individual properties </td>
+				</tr>
+				<tr>
+					<th>Applies to: </th>
+					<td>all elements </td>
+				</tr>
+				<tr>
+					<th>Inherited: </th>
+					<td>no </td>
+				</tr>
+				<tr>
+					<th>Percentages: </th>
+					<td>see individual properties </td>
+				</tr>
+				<tr>
+					<th>Media: </th>
+					<td>visual </td>
+				</tr>
+				<tr>
+					<th>Computed value: </th>
+					<td>see individual properties </td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Backgrounds and Borders Module Level 3 &rsaquo; background - <a href="http://www.w3.org/TR/css3-background/#background">http://www.w3.org/TR/css3-background/#background</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="gradient">3.3.9 _ gradient</h3>
+		<div style="height:300px; margin:0 0 1em 0; background:#3EAF0E -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3EAF0E), to(#fff)); background:#3EAF0E -moz-linear-gradient(top, #3EAF0E, #fff); filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#3EAF0E, endColorStr=#ffffff)"></div>		
+		<code>
+			background:#3EAF0E <em>-webkit-gradient</em>(linear, 0% 0%, 0% 100%, from(#3EAF0E), to(#fff));<br>
+			background:#3EAF0E <em>-moz-linear-gradient</em>(top, #3EAF0E, #fff);<br>
+			filter:progid:DXImageTransform.Microsoft.<em>gradient</em>(startColorStr=#3EAF0E, endColorStr=#ffffff);
+		</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+		<p>웹킷(크롬, 사파리)과 파이어폭스 및 IE의 속성 및 값 선언 방식이 모두 다름에 유의한다. 웹킷은 (타입, X시작점 Y시작점, X종료점 Y종료점, 시작색, 종료색) 형식으로 선언하고 파이어폭스는 (시작점, 시작색, 종료색) 순으로 선언한다. gradient를 지원하지 않는 브라우저를 위하여 기본 배경색을 지정해두어야 함에 유의한다. IE는 IE 전용 Gradient Filter를 사용한다.</p>
+		<ul>
+			<li>Safari CSS Visual Effects Guide &rsaquo; gradients - <a href="http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html">http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html</a></li>
+			<li>Mozila Developer Center &rsaquo; -moz-linear-gradient - <a href="https://developer.mozilla.org/en/CSS/-moz-linear-gradient">https://developer.mozilla.org/en/CSS/-moz-linear-gradient</a></li>
+			<li>MSDN &rsaquo; Gradient Filter - <a href="http://msdn.microsoft.com/en-us/library/ms532997(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532997(v=VS.85).aspx</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="transform">3.3.10 _ transform</h3>
+		<div style="position:relative; width:300px;">
+			<p><img src="img/s27.jpg" width="300" alt="아이폰4" class="iPhone"></p>
+			<p style="position:absolute; top:150px; left:40px; font-size:50px; font-weight:bold; margin:0; padding:0; border:10px solid #f00; color:#fff; -o-transform:rotate(-30deg); -moz-transform:rotate(-30deg); -webkit-transform:rotate(-30deg); box-shadow:0 0 10px #000; -moz-box-shadow:0 0 10px #000;  -webkit-box-shadow:0 0 10px #000; text-shadow:0 0 10px #000; filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.8660253882408142, M12=0.5, M21=-0.5, M22=0.8660253882408142, sizingmethod='auto expand')">Sold Out</p>
+			<p class="iPhoneText" style="position:absolute; top:70px; left:100%; margin:0; font-size:70px; font-weight:bold; white-space:nowrap; -o-transform:rotate(90deg); -o-transform-origin:0 100%; -moz-transform:rotate(90deg); -moz-transform-origin:0 100%; -webkit-transform:rotate(90deg); -webkit-transform-origin:0 100%; text-shadow:0 0 10px #666; filter:progid:DXImageTransform.Microsoft.Matrix(M11=6.123031769111886e-17, M12=-1, M21=1, M22=6.123031769111886e-17, sizingmethod='auto expand');">iPhone 4</p>
+		</div>
+		<code>
+			<em>-o-transform</em>:rotate(90deg);<em>-o-transform-origin</em>:0 100%; <br>
+			<em>-moz-transform</em>:rotate(90deg);<em>-moz-transform-origin</em>:0 100%;<br>
+			<em>-webkit-transform</em>:rotate(90deg);<em>-webkit-transform-origin</em>:0 100%;<br>
+					filter:progid:DXImageTransform.Microsoft.<em>Matrix</em>(M11=6.123031769111886e-17, M12=-1, M21=1, M22=6.123031769111886e-17, sizingmethod='auto expand');
+		</code>
+		<p class="browserSupport" style="clear:both;">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_ff.png" alt="파이어폭스">
+			<img src="img/br_op.png" alt="오페라">
+			<img src="img/br_ie.png" alt="인터넷익스플로러">
+		</p>
+		<p>시계 방향으로 90도 회전시키는 코드. translate(이동), scale(크기), rotate(회전), skew(비틀기)가 가능하다. transform-oriain 속성은 transform의 축을 지정하는 속성으로써 값은 기본 값이 50%(X축) 50%(Y축) 이기 때문에 기본 값을 따르는 경우 생략할 수 있다. IE의 경우 IE 전용 Matrix Filter를 사용할 수 있으나 사용법이 다소 복잡하다.</p>
+		<table>
+			<caption>
+			transform 문법
+			</caption>
+			<tbody>
+				<tr>
+					<th> Name: </th>
+					<td> <dfn>transform</dfn> </td>
+				</tr>
+				<tr>
+					<th> Value: </th>
+					<td> none | <a href="http://www.w3.org/TR/css3-2d-transforms/#transform-functions">&lt;transform-function&gt;</a> [ &lt;transform-function&gt; ]* </td>
+				</tr>
+				<tr>
+					<th> Initial: </th>
+					<td> none </td>
+				</tr>
+				<tr>
+					<th> Applies&nbsp;to: </th>
+					<td> block-level and inline-level elements </td>
+				</tr>
+				<tr>
+					<th> Inherited: </th>
+					<td> no </td>
+				</tr>
+				<tr>
+					<th> Percentages: </th>
+					<td> refer to the size of the element's box </td>
+				</tr>
+				<tr>
+					<th> Media: </th>
+					<td> visual </td>
+				</tr>
+				<tr>
+					<th> Computed value: </th>
+					<td> Same as specified value. </td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<caption>
+			transform-origin 문법
+			</caption>
+			<tbody>
+				<tr>
+					<th> Name: </th>
+					<td> <dfn>transform-origin</dfn> </td>
+				</tr>
+				<tr>
+					<th> Value: </th>
+					<td> [ [ &lt;percentage&gt; | &lt;length&gt; | left | center | right ] [
+						&lt;percentage&gt; | &lt;length&gt; | top | center | bottom ]? ] | [ [
+						left | center | right ] || [ top | center | bottom ] ] </td>
+				</tr>
+				<tr>
+					<th> Initial: </th>
+					<td> 50% 50% </td>
+				</tr>
+				<tr>
+					<th> Applies&nbsp;to: </th>
+					<td> block-level and inline-level elements </td>
+				</tr>
+				<tr>
+					<th> Inherited: </th>
+					<td> no </td>
+				</tr>
+				<tr>
+					<th> Percentages: </th>
+					<td> refer to the size of the element's box </td>
+				</tr>
+				<tr>
+					<th> Media: </th>
+					<td> visual </td>
+				</tr>
+				<tr>
+					<th> Computed value: </th>
+					<td> For &lt;length&gt; the absolute value, otherwise a percentage </td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS 2D Transforms Module Level 3 &rsaquo; transform - <a href="http://www.w3.org/TR/css3-2d-transforms/#transform-property">http://www.w3.org/TR/css3-2d-transforms/#transform-property</a></li>
+			<li>MSDN &rsaquo; Matrix Filter - <a href="http://msdn.microsoft.com/en-us/library/ms533014(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms533014(v=VS.85).aspx</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="transition">3.3.11 _ transition</h3>
+		<ul class="menu">
+			<li class="on"><a href="#">Menu1</a></li>
+			<li><a href="#">Menu2</a></li>
+			<li><a href="#">Menu3</a></li>
+			<li><a href="#">Menu4</a></li>
+			<li><a href="#">Menu5</a></li>
+		</ul>
+		<code>
+			a{padding:10px 15px; margin:0;<br>
+			&nbsp;&nbsp;<em>-o-transition</em>:0.2s; <br>
+			&nbsp;&nbsp;<em>-webkit-transition</em>:0.2s;<br>
+			&nbsp;&nbsp;<del><em>-moz-transition</em>:.2s;</del>}<br><br>
+			a:hover{padding:15px 20px; margin:-6px; opacity:0.8;}
+		</code>
+		<p class="browserSupport" style="margin:50px 0 0 0">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+			<img src="img/br_op.png" alt="오페라">
+		</p>
+		<p>메뉴 버튼에 마우스를 올리면 플래시 메뉴와 같은 부드러운 움직임이 발생한다. transition 속성의 값으로는 어떤 속성을 몇 초간 진행할 것인지 정의한다. 어떤 속성을 transition 할 것인지 지정하지 않으면 기본 값 all이 지정되어 모든 속성을 transition 시킨다. 파이어폭스 브라우저는 3.7 버전부터 지원을 기대할 수 있다.</p>
+		<table>
+			<caption>문법</caption>
+			<tbody>
+				<tr>
+					<th> Name: </th>
+					<td> <dfn>transition</dfn> </td>
+				</tr>
+				<tr>
+					<th> Value: </th>
+					<td> [&lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-property">transition-property</a>'&gt;
+						|| &lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-duration">transition-duration</a>'&gt;
+						|| &lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function">transition-timing-function</a>'&gt;
+						|| &lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-delay">transition-delay</a>'&gt; [,
+						[&lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-property">transition-property</a>'&gt;
+						|| &lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-duration">transition-duration</a>'&gt;
+						|| &lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-timing-function">transition-timing-function</a>'&gt;
+						|| &lt;'<a href="http://www.w3.org/TR/css3-transitions/#transition-delay">transition-delay</a>'&gt;]]* </td>
+				</tr>
+				<tr>
+					<th> Initial: </th>
+					<td> see individual properties </td>
+				</tr>
+				<tr>
+					<th> Applies&nbsp;to: </th>
+					<td> all elements, :before and :after pseudo elements </td>
+				</tr>
+				<tr>
+					<th> Inherited: </th>
+					<td> no </td>
+				</tr>
+				<tr>
+					<th> Percentages: </th>
+					<td> N/A </td>
+				</tr>
+				<tr>
+					<th> Media: </th>
+					<td> interactive </td>
+				</tr>
+				<tr>
+					<th> Computed value: </th>
+					<td> Same as specified value. </td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Transitions Module Level 3 &rsaquo; transition - <a href="http://www.w3.org/TR/css3-transitions/#the-transition-shorthand-property-">http://www.w3.org/TR/css3-transitions/#the-transition-shorthand-property-</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3 id="animation">3.3.12 _ animation</h3>
+		<p><a href="#" class="ani">animation?</a></p>		
+		<code>
+			.ani{ <em>-webkit-animation</em>:<em>webkitFire</em> infinite 1s linear;}<br><br>
+			<em>@-webkit-keyframes</em> '<em>webkitFire</em>'{<br>
+			&nbsp;&nbsp;<em>from</em>{ -webkit-transform:rotate(<em>0deg</em>);} <br>
+			&nbsp;&nbsp;<em>to</em>{-webkit-transform:rotate(<em>360deg</em>);} <br>
+			}
+		</code>
+		<p class="browserSupport">지원 브라우저 : 
+			<img src="img/br_cr.png" alt="크롬">
+			<img src="img/br_sf.png" alt="사파리">
+		</p>
+		<p>'webkitFire'라는 사용자 정의 에니메이션이 실행 된다. 일정한(linear) 속도로 1초(1s)에 한 바퀴(0~360deg)씩 영원히(infinite) 돌게 된다.</p>
+		<table>
+			<caption>문법</caption>
+			<tbody>
+				<tr>
+					<th> Name: </th>
+					<td> <dfn>animation</dfn> </td>
+				</tr>
+				<tr>
+					<th> Value: </th>
+					<td> [&lt;animation-name&gt; || &lt;animation-duration&gt; ||
+						&lt;animation-timing-function&gt; || &lt;animation-delay&gt; ||
+						&lt;animation-iteration-count&gt; || &lt;animation-direction&gt;] [,
+						[&lt;animation-name&gt; || &lt;animation-duration&gt; ||
+						&lt;animation-timing-function&gt; || &lt;animation-delay&gt; ||
+						&lt;animation-iteration-count&gt; || &lt;animation-direction&gt;] ]* </td>
+				</tr>
+				<tr>
+					<th> Initial: </th>
+					<td> see individual properties </td>
+				</tr>
+				<tr>
+					<th> Applies&nbsp;to: </th>
+					<td> block-level and inline-level elements </td>
+				</tr>
+				<tr>
+					<th> Inherited: </th>
+					<td> no </td>
+				</tr>
+				<tr>
+					<th> Percentages: </th>
+					<td> N/A </td>
+				</tr>
+				<tr>
+					<th> Media: </th>
+					<td> visual </td>
+				</tr>
+				<tr>
+					<th> Computed value: </th>
+					<td> Same as specified value. </td>
+				</tr>
+			</tbody>
+		</table>
+		<ul>
+			<li>CSS Animations Module Level 3 &rsaquo; animation - <a href="http://www.w3.org/TR/css3-animations/#the-animation-shorthand-property-">http://www.w3.org/TR/css3-animations/#the-animation-shorthand-property-</a></li>
+		</ul>
+	</article>
+</section>
+<hr>
+<section>
+	<h2 id="explain">3.4 _ CSS3 명세 읽는 법</h2>
+	<table>
+		<caption>CSS3 명세 읽는 법</caption>
+		<thead>
+			<tr>
+				<th scope="col">용어</th>
+				<th scope="col">해설</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Value</th>
+				<td>유효한 값 또는 문법</td>
+			</tr>
+			<tr>
+				<th scope="row">Initial</th>
+				<td>기본 값 (값을 지정하지 않은 경우의)</td>
+			</tr>
+			<tr>
+				<th scope="row">Applies to</th>
+				<td>속성을 적용할 수 있는 요소 (block, inline, inline-block ... all elements)</td>
+			</tr>
+			<tr>
+				<th scope="row">Inherited</th>
+				<td>속성이 자손에게 상속 되는지의 여부 (yes, no)</td>
+			</tr>
+			<tr>
+				<th scope="row">Percentage</th>
+				<td>퍼센티지 값을 적용할 수 있는지의 여부 (N/A 는 not applicable 또는 not available 으로써 적용할 수 없다는 의미)</td>
+			</tr>
+			<tr>
+				<th scope="row">Media</th>
+				<td>어떤 미디어 그룹에 적용할 수 있는 속성인지의 여부 (visual, interactive ...)</td>
+			</tr>
+			<tr>
+				<th scope="row">Computed value</th>
+				<td>절대 값이 어떻게 계산 되는지 </td>
+			</tr>
+			<tr>
+				<th scope="row">&lt;...&gt;</th>
+				<td>포함되는 데이터 유형을 변수 형식으로 설명 (예를 들면 &lt;length&gt;, &lt;percentage&gt;) </td>
+			</tr>
+			<tr>
+				<th scope="row">a b</th>
+				<td>공백으로 분리되어 나열된 값들은 모든 값이 반드시 필요하고 순서를 지켜야 한다</td>
+			</tr>
+			<tr>
+				<th scope="row">|</th>
+				<td>둘 이상의 값이 이것으로 분리되어 있으면 하나의 값은 반드시 필요하고 하나만 필요하다</td>
+			</tr>
+			<tr>
+				<th scope="row">||</th>
+				<td>둘 이상의 값이 이것으로 분리되어 있으면 하나 또는 하나 이상 반드시 필요하고 순서는 지키지 않아도 된다</td>
+			</tr>
+			<tr>
+				<th scope="row">&amp;&amp;</th>
+				<td>둘 이상의 값이 이것으로 분리되어 있으면 모든 값이 반드시 필요하고 순서는 지키지 않아도 된다</td>
+			</tr>
+			<tr>
+				<th scope="row">[...]</th>
+				<td>값을 그룹핑 한다</td>
+			</tr>
+			<tr>
+				<th scope="row">*</th>
+				<td>선행되는 유형의 값은 생략하거나 한 번 이상 등장할 수 있다</td>
+			</tr>
+			<tr>
+				<th scope="row">+</th>
+				<td>선행되는 유형의 값은 반드시 필요하고 한 번  이상 필요하다</td>
+			</tr>
+			<tr>
+				<th scope="row">?</th>
+				<td>선행되는 유형의 값은 생략하거나 한 번만 필요하다</td>
+			</tr>
+			<tr>
+				<th scope="row">{a,b}</th>
+				<td>선행되는 유형의 값은 적어도 'a' 번 필요하고 최대한 'b' 번 필요하다. (예를 들면 border-color 속성의 Value는 &lt;color&gt;{1,4} 이다)</td>
+			</tr>
+			<tr>
+				<th scope="row">(...)</th>
+				<td>인용부호 밖에 있는 괄호는  값의 묶음을 위해 사용되므로 문자 그대로 출력해야 한다 (예 background:url(...);)</td>
+			</tr>
+			<tr>
+				<th scope="row">/</th>
+				<td>인용부호 밖에 있는 슬러시는  값의 연결을 위해 사용되므로 문자 그대로 출력해야 한다 (예 font:12px/1.2 Sans-serif;)</td>
+			</tr>
+			<tr>
+				<th scope="row">,</th>
+				<td>인용부호 밖에 있는 쉼표는 값의 연결을 위해 사용되므로 문자 그대로 출력해야 한다 (예 font-family:Tahoma, Geneva, sans-serif;)</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+<hr>
+<section>
+	<h2 id="faq">3.5 _ CSS3 FAQ</h2>
+	<article>
+		<h3 id="faq1">3.5.1 _ CSS3는 언제 지원 되나?</h3>
+		<p>CSS의 경우 공식 표준(de jure standard) 보다 사실 표준(de facto standard)이 더욱 의미가 있다. 그 이유는 현존하는 웹 브라우저들이 권고 후보(CR:Candidate Recommendation) 단계에 머물러 있는 CSS 2.1 명세의 대부분을 이미 잘 지원하고 있기 때문. CSS 2.1은 공식 표준(REC:Recommendation)이 되기 위하여 권고 제의(PR:Proposed Recommendation) 라는 단계를 한 번 더 거쳐야 하지만 이미 현실 세계에서는 사실상의 표준이 되어 있는 셈이다. 따라서 CSS3가 공식 표준이 될 때까지 기다릴 필요가 없다. 웹 브라우저들이 지원하기만 한다면 CSS3의 새로운 기술 명세를 현재의 실무에 즉시 적용할 수 있다. 이미 현존하는 최신 웹 브라우저들은 앞다투어 CSS3의 유용한 명세들을 지원하기 시작했다.</p>
+	</article>
+	<article>
+		<h3 id="faq2">3.5.2 _ CSS3를 사용하면 이를 잘 지원하지 못하는 하위 버전 브라우저를 선택한 사용자를 차별하는 것이 아닌가?</h3>
+		<p>전혀 그렇지 않다. CSS는 HTML 문서의 화면 표시 스타일을 기술하는 언어로써 HTML 구조를 변경하거나 의미를 교정하는 언어가 아니다.  따라서 CSS는 의도하지 않은 상황에서도 자연스럽게 우아한 낮춤(Graceful Degradation)과 점진적 향상(Progressive Enhancement) 원칙에 충실하다. 최신 웹 브라우저를 선택한 사용자에게는 더 세련되고 화려하면서 역동적인 모습을 보여줄 것이다. 그러나 오래된 웹 브라우저를 선택한 사용자도 HTML 문서를 읽거나 듣는데 전혀 문제가 되지 않는다. 이것은 상호 운용성(interoperability) 또는 웹 접근성(web accessibility)의 어느 측면에서 보더라도 차별에 해당하지 않는다. 더 좋은 도구를 선택한 사용자에게 더 좋은 사용자 경험을 제공하는 것은 당연한 이치로써 이것은 차별을 의미하지 않는다.</p>
+	</article>
+	<article>
+		<h3 id="faq3">3.5.3 _ CSS3를 사용하면 CSS 문법 유효성 검사를 만족할 수 없지 않나?</h3>
+		<p>그렇다. CSS3를 사용하면 CSS 문법 유효성 검사를 만족시킬 수 없다. 그러나 그것은 문제가 되지 않는다.   CSS 문법 유효성 검사 결과는 현실 세계에서 중요하지 않다. CSS의 사용에 있어서 중요한 것은 사실상의 표준이고 이것은 현존하는 웹 브라우저들의 지원 여부에 따른다. 만약 누군가 CSS의 문법 유효성을 완벽하게 지켜야 한다고 주장한다면 W3C 웹 사이트의 CSS 소스 코드를 열어보라고 권해줄 수 있다. W3C 공식 웹사이트(w3.org)는 이미 CSS3 속성을 사용하여 그래픽 이미지를 최소화 하면서도 웹 페이지를 화려하게 디자인 했다. CSS3를 지원하지 않는 IE 브라우저 사용자에게는 조금씩 다르게 보이는 디자인이 존재한다. 그러나 누구도 W3C가 IE 브라우저 사용자를 차별했다고 말하지는 않는다.</p>
+	</article>
+	<article>
+		<h3 id="faq4">3.5.4 _ CSS3의  명세를 지금부터 공부해야 하나?</h3>
+		<p>2010년 현재 CSS3는 아직 모든 명세가 확정되지 않았고 웹 브라우저들이 모든 명세를 잘 지원하는 것도 아니다. 따라서 최신 브라우저에서 지원하는 유용한 몇 가지 속성들을 먼저 사용해보면서 자연스럽게 점진적으로 익혀가는 것이 좋다. 또한 CSS2 버전에서 지원하던 거의 모든 속성과 선택자 사용법을 계승하고 있기 때문에 새 표준에서 추가된 명세들 가운데 브라우저들이 지원하는 명세들을 먼저 익히면 된다. 여러분이 CSS를 처음 배울때에도 아마 이런 방식으로 접근했을 것이다.</p>
+	</article>
+	<article>
+		<h3 id="faq5">3.5.5 _ CSS3 명세가 갑자기 바뀌면 어떻게 하나?</h3>
+		<p>CSS3 명세가 바뀌는 것은 중요한 사실이 아니다. 웹 브라우저가 바뀐 CSS3 명세를 지원하는지의 여부가 중요하다.  보통의 웹 브라우저들은 하위 호환성을 중요하게 여기기 때문에 새 표준을 수용하면서 낡은 명세의 지원을 차단해 버리는 어리석은 일은 하지 않을 것이다. 예를 들어 CSS3 명세는 상자의 한 쪽 귀퉁이에 둥근 모서리 효과를 지정할 때 border-top-left-radius 라는 속성을 사용할 것을 제시하고 있지만 파이어폭스 브라우저는 둥근 모서리를 표현할 때  -moz-border-radius-topleft 라는 속성을 사용해야 한다. 만약 border-top-left-radius 속성이 최종 권고안으로 확정 되더라도 파이어폭스 브라우저는 -moz-border-radius-topleft 속성의 지원을 멈추지 않을 것이다.</p>
+	</article>
+	<article>
+		<h3 id="faq6">3.5.6 _ CSS3 명세를 보면서 공부했지만 대부분의 브라우저들이 지원하지 않는것 같다.</h3>
+		<p>지원하지 않는 것이 아니라 사용 방법이 조금 다를 뿐이다. 웹 브라우저들은 CSS3 명세를 지원하지만 미처 발견하지 못했던 매우 특이한 경우의 문제점이나 개선 사항을 수집하기 위해 보다 안전한 방법으로 CSS3를 지원하는 방법을 선택했다. 그것이 바로 벤더 확장(Vendor Extensions) 속성이다. 벤더 확장 속성이란  CSS 속성 앞에 벤더 표시를 위한 접두사(prefix)를 붙인 상태의 속성 표기법이다. 오페라 브라우저는 -o-, 파이어폭스는 -moz-, 웹킷  엔진을 사용하는 사파리와 크롬은 -webkit- 이라는 접두사를 붙임으로써 현재 지원하는 속성이 공식적인 표준과 다를 수 있고   변경의 여지가 있을 수 있다는 점을 암시하고 있다. 예를 들면 CSS3의 box-shadow 속성을 작성할 때 파이어폭스는 -moz-box-shadow 라고 작성해야 한다. 파이어폭스가 이 속성을 공식 지원하기 시작한다면 box-shadow와 -moz-box-shadow 표기법을 병행 지원 할 것이다. 다른 벤더들도 마찬가지다.</p>
+	</article>
+	<article>
+		<h3 id="faq7">3.5.7 _ 우리 고객들은 IE 브라우저에서도 CSS3 기법들이 적용되길 원한다.</h3>
+		<p>안타깝게도 현재(IE8) 및 하위 버전의 IE 브라우저는 CSS3를 지원하지 않는다. IE9 부터 HTML5와 함께 CSS3를 지원할 계획이 발표되었고 IE9 브라우저는 Windows Vista, Windows 7 이후의 운영체제에만 설치 가능하다. IE9 브라우저는 아직(2010년 7월 현재) 공식 출시일을 밝힌 적이 없지만  빠르면 2011년에 출시가 될 것으로 전망하고 있다. CSS3가 최신 기술이기 때문에 하위 버전의 브라우저에서 똑같이 구현하려면  그래픽 이미지 또는 자바스크립트를 추가로 사용해야 한다. 때문에 무리하게 적용하는 경우 웹 페이지의 성능을 떨어뜨리는  결과를 감수해야 한다. 평균적으로 웹 페이지 로딩 속도의 80%는 이미지와 자바스크립트를 내려받는데 소요된다. 트래픽이 높은 웹 사이트 일수록 이러한 성능 문제는 치명적으로 작용하기 때문에 낮은 버전의 웹 브라우저에는 우아한 낮춤 전략으로 접근하는 것이 좋다.  예를 들면 낮은 버전의 웹 브라우저에서는 둥근 모서리 대신 각진 모서리 표현을 사용하는 것이다. 이것은 고객이나 디자이너의 욕심을 포기하라는 의미가 아니라 성능과 타협할 수 있도록 합의를 이끌어야  한다는 뜻이다. 결과적으로 모든 사용자들에게 높은 성능을 제공할 수 있고 최신 웹 브라우저를 선택한 사용자에게는 보다 향상된 경험을 제공할 수 있다. 낡은 브라우저 때문에 계속해서 시대에 뒤떨어진 낡은 기술만을 사용해야 한다면 향상된 경험도 제공할 수 없게 된다.</p>
+	</article>
+</section>
+<hr>
+<section>
+	<h2 id="ref">3.6 _ 참고자료</h2>
+	<ul>
+		<li>W3C Standards &amp; Draft
+			<ul>
+				<li>About the CSS 2.1 Specification - <a href="http://www.w3.org/TR/CSS21/about.html">http://www.w3.org/TR/CSS21/about.html</a></li>
+				<li>CSS3.info - <a href="http://www.css3.info/">http://www.css3.info/</a></li>
+				<li>CSS3 Working Group Editor's Draft - <a href="http://dev.w3.org/csswg/">http://dev.w3.org/csswg/</a></li>
+				<li>Selectors Level 3 - <a href="http://www.w3.org/TR/css3-selectors/">http://www.w3.org/TR/css3-selectors/</a></li>
+				<li>CSS Text Level 3 - <a href="http://www.w3.org/TR/css3-text/">http://www.w3.org/TR/css3-text/</a></li>
+				<li>CSS Fonts Module Level 3 - <a href="http://www.w3.org/TR/css3-fonts/">http://www.w3.org/TR/css3-fonts/</a></li>
+				<li>CSS Color Module Level 3 - <a href="http://www.w3.org/TR/css3-color/">http://www.w3.org/TR/css3-color/</a></li>
+				<li>CSS Backgrounds and Borders Module Level 3 - <a href="http://www.w3.org/TR/css3-background/">http://www.w3.org/TR/css3-background/</a></li>
+				<li>CSS 2D Transforms Module Level 3 - <a href="http://www.w3.org/TR/css3-2d-transforms/">http://www.w3.org/TR/css3-2d-transforms/</a></li>
+				<li>CSS 3D Transforms Module Level 3 - <a href="http://www.w3.org/TR/css3-3d-transforms/">http://www.w3.org/TR/css3-3d-transforms/</a></li>
+				<li>CSS Transitions Module Level 3 - <a href="http://www.w3.org/TR/css3-transitions/">http://www.w3.org/TR/css3-transitions/</a></li>
+				<li>CSS Animations Module Level 3 - <a href="http://www.w3.org/TR/css3-animations/">http://www.w3.org/TR/css3-animations/</a></li>
+				<li>ALL STANDARDS AND DRAFTS &rsaquo; CSS - <a href="http://www.w3.org/TR/#tr_CSS">http://www.w3.org/TR/#tr_CSS</a></li>
+			</ul>
+		</li>
+		<li>Safari CSS Reference - <a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariCSSRef/Introduction.html">http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariCSSRef/Introduction.html</a></li>
+		<li>Mozilla CSS Extensions - <a href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions</a></li>
+		<li>Opera Web specifications support - <a href="http://www.opera.com/docs/specs/">http://www.opera.com/docs/specs/</a></li>
+		<li>MSDN &rsaquo; Cascading Style Sheets - <a href="http://msdn.microsoft.com/en-us/library/ms531205(v=vs.85).aspx">http://msdn.microsoft.com/en-us/library/ms531205(v=vs.85).aspx</a></li>
+		<li>MSDN &rsaquo; Visual Filters and Transitions Reference - <a href="http://msdn.microsoft.com/en-us/library/ms532853(v=VS.85).aspx">http://msdn.microsoft.com/en-us/library/ms532853(v=VS.85).aspx</a></li>
+	</ul>
+</section>
+<hr>
+<footer>
+	<address>
+		<p>이 저작물은 크리에이티브 커먼즈의 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.ko">3.0 라이센스</a>(저작자표시, 비영리, 변경금지)에 따라 이용하실 수 있습니다.</p>
+		<p>정찬명 - <a href="http://naradesign.net/">http://naradesign.net/</a></p>
+	</address>
+</footer>
+</body>
+</html>

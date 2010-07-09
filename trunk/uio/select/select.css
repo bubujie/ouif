@@ -21,4 +21,3 @@
 .select li label{ position:absolute; left:0; top:0; width:100%; text-indent:8px; *text-indent:6px; height:18px; line-height:18px; color:#767676; background:#fff;}
 .select li a{ display:block; text-indent:8px; *text-indent:6px; height:18px; line-height:18px; color:#767676; background:#fff; text-decoration:none;}
 .select li.hover *{ background:#999; color:#fff;}
-.selectGo{ border:1px solid #bababa; height:21px; width:28px; padding:0; *margin:-1px 0 -1px 4px; overflow:visible; background:#eee; vertical-align:middle; cursor:pointer; font:bold 11px Tahoma; line-height:19px; _line-height:normal; color:#767676;}
