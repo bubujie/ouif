@@ -58,6 +58,7 @@ jQuery(function($){
 	});
 	
 	select_value.click(show_option);
+	select_root.find('ul').css('position','absolute');
 	select_root.removeClass('open');
 	select_root.mouseleave(function(){$(this).removeClass('open');});
 	select_a.click(set_anchor).click(hide_option).focus(i_hover).hover(i_hover);
