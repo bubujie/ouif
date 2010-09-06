@@ -11,7 +11,7 @@
 .select div.myValue{ height:19px; text-indent:8px;}
 .select .ctrl{ position:absolute; top:0; right:0; width:18px; height:19px; border:1px solid #bababa; border-left:1px solid #eaeaea; background:#fff;}
 .select .arrow{ position:absolute; width:0; height:0; top:9px; right:6px; line-height:0; font-size:0; border-top:3px solid #999; border-left:3px solid #fff; border-right:3px solid #fff;}
-.select ul{ position:absolute; top:20px; left:0; width:100%; list-style:none; border:0; border-top:1px solid #bababa; border-bottom:1px solid #bababa; background:#fff; overflow:hidden;}
+.select ul{ top:20px; left:0; width:100%; list-style:none; border:0; border-top:1px solid #bababa; border-bottom:1px solid #bababa; background:#fff; overflow:hidden;}
 .select ul.aList{ display:none;}
 .select.open ul.aList{ display:block;}
 .select ul.iList{ left:-2000%;}
