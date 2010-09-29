@@ -33,7 +33,7 @@ jQuery(function($){
 			t.parent('li').addClass('active');
 		}
 	}
-	sItem.find('>a').click(sMenuToggle).focus(sMenuToggle);
+	sItem.find('>a[href=#]').click(sMenuToggle).focus(sMenuToggle);
 	
 	function subMenuActive(){
 		ssItem.removeClass('active');
