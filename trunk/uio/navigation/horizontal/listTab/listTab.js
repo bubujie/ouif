@@ -7,6 +7,8 @@ jQuery(function($){
 		var myClass = t.parent('li').attr('class');
 		t.parents('.listTab:first').attr('class', 'listTab '+myClass);
 		tab.css('height', t.next('ul').height()+40);
+		return false;
 	}
 	tab.find('>ul>li>a').click(onSelectTab).focus(onSelectTab);
+	
 });
