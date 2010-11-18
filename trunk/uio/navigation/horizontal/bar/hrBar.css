@@ -74,7 +74,7 @@
 .menu .major .sub ul{ margin:0; padding:1px; border:1px solid #878787; border-top:0; background:#fff;}
 .menu .major .sub li{ width:100%; *width:auto; float:none; clear:both; display:block; _display:inline; border:0; margin:0;}
 .menu .major .sub a{ width:100%; _width:auto; float:none; clear:both; display:block; padding:0 !important; margin:0; background-image:none !important; filter:none;}
-.menu .major .sub a span{ display:block; height:auto; padding:5px 20px; font-weight:normal; color:#767676; border:0; _zoom:0;}
+.menu .major .sub a span{ display:inline-block; height:auto; padding:5px 20px; font-weight:normal; color:#767676; border:0;}
 
 /* Menu Aside */
 .menu .aside{ position:relative; z-index:2; float:right; border-left:1px solid; background:url(bgBarEnd.png); _background:none; /*_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bgBarEnd.png', sizingMethod='scale');*/}
