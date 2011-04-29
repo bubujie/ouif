@@ -13,6 +13,7 @@ jQuery(function($){
 		t.next('ul').show();
 		tab_i.removeClass('active');
 		t.parent('li').addClass('active');
+		return false;
 	}
 	function tabSubMenuActive(){
 		tab_ii.removeClass('active');
