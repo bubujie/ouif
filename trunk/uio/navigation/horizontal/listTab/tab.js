@@ -15,6 +15,7 @@ jQuery(function($){
 		tab_list_i.removeClass('active');
 		t.parent('li').addClass('active');
 		tab_list.css('height', t.next('ul').height()+40);
+		return false;
 	}
 	function listTabSubMenuActive(){
 		tab_list_ii.removeClass('active');
