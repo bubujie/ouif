@@ -20,5 +20,5 @@ jQuery(function($){
 		$(this).parent(tab_ii).addClass('active');
 	}; 
 	tab_i.find('>a[href=#]').click(tabMenuToggle).focus(tabMenuToggle);
-	tab_ii.find('>a').click(tabSubMenuActive).focus(tabSubMenuActive);
+	tab_ii.find('>a[href=#]').click(tabSubMenuActive).focus(tabSubMenuActive);
 });
