@@ -2,21 +2,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>OUIF : List Tab</title>
-<link rel="stylesheet" type="text/css" href="listTab.css">
+<link rel="stylesheet" type="text/css" href="tab.css">
 </head>
 <body>
-<div class="listTab m1 jsOff">
+<div class="tab jx">
 	<ul>
-		<li class="m1"><a href="#sm1"><span>공지사항</span></a>
-			<ul id="sm1">
+		<li class="active"><a href="#"><span>공지사항</span></a>
+			<ul>
 				<li>&rsaquo; <a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span class="time">2010.12.24</span></li>
 				<li>&rsaquo; <a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span class="time">2010.12.24</span></li>
 				<li>&rsaquo; <a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span class="time">2010.12.24</span></li>
 				<li class="more">&rsaquo; <a href="#">공지사항 더보기</a></li>
 			</ul>
 		</li>
-		<li class="m2"><a href="#sm2"><span>보도자료</span></a>
-			<ul id="sm2">
+		<li><a href="#"><span>보도자료</span></a>
+			<ul>
 				<li>&rsaquo; <a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span class="time">2010.12.24</span></li>
 				<li>&rsaquo; <a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span class="time">2010.12.24</span></li>
 				<li>&rsaquo; <a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span class="time">2010.12.24</span></li>
@@ -24,8 +24,8 @@
 				<li class="more">&rsaquo; <a href="#">보도자료 더보기</a></li>
 			</ul>
 		</li>
-		<li class="m3"><a href="#sm3"><span>해명자료</span></a>
-			<ul id="sm3">
+		<li><a href="#"><span>해명자료</span></a>
+			<ul>
 				<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="time">2010.12.24</span></li>
 				<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="time">2010.12.24</span></li>
 				<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="time">2010.12.24</span></li>
@@ -36,9 +36,9 @@
 		</li>
 	</ul>
 </div>
-<button type="button" onClick="$('link[href=listTab.css]').attr('href','')">CSS(X)</button>
-<button type="button" onClick="$('link[href]').attr('href','listTab.css')">CSS(O)</button>
+<button type="button" onclick="$('link[href=tab.css]').attr('href','')">CSS(X)</button>
+<button type="button" onclick="$('link[href]').attr('href','tab.css')">CSS(O)</button>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="listTab.js"></script>
+<script type="text/javascript" src="tab.js"></script>
 </body>
 </html>

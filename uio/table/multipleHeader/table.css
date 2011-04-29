@@ -1,15 +1,11 @@
 @charset "utf-8"; 
 
-/* table */
-.table{ margin:1em 0;}
-.table table{ width:100%; border:0; border-top:2px solid #999; font:12px Tahoma, Geneva, sans-serif;}
-.table caption{ padding:8px 0; font-weight:bold; text-align:left;}
-.table th,
-.table td{ border:0; padding:8px; vertical-align:top;}
-.table th{ color:#333;}
-.table td{ color:#767676;}
-.table thead th{ border-bottom:1px solid #ccc; background:#f8f8f8;}
-.table tbody th{ border-bottom:1px solid #ddd; background:#fafafa;}
-.table tfoot th{ border-bottom:1px solid #ddd;}
-.table tbody td{ border-bottom:1px solid #ddd;}
-.table tfoot td{ border-bottom:1px solid #ddd; font-weight:bold; color:#333;}
+/* Table */
+.table{border:0;border-collapse:collapse;margin:1em 0;font-size:12px;font-family:Tahoma, Geneva, sans-serif}
+.table table{width:100%;border:0;border-top:2px solid #666}
+.table caption{padding:8px 0;font-weight:bold;text-align:left}
+.table caption em{float:right;font-style:normal;font-weight:normal;color:#f60}
+.table th,.table td{border:0;padding:8px;vertical-align:top;text-align:left;border-bottom:1px solid #ddd}
+.table th{background:#f8f8f8}
+.table thead th{border-bottom:1px solid #999}
+.table tfoot td{font-weight:bold;background:#f8f8f8}

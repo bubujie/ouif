@@ -1,7 +1,7 @@
 jQuery(function($){
-	// Input Clear
-	var iText = $('.regist .iLabel').next('.iText');
-	$('.regist .iLabel').css('position','absolute');
+	// Input Cleaner
+	var iText = $('.form .iLabel').next('.iText');
+	$('.form .iLabel').css('position','absolute');
 	iText
 		.focus(function(){
 			$(this).prev('.iLabel').css('visibility','hidden');
