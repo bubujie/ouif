@@ -13,10 +13,12 @@ jQuery(function($){
 		t.next('ul').show();
 		tab_i.removeClass('active');
 		t.parent('li').addClass('active');
+		return false;
 	}
 	function tabSubMenuActive(){
 		tab_ii.removeClass('active');
 		$(this).parent(tab_ii).addClass('active');
+		return false;
 	}; 
 	tab_i.find('>a[href=#]').click(tabMenuToggle).focus(tabMenuToggle);
 	tab_ii.find('>a[href=#]').click(tabSubMenuActive).focus(tabSubMenuActive);

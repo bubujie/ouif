@@ -20,6 +20,7 @@ jQuery(function($){
 	function listTabSubMenuActive(){
 		tab_list_ii.removeClass('active');
 		$(this).parent(tab_list_ii).addClass('active');
+		return false;
 	}; 
 	tab_list_i.find('>a[href=#]').click(listTabMenuToggle).focus(listTabMenuToggle);
 	tab_list_ii.find('>a[href=#]').click(listTabSubMenuActive).focus(listTabSubMenuActive);
