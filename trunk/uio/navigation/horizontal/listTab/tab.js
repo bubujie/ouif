@@ -1,25 +1,25 @@
 jQuery(function($){
-	// Tab Navigation
-	var tab = $('div.tab');
-	var tab_i = tab.find('>ul>li');
-	var tab_ii = tab.find('>ul>li>ul>li');
-	tab.removeClass('jx');
-	tab_i.find('>ul').css('display','none');
-	tab_i.find('>ul>li[class=active]').parents('li').attr('class','active');
-	tab.find('>ul>li[class=active]').find('>ul').css('display','block');
-	tab.css('height', tab.find('>ul>li>ul:visible').height()+40);
-	function tabMenuToggle(event){
+	// List Tab Navigation
+	var tab_list = $('div.tab.list');
+	var tab_list_i = tab_list.find('>ul>li');
+	var tab_list_ii = tab_list.find('>ul>li>ul>li');
+	tab_list.removeClass('jx');
+	tab_list_i.find('>ul').css('display','none');
+	tab_list_i.find('>ul>li[class=active]').parents('li').attr('class','active');
+	tab_list.find('>ul>li[class=active]').find('>ul').css('display','block');
+	tab_list.css('height', tab_list.find('>ul>li>ul:visible').height()+40);
+	function listTabMenuToggle(event){
 		var t = $(this);
-		tab_i.find('>ul').hide();
+		tab_list_i.find('>ul').hide();
 		t.next('ul').show();
-		tab_i.removeClass('active');
+		tab_list_i.removeClass('active');
 		t.parent('li').addClass('active');
-		tab.css('height', t.next('ul').height()+40);
+		tab_list.css('height', t.next('ul').height()+40);
 	}
-	function tabSubMenuActive(){
-		tab_ii.removeClass('active');
-		$(this).parent(tab_ii).addClass('active');
+	function listTabSubMenuActive(){
+		tab_list_ii.removeClass('active');
+		$(this).parent(tab_list_ii).addClass('active');
 	}; 
-	tab_i.find('>a[href=#]').click(tabMenuToggle).focus(tabMenuToggle);
-	tab_ii.find('>a').click(tabSubMenuActive).focus(tabSubMenuActive);
+	tab_list_i.find('>a[href=#]').click(listTabMenuToggle).focus(listTabMenuToggle);
+	tab_list_ii.find('>a').click(listTabSubMenuActive).focus(listTabSubMenuActive);
 });
