@@ -18,7 +18,6 @@
 .tab.list li li.more{position:absolute;top:-30px;right:0;border:0 !important;background:transparent}
 .tab.list li.active a{border:1px solid #ccc;border-bottom:1px solid #fff;margin-top:-1px;background:transparent;color:#333}
 .tab.list li.active a span{padding-top:7px;font-weight:bold}
-/* Tab + List - JS Off */
 .tab.list.jx{height:auto}
 .tab.list.jx ul{border:0}
 .tab.list.jx li{float:none;position:relative}
