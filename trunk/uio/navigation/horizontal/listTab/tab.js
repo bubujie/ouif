@@ -3,9 +3,9 @@ jQuery(function($){
 	var tab_list = $('div.tab.list');
 	var tab_list_i = tab_list.find('>ul>li');
 	tab_list.removeClass('jx');
-	tab_list_i.find('>ul').css('display','none');
-	tab_list.find('>ul>li[class=active]').find('>ul').css('display','block');
-	tab_list.css('height', tab_list.find('>ul>li>ul:visible').height()+40);
+	tab_list_i.find('>ul').hide();
+	tab_list.find('>ul>li[class=active]').find('>ul').show();
+	tab_list.css('height', tab_list.find('>ul>li.active>ul').height()+40);
 	function listTabMenuToggle(event){
 		var t = $(this);
 		tab_list_i.find('>ul').hide();
