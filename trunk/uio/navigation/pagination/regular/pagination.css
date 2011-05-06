@@ -1,13 +1,14 @@
+@charset "utf-8";
 /* Pagination */
-.pagination{ padding:15px 0; text-align:center; line-height:normal;}
+.pagination{padding:15px 0;text-align:center;line-height:normal}
 .pagination a,
-.pagination strong{ position:relative; display:inline-block; margin:0 -2px; padding:2px 8px; font-weight:bold; font-size:12px; text-decoration:none; line-height:normal; color:#333; font-family:Tahoma, Sans-serif; vertical-align:middle;}
+.pagination strong{position:relative;display:inline-block;padding:2px 4px;font-weight:bold;text-decoration:none;line-height:normal;color:#333;vertical-align:middle}
 .pagination a:hover,
 .pagination a:active,
-.pagination a:focus{ background-color:#f8f8f8; }
-.pagination strong{ color:#ff6600;}
-.pagination .direction{ font-weight:normal; color:#767676; white-space:nowrap;}
-.pagination .direction span{ font-weight:bold; font-size:14px;}
+.pagination a:focus{border:1px solid #ddd;margin:0 -1px}
+.pagination strong{color:#ff6600;font-size:20px}
+.pagination .direction{font-weight:normal;white-space:nowrap}
+.pagination .direction span{font-weight:bold;font-size:14px}
 .pagination .direction:hover,
 .pagination .direction:active,
-.pagination .direction:focus{ background-color:#fff; color:#333;}
+.pagination .direction:focus{border:0;margin:0}

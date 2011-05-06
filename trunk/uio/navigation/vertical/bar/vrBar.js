@@ -1,48 +1,33 @@
 jQuery(function($){
-	
-	// Side Menu
-	var sMenu = $('div.sMenu');
-	var sItem = sMenu.find('>ul>li');
-	var ssItem = sMenu.find('>ul>li>ul>li');
-	var lastEvent = null;
-	
-	sItem.find('>ul').css('display','none');
-	sMenu.find('>ul>li>ul>li[class=active]').parents('li').attr('class','active');
-	sMenu.find('>ul>li[class=active]').find('>ul').css('display','block');
-
-	function sMenuToggle(event){
+	// Vertical Navigation
+	var vNav = $('div.vNav');
+	var vNav_i = vNav.find('>ul>li');
+	var vNav_ii = vNav.find('>ul>li>ul>li');
+	vNav_i.find('>ul').hide();
+	vNav.find('>ul>li>ul>li[class=active]').parents('li').attr('class','active');
+	vNav.find('>ul>li[class=active]').find('>ul').show();
+	function vNavToggle(event){
 		var t = $(this);
-		
-		if (this == lastEvent) return false;
-		lastEvent = this;
-		setTimeout(function(){ lastEvent=null }, 200);
-		
 		if (t.next('ul').is(':hidden')) {
-			sItem.find('>ul').slideUp(100);
+			vNav_i.find('>ul').slideUp(100);
 			t.next('ul').slideDown(100);
-		} else if(!t.next('ul').length) {
-			sItem.find('>ul').slideUp(100);
-		} else {
-			t.next('ul').slideUp(100);
+		} else if (t.next('ul').is(':visible')){
+			t.next('ul').show();
+		} else if (!t.next('ul').langth) {
+			vNav_i.find('>ul').slideUp(100);
 		}
-		
-		if (t.parent('li').hasClass('active')){
-			t.parent('li').removeClass('active');
-		} else {
-			sItem.removeClass('active');
-			t.parent('li').addClass('active');
-		}
+		vNav_i.removeClass('active');
+		t.parent('li').addClass('active');
+		return false;
 	}
-	sItem.find('>a[href=#]').click(sMenuToggle).focus(sMenuToggle);
-	
-	function subMenuActive(){
-		ssItem.removeClass('active');
-		$(this).parent(ssItem).addClass('active');
+	vNav_i.find('>a[href=#]').click(vNavToggle).focus(vNavToggle);
+	function vNavActive(){
+		vNav_ii.removeClass('active');
+		$(this).parent(vNav_ii).addClass('active');
+		return false;
 	}; 
-	ssItem.find('>a').click(subMenuActive).focus(subMenuActive);
-	
-	//icon
-	sMenu.find('>ul>li>ul').prev('a').append('<span class="i"></span>');
+	vNav_ii.find('>a[href=#]').click(vNavActive).focus(vNavActive);
+	vNav.find('>ul>li>ul').prev('a').append('<span class="i"></span>');
 });
 
 
