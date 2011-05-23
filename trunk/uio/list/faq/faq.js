@@ -1,4 +1,5 @@
-jQuery(function(){
+jQuery(function($){
+	// Frequently Asked Question
 	var article = $('.faq .article');
 	article.addClass('hide');
 	article.find('.a').hide();
