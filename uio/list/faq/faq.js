@@ -16,6 +16,7 @@ jQuery(function($){
 			myArticle.removeClass('show').addClass('hide');
 			myArticle.find('.a').slideUp(100);
 		}
+		return false;
 	});
 	$('.faq>.faqHeader>.showAll').click(function(){
 		var hidden = $('.faq .article.hide').length;
